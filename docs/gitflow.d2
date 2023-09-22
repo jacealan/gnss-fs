@@ -1,0 +1,22 @@
+git flow of Jace: {
+  shape: sequence_diagram
+
+  main
+  develop
+  feature
+
+  develop.c2 -> feature.f1: feature1
+  develop.m1 <- feature.f1: merge
+  main.m1 <- develop.c3: merge
+
+  develop.c4 -> feature.f2: feature2
+  develop.c4 <- feature.f2: merge
+
+  main.hotfix1 -> main.hotfix1: hotfix1
+  main.hotfix1 -> develop.c5: merge
+
+  develop.c5 -> feature.f3: feature3
+  develop.m2 <- feature.f3: merge
+  develop.hotfix3 -> develop.hotfix3: fix
+  main.m2 <- develop.m2: merge
+}
