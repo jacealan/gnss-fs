@@ -332,6 +332,19 @@ const EditBranch: NextPage = () => {
                 업로드된 이미지는 5개월 후 자동 삭제됩니다
               </span>
               <br />
+              <span
+                style={{
+                  color: "#555",
+                  fontSize: "0.7rem",
+                }}
+              >
+                <Link href="https://imgbb.com/" target="_blank">
+                  ImgBB(https://imgbb.com/)
+                </Link>
+                에 이미지 파일을 업로드 후<br />
+                다이렉트 링크 주소를 이미지칸에 직접 입력하셔도 됩니다
+              </span>
+              <br />
               <br />
               <span style={{ color: "red", fontWeight: 700 }}>
                 [!!! 주의 !!!]
