@@ -590,7 +590,6 @@ export default function Controller({
               </ButtonGroup>
             </GridItem>
           )}
-
           <GridItem>
             <Box
               justifyContent={"space-between"}
@@ -604,166 +603,149 @@ export default function Controller({
               온라인 홍보 관리
             </Box>
           </GridItem>
-
-          <GridItem bgColor={colors.blue0}>
-            <Flex
-              justifyContent={"space-between"}
-              flexGrow={"1"}
-              w="100%"
-              gap={1}
-              bgColor={colors.blue0}
-              mb={2}
-            >
-              <Box w="100%">
-                <a
-                  href={`https://docs.google.com/spreadsheets/d/1-i7GucH--ChkDTCJZX8IonLm6g-rglFJWjrVdPuIw8g/edit#gid=227963569`}
-                  target="_blank"
-                >
-                  <Button
-                    w="100%"
-                    bgColor="white"
-                    border={`solid 1px ${colors.blue1}`}
-                    borderRadius={"4px"}
-                    fontSize="14px"
-                    fontWeight={400}
-                    _hover={{ fontWeight: 700 }}
-                  >
-                    <Flex
-                      justifyContent={"space-between"}
-                      alignItems={"center"}
-                      w="100%"
-                    >
-                      <Image src="/assets/icons/editData.webp" w="20px" />
-                      <Box>설명회/시간표 등록</Box>
-                    </Flex>
-                  </Button>
-                </a>
-              </Box>
-              <Box w="100%">
-                <a href={`https://imgbb.com/`} target="_blank">
-                  <Button
-                    w="100%"
-                    bgColor="white"
-                    border={`solid 1px ${colors.blue1}`}
-                    borderRadius={"4px"}
-                    fontSize="14px"
-                    fontWeight={400}
-                    _hover={{ fontWeight: 700 }}
-                  >
-                    <Flex
-                      justifyContent={"space-between"}
-                      alignItems={"center"}
-                      w="100%"
-                    >
-                      <Image src="/assets/icons/imgbb.webp" w="20px" />
-                      <Box>ImgBB</Box>
-                    </Flex>
-                  </Button>
-                </a>
-              </Box>
-            </Flex>
-
+          {teamData?.branches.length !== 0 && (
             <GridItem>
-              {teamData?.blog ? (
-                <a href={`${teamData?.blog}`} target="_blank">
-                  <Button
-                    w="100%"
-                    bgColor="white"
-                    border={`solid 1px ${colors.blue1}`}
-                    borderRadius={"4px"}
-                    fontSize="14px"
-                    fontWeight={400}
-                    _hover={{ fontWeight: 700 }}
-                  >
-                    <Flex
-                      justifyContent={"center"}
-                      alignItems={"center"}
-                      w="100%"
+              <ButtonGroup w="100%">
+                {teamData?.branches.map((branch: any, index: number) => (
+                  <Box w="100%" key={index}>
+                    <a
+                      href={`/intra/team/${teamId}/${branch.branchId}/edit`}
+                      target="_blank"
                     >
-                      <Image
-                        src="/assets/icons/blog.png"
-                        alignItems={"center"}
-                        w="20px"
-                      />
-                      <Box ml={2}>블로그</Box>
-                    </Flex>
-                  </Button>
-                </a>
-              ) : (
-                <>
-                  <Grid templateColumns={"1fr 1fr 1fr"} gap={1}>
-                    <GridItem>
-                      <a href={`${teamData?.blogElement}`} target="_blank">
-                        <Button
-                          w="100%"
-                          bgColor="white"
-                          border={`solid 1px ${colors.blue1}`}
-                          borderRadius={"4px"}
-                          fontSize="14px"
-                          fontWeight={400}
-                          _hover={{ fontWeight: 700 }}
+                      <Button
+                        // leftIcon={<BsFileEarmarkSpreadsheet />}
+                        // colorScheme="pink"
+                        w="100%"
+                        bgColor="white"
+                        border={`solid 1px ${colors.blue1}`}
+                        borderRadius={"4px"}
+                        // fontSize="14px"
+                        fontWeight={400}
+                        _hover={{ fontWeight: 700 }}
+                        fontSize={
+                          teamData?.branches.length > 2 ? "0.7rem" : "1rem"
+                        }
+                      >
+                        <Flex
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          // w="100%"
                         >
-                          <Flex
-                            justifyContent={"center"}
-                            alignItems={"center"}
-                            w="100%"
-                          >
-                            <Image src="/assets/icons/blog.png" w="20px" />
-                            <Box ml={2}>초•중등</Box>
-                          </Flex>
-                        </Button>
-                      </a>
-                    </GridItem>
-                    <GridItem>
-                      <a href={`${teamData?.blogHigh}`} target="_blank">
-                        <Button
-                          w="100%"
-                          bgColor="white"
-                          border={`solid 1px ${colors.blue1}`}
-                          borderRadius={"4px"}
-                          fontSize="14px"
-                          fontWeight={400}
-                          _hover={{ fontWeight: 700 }}
-                        >
-                          <Flex
-                            justifyContent={"center"}
-                            alignItems={"center"}
-                            w="100%"
-                          >
-                            <Image src="/assets/icons/blog.png" w="20px" />
-                            <Box ml={2}>고등</Box>
-                          </Flex>
-                        </Button>
-                      </a>
-                    </GridItem>
-                    <GridItem>
-                      <a href={`${teamData?.blogScience}`} target="_blank">
-                        <Button
-                          w="100%"
-                          bgColor="white"
-                          border={`solid 1px ${colors.blue1}`}
-                          borderRadius={"4px"}
-                          fontSize="14px"
-                          fontWeight={400}
-                          _hover={{ fontWeight: 700 }}
-                        >
-                          <Flex
-                            justifyContent={"center"}
-                            alignItems={"center"}
-                            w="100%"
-                          >
-                            <Image src="/assets/icons/blog.png" w="20px" />
-                            <Box ml={2}>과학</Box>
-                          </Flex>
-                        </Button>
-                      </a>
-                    </GridItem>
-                  </Grid>
-                </>
-              )}
+                          <Image src="/assets/icons/cubes.png" w="20px" />
+                          <Box ml={1}>
+                            {branches &&
+                              branches[branch.branchId].split(" ")[0]}
+                          </Box>
+                        </Flex>
+                        {/* {branches && branches[branch.branchId].split(" ")[0]} */}
+                      </Button>
+                    </a>
+                  </Box>
+                ))}
+              </ButtonGroup>
             </GridItem>
+          )}
+          {/* <GridItem bgColor={colors.blue0}> */}
+          <GridItem>
+            {teamData?.blog ? (
+              <a href={`${teamData?.blog}`} target="_blank">
+                <Button
+                  w="100%"
+                  bgColor="white"
+                  border={`solid 1px ${colors.blue1}`}
+                  borderRadius={"4px"}
+                  fontSize="14px"
+                  fontWeight={400}
+                  _hover={{ fontWeight: 700 }}
+                >
+                  <Flex
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    w="100%"
+                  >
+                    <Image
+                      src="/assets/icons/blog.png"
+                      alignItems={"center"}
+                      w="20px"
+                    />
+                    <Box ml={2}>블로그</Box>
+                  </Flex>
+                </Button>
+              </a>
+            ) : (
+              <>
+                <Grid templateColumns={"1fr 1fr 1fr"} gap={2}>
+                  <GridItem>
+                    <a href={`${teamData?.blogElement}`} target="_blank">
+                      <Button
+                        w="100%"
+                        bgColor="white"
+                        border={`solid 1px ${colors.blue1}`}
+                        borderRadius={"4px"}
+                        fontSize="14px"
+                        fontWeight={400}
+                        _hover={{ fontWeight: 700 }}
+                      >
+                        <Flex
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          w="100%"
+                        >
+                          <Image src="/assets/icons/blog.png" w="20px" />
+                          <Box ml={2}>초•중등</Box>
+                        </Flex>
+                      </Button>
+                    </a>
+                  </GridItem>
+                  <GridItem>
+                    <a href={`${teamData?.blogHigh}`} target="_blank">
+                      <Button
+                        w="100%"
+                        bgColor="white"
+                        border={`solid 1px ${colors.blue1}`}
+                        borderRadius={"4px"}
+                        fontSize="14px"
+                        fontWeight={400}
+                        _hover={{ fontWeight: 700 }}
+                      >
+                        <Flex
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          w="100%"
+                        >
+                          <Image src="/assets/icons/blog.png" w="20px" />
+                          <Box ml={2}>고등</Box>
+                        </Flex>
+                      </Button>
+                    </a>
+                  </GridItem>
+                  <GridItem>
+                    <a href={`${teamData?.blogScience}`} target="_blank">
+                      <Button
+                        w="100%"
+                        bgColor="white"
+                        border={`solid 1px ${colors.blue1}`}
+                        borderRadius={"4px"}
+                        fontSize="14px"
+                        fontWeight={400}
+                        _hover={{ fontWeight: 700 }}
+                      >
+                        <Flex
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          w="100%"
+                        >
+                          <Image src="/assets/icons/blog.png" w="20px" />
+                          <Box ml={2}>과학</Box>
+                        </Flex>
+                      </Button>
+                    </a>
+                  </GridItem>
+                </Grid>
+              </>
+            )}
           </GridItem>
-
+          {/* </GridItem> */}
           <GridItem>
             <Box
               justifyContent={"space-between"}
@@ -900,103 +882,7 @@ export default function Controller({
             </Flex>
           </GridItem>
 
-          {/* {teamData?.gdriveFolder && (
-            <GridItem>
-              <a href={`${teamData?.gdriveFolder}`} target="_blank">
-                <Button
-                  w="100%"
-                  colorScheme="facebook"
-                  leftIcon={<FaGoogleDrive />}
-                >
-                  <Box>Google Drive (본부 공유)</Box>
-                </Button>
-              </a>
-            </GridItem>
-          )}*/}
           {/* <GridItem>
-            <ButtonGroup w="100%">
-              <Box width="65%">
-                <a
-                  href="https://docs.google.com/spreadsheets/d/1-i7GucH--ChkDTCJZX8IonLm6g-rglFJWjrVdPuIw8g/edit#gid=227963569"
-                  target="_blank"
-                >
-                  <Button
-                    leftIcon={<BsFileEarmarkSpreadsheet />}
-                    colorScheme="pink"
-                    w="100%"
-                  >
-                    GNSS.co.kr 구글시트
-                  </Button>
-                </a>
-              </Box>
-              <Box width="35%">
-                <a href="https://imgbb.com/" target="_blank">
-                  <Button
-                    leftIcon={<IoIosImages />}
-                    colorScheme="pink"
-                    variant={"outline"}
-                    w="100%"
-                  >
-                    ImgBB
-                  </Button>
-                </a>
-              </Box>
-            </ButtonGroup>
-          </GridItem> */}
-          {/* {teamData?.notionPage && (
-            <GridItem>
-              <a href={`${teamData?.notionPage}`} target="_blank">
-                <Button
-                  w="100%"
-                  // colorScheme="whatsapp"
-                  bgColor={colors.neutrals}
-                  color={colors.primary}
-                  _hover={{ bg: "gray" }}
-                  leftIcon={<SiNotion />}
-                >
-                  노션(Notion)
-                </Button>
-              </a>
-            </GridItem>
-          )} */}
-          {/* <GridItem>
-            {teamData?.blog ? (
-              <a href={`${teamData?.blog}`} target="_blank">
-                <Button w="100%" colorScheme="whatsapp" leftIcon={<SiNaver />}>
-                  블로그
-                </Button>
-              </a>
-            ) : (
-              <>
-                <Grid templateColumns={"1fr 1fr"} gap={2}>
-                  <GridItem>
-                    <a href={`${teamData?.blogElement}`} target="_blank">
-                      <Button
-                        w="100%"
-                        colorScheme="whatsapp"
-                        leftIcon={<SiNaver />}
-                      >
-                        블로그(초•중)
-                      </Button>
-                    </a>
-                  </GridItem>
-                  <GridItem>
-                    <a href={`${teamData?.blogHigh}`} target="_blank">
-                      <Button
-                        w="100%"
-                        colorScheme="whatsapp"
-                        leftIcon={<SiNaver />}
-                      >
-                        블로그(고등)
-                      </Button>
-                    </a>
-                  </GridItem>
-                </Grid>
-              </>
-            )}
-          </GridItem> */}
-
-          <GridItem>
             <Box
               justifyContent={"space-between"}
               alignItems={"center"}
@@ -1008,53 +894,67 @@ export default function Controller({
             >
               TESTing (NEVER TOUCH!)
             </Box>
-          </GridItem>
-          {teamData?.branches.length !== 0 && (
-            <GridItem>
-              <ButtonGroup w="100%">
-                {teamData?.branches.map((branch: any, index: number) => (
-                  <Box w="100%" key={index}>
-                    <a
-                      href={`/intra/team/${teamId}/${branch.branchId}/edit`}
-                      target="_blank"
-                    >
-                      <Button
-                        // leftIcon={<BsFileEarmarkSpreadsheet />}
-                        // colorScheme="pink"
-                        w="100%"
-                        bgColor="white"
-                        border={`solid 1px ${colors.blue1}`}
-                        borderRadius={"4px"}
-                        // fontSize="14px"
-                        fontWeight={400}
-                        _hover={{ fontWeight: 700 }}
-                        fontSize={
-                          teamData?.branches.length > 2 ? "0.7rem" : "1rem"
-                        }
-                      >
-                        <Flex
-                          justifyContent={"center"}
-                          alignItems={"center"}
-                          // w="100%"
-                        >
-                          <Image src="/assets/icons/cubes.png" w="20px" />
-                          <Box ml={1}>
-                            {branches &&
-                              branches[branch.branchId].split(" ")[0]}
-                          </Box>
-                        </Flex>
-                        {/* {branches && branches[branch.branchId].split(" ")[0]} */}
-                      </Button>
-                    </a>
-                  </Box>
-                ))}
-              </ButtonGroup>
-            </GridItem>
-          )}
+          </GridItem> */}
+          {/* <Flex
+            justifyContent={"space-between"}
+            flexGrow={"1"}
+            w="100%"
+            gap={1}
+            bgColor={colors.blue0}
+            mb={2}
+          >
+            <Box w="100%">
+              <a
+                href={`https://docs.google.com/spreadsheets/d/1-i7GucH--ChkDTCJZX8IonLm6g-rglFJWjrVdPuIw8g/edit#gid=227963569`}
+                target="_blank"
+              >
+                <Button
+                  w="100%"
+                  bgColor="white"
+                  border={`solid 1px ${colors.blue1}`}
+                  borderRadius={"4px"}
+                  fontSize="14px"
+                  fontWeight={400}
+                  _hover={{ fontWeight: 700 }}
+                >
+                  <Flex
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                    w="100%"
+                  >
+                    <Image src="/assets/icons/editData.webp" w="20px" />
+                    <Box>설명회/시간표 등록</Box>
+                  </Flex>
+                </Button>
+              </a>
+            </Box>
+            <Box w="100%">
+              <a href={`https://imgbb.com/`} target="_blank">
+                <Button
+                  w="100%"
+                  bgColor="white"
+                  border={`solid 1px ${colors.blue1}`}
+                  borderRadius={"4px"}
+                  fontSize="14px"
+                  fontWeight={400}
+                  _hover={{ fontWeight: 700 }}
+                >
+                  <Flex
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                    w="100%"
+                  >
+                    <Image src="/assets/icons/imgbb.webp" w="20px" />
+                    <Box>ImgBB</Box>
+                  </Flex>
+                </Button>
+              </a>
+            </Box>
+          </Flex> */}
         </Grid>
-        <Box width="100%" textAlign={"right"}>
+        {/* <Box width="100%" textAlign={"right"}>
           <EditIcon />
-        </Box>
+        </Box> */}
       </Box>
     </>
   )
