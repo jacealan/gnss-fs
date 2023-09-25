@@ -1,5 +1,8 @@
 import dbConnect from "@/lib/mongooseConnect"
 import Branch from "@/models/branch"
+import User from "@/models/user"
+
+import moment from "moment-timezone"
 
 export default async function handler(req: any, res: any) {
   const {
@@ -166,7 +169,7 @@ export default async function handler(req: any, res: any) {
     //   }
 
     case "POST" /* MAKE BRANCH */:
-      console.log("POST")
+      // console.log("POST")
       try {
         const isBranch = await Branch.findOne({ branchId: branchId })
         if (isBranch) {
@@ -334,7 +337,7 @@ export default async function handler(req: any, res: any) {
       }
 
     case "PUT" /* UPDATE BRANCH */:
-      console.log("PUT")
+      // console.log("PUT")
       try {
         const branch = await Branch.findOneAndUpdate(
           { branchId: branchId },
@@ -484,7 +487,24 @@ export default async function handler(req: any, res: any) {
             timezoneOffset,
           }
         )
-        console.log(branch)
+        // console.log(branch)
+
+        const updatedUser = await User.findOne({ email: updatedBy })
+        const updatedUserName: string = updatedUser.name
+        const updatedUserIntraPhone: string = updatedUser.intraPhone
+        const updatedTime: string = moment().tz("Asia/Seoul").format("a hh:mm")
+        const discordMessage = {
+          content: `[${branchTitle}] is Updated by ${updatedUserName}/${updatedUserIntraPhone}) at ${updatedTime}`,
+        }
+        await fetch(process.env.DISCORD_WEBHOOKURL_SCHEDULE ?? "", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(discordMessage),
+        })
+        console.log(discordMessage)
+
         res.status(200).json({ success: true, data: branch })
       } catch (error) {
         res.status(400).json({ success: false })
