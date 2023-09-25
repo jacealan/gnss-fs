@@ -2717,6 +2717,11 @@ export default function QR() {
         </Flex>
         <Flex justifyContent={"center"} width="100%" bgColor="#de152e">
           <Box width="100%" maxWidth="800px">
+            <Image src={"/assets/images/qr_plsj_21.png"} width="100%" />
+          </Box>
+        </Flex>
+        <Flex justifyContent={"center"} width="100%" bgColor="#de152e">
+          <Box width="100%" maxWidth="800px">
             <a href="https://forms.gle/UUZwBs2og3UL6xR36" target="_blank">
               <Image src={"/assets/images/qr_plsj_btn1.png"} width="100%" />
             </a>
