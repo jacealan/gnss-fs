@@ -2692,6 +2692,19 @@ export default function QR() {
   if (branchId === "PlSj") {
     return (
       <>
+        <Head>
+          <title>개념폴리아 수지관 오픈설명회</title>
+          <meta name="description" content="수학은 개념상상,개념폴리아" />
+          <meta property="og:title" content="개념폴리아 수지관 오픈설명회" />
+          <meta
+            property="og:description"
+            content="수학은 개념상상,개념폴리아"
+          />
+          <meta
+            property="og:image"
+            content="//gnss.co.kr/assets/images/og1605x647.png"
+          />
+        </Head>
         <Flex justifyContent={"center"} width="100%" bgColor="#181615">
           <Box width="100%" maxWidth="800px">
             <Image src={"/assets/images/qr_plsj_1.png"} width="100%" />
