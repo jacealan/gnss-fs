@@ -41,10 +41,11 @@ export default function ApplyReserve({
                 color="#aaa"
                 border="solid 1px #aaa"
                 borderRadius={"10px"}
-                w="18px"
-                h="18px"
+                w="14px"
+                h="14px"
                 mr={1}
                 mt="1px"
+                fontSize="0.8rem"
               >
                 +
               </Center>
