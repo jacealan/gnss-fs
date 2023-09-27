@@ -39,7 +39,7 @@ const qrData = {
       },
       {
         title: "개념폴리아 방배관 입학테스트 에약",
-        href: "https://forms.gle/uBvXrtgUj5K5rYV19",
+        href: "https://forms.gle/bZE1u9tE6wAMe3557",
       },
       {
         title: "설명회 참석 예약",
@@ -2545,8 +2545,8 @@ export default function QR() {
                     font-family="SpoqaHanSansNeo-Medium, Spoqa Han Sans Neo"
                     font-weight="500"
                   >
-                    <tspan x="0" y="0">
-                      삼성청담관 입학테스트 예약
+                    <tspan x="30" y="0">
+                      삼성청담관 상담 신청
                     </tspan>
                   </text>
                 </a>
