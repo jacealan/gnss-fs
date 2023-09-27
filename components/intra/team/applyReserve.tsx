@@ -32,9 +32,9 @@ export default function ApplyReserve({
                 color="white"
                 fontSize="0.6rem"
                 h="20px"
-                leftIcon={<AddIcon />}
+                // leftIcon={<AddIcon />}
               >
-                입력
+                +
               </Button>
             </Link>
             <Link href={teamData?.askSheet} target="_blank">
@@ -71,7 +71,7 @@ export default function ApplyReserve({
         >
           <Box>입학테스트 예약자</Box>
           <Box>
-            <Link href={teamData?.applyReserve} target="_blank">
+            {/* <Link href={teamData?.applyReserve} target="_blank">
               <Button
                 bgColor={colors.blue21}
                 color="white"
@@ -81,7 +81,7 @@ export default function ApplyReserve({
               >
                 입력
               </Button>
-            </Link>
+            </Link> */}
             <Link href={teamData?.applyReserveSheet} target="_blank">
               <Button
                 bgColor={colors.blue2}
