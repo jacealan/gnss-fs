@@ -1,7 +1,7 @@
 // import Link from "next/link"
 import colors from "@/theme/colors"
 import { CheckIcon, AddIcon } from "@chakra-ui/icons"
-import { Box, Flex, Button, Link } from "@chakra-ui/react"
+import { Box, Flex, Button, Link, Center } from "@chakra-ui/react"
 
 export default function ApplyReserve({
   askStatus,
@@ -25,17 +25,30 @@ export default function ApplyReserve({
           mb={4}
         >
           <Box>상담예약자</Box>
-          <Box>
+          <Flex alignItems={"center"}>
             <Link href={teamData?.askInput} target="_blank">
-              <Button
-                bgColor={colors.blue21}
-                color="white"
-                fontSize="0.6rem"
+              {/* <Button
+                // bgColor={colors.blue21}
+                // color="white"
+                colorScheme="blackAlpha"
+                fontSize="0.9rem"
                 h="20px"
+                w="10px"
                 // leftIcon={<AddIcon />}
+                variant={"outline"}
+              > */}
+              <Center
+                color="#aaa"
+                border="solid 1px #aaa"
+                borderRadius={"10px"}
+                w="18px"
+                h="18px"
+                mr={1}
+                mt="1px"
               >
                 +
-              </Button>
+              </Center>
+              {/* </Button> */}
             </Link>
             <Link href={teamData?.askSheet} target="_blank">
               <Button
@@ -48,7 +61,7 @@ export default function ApplyReserve({
                 확인
               </Button>
             </Link>
-          </Box>
+          </Flex>
         </Flex>
 
         <object
@@ -57,6 +70,9 @@ export default function ApplyReserve({
           height="300px"
           data={askStatus}
         ></object>
+      </Box>
+      <Box fontSize="0.6rem" w="100%" textAlign={"right"}>
+        시트의 변경사항 적용까지 최대 5분의 시간이 필요합니다
       </Box>
       <Box>
         <Flex
@@ -102,6 +118,9 @@ export default function ApplyReserve({
           height="500px"
           data={applyReserveStatus}
         ></object>
+        <Box fontSize="0.6rem" w="100%" textAlign={"right"}>
+          시트의 변경사항 적용까지 최대 5분의 시간이 필요합니다
+        </Box>
       </Box>
     </>
   )
