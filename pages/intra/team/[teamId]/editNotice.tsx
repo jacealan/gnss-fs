@@ -454,15 +454,15 @@ export default function EditNotice() {
                   </InputLeftAddon>{" "}
                   <Textarea
                     h={100}
-                    placeholder="내용(~1000자)"
+                    placeholder="내용(~3000자)"
                     size="sm"
                     resize="none"
-                    maxLength={100}
+                    maxLength={3000}
                     {...register("description")}
                   />
                   {/* <Input
                     id="description"
-                    placeholder="내용(~1000자)"
+                    placeholder="내용(~3000자)"
                   /> */}
                 </InputGroup>
                 <FormErrorMessage>
