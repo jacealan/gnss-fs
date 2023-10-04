@@ -110,7 +110,7 @@ export default function GNBIZ() {
           gap={"10px"}
         >
           <GridItem>
-            <Calendar teamId={"gnBiz"} />
+            <Calendar teamId={"gnGa"} />
           </GridItem>
           <GridItem>
             <VStack align="left">
