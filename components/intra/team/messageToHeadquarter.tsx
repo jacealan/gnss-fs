@@ -235,7 +235,7 @@ export default function MessageToHeadquarter() {
               }`}
               size="sm"
               resize="none"
-              maxLength={500}
+              maxLength={2000}
               {...register("message")}
             />
             <FormErrorMessage>

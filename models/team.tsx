@@ -38,8 +38,8 @@ const TeamSchema = new mongoose.Schema(
     applyHighSheet: { type: String },
     applyReserveSheet: { type: String },
     applyReserveStatus: { type: String },
-    applyReserve: { type: String },
-    applyReserveForm: { type: String },
+    applyReserve: { type: String }, //
+    applyReserveForm: { type: String }, //
     keynoteReserveSheet: { type: String },
     keynoteReserve: { type: String },
     keynoteReserveForm: { type: String },
