@@ -13,7 +13,7 @@ export default function DetailBottom({
   targetId: string | any
   detail: string
 }) {
-  const bgColor = detail === "schedule" ? theme.green : theme.blue
+  const bgColor = detail === "Schedule" ? theme.green : theme.blue
 
   return (
     <>
