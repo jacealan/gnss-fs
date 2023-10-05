@@ -86,6 +86,12 @@ const TeamSchema = new mongoose.Schema(
         branchId: { type: String, required: true },
       },
     ],
+    quickLinks: [
+      {
+        title: { type: String, required: true },
+        link: { type: String, required: true },
+      },
+    ],
   },
   { versionKey: false, timestamps: true }
 )

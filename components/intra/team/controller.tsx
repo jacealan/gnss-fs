@@ -16,6 +16,12 @@ import { BsPerson, BsFileEarmarkSpreadsheet } from "react-icons/bs"
 import { FaBlogger, FaGoogleDrive } from "react-icons/fa"
 import { IoIosImages } from "react-icons/io"
 import { SiNaver, SiNotion } from "react-icons/si"
+import {
+  TbSquareRoundedNumber1Filled,
+  TbSquareRoundedNumber2Filled,
+  TbSquareRoundedNumber3Filled,
+  TbSquareRoundedNumber4Filled,
+} from "react-icons/tb"
 
 const joins: string[] = ["PlBb", "PlPc", "PlSd", "PlSj"]
 
@@ -645,7 +651,7 @@ export default function Controller({
               </ButtonGroup>
             </GridItem>
           )}
-          {/* <GridItem bgColor={colors.blue0}> */}
+
           <GridItem>
             {teamData?.blog ? (
               <a href={`${teamData?.blog}`} target="_blank">
@@ -745,7 +751,7 @@ export default function Controller({
               </>
             )}
           </GridItem>
-          {/* </GridItem> */}
+
           <GridItem>
             <Box
               justifyContent={"space-between"}
@@ -882,75 +888,57 @@ export default function Controller({
             </Flex>
           </GridItem>
 
-          {/* <GridItem>
-            <Box
-              justifyContent={"space-between"}
-              alignItems={"center"}
-              w="100%"
-              color={colors.grey}
-              fontWeight={700}
-              borderBottom={`solid 1px ${colors.grey}`}
-              mt={2}
-            >
-              TESTing (NEVER TOUCH!)
-            </Box>
-          </GridItem> */}
-          {/* <Flex
-            justifyContent={"space-between"}
-            flexGrow={"1"}
-            w="100%"
-            gap={1}
-            bgColor={colors.blue0}
-            mb={2}
-          >
-            <Box w="100%">
-              <a
-                href={`https://docs.google.com/spreadsheets/d/1-i7GucH--ChkDTCJZX8IonLm6g-rglFJWjrVdPuIw8g/edit#gid=227963569`}
-                target="_blank"
-              >
-                <Button
+          {teamData?.quickLinks?.length > 0 && (
+            <>
+              <GridItem>
+                <Box
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
                   w="100%"
-                  bgColor="white"
-                  border={`solid 1px ${colors.blue1}`}
-                  borderRadius={"4px"}
-                  fontSize="14px"
-                  fontWeight={400}
-                  _hover={{ fontWeight: 700 }}
+                  color={colors.grey}
+                  fontWeight={700}
+                  borderBottom={`solid 1px ${colors.grey}`}
+                  mt={2}
                 >
-                  <Flex
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    w="100%"
-                  >
-                    <Image src="/assets/icons/editData.webp" w="20px" />
-                    <Box>설명회/시간표 등록</Box>
-                  </Flex>
-                </Button>
-              </a>
-            </Box>
-            <Box w="100%">
-              <a href={`https://imgbb.com/`} target="_blank">
-                <Button
-                  w="100%"
-                  bgColor="white"
-                  border={`solid 1px ${colors.blue1}`}
-                  borderRadius={"4px"}
-                  fontSize="14px"
-                  fontWeight={400}
-                  _hover={{ fontWeight: 700 }}
-                >
-                  <Flex
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    w="100%"
-                  >
-                    <Image src="/assets/icons/imgbb.webp" w="20px" />
-                    <Box>ImgBB</Box>
-                  </Flex>
-                </Button>
-              </a>
-            </Box>
-          </Flex> */}
+                  퀵링크
+                </Box>
+              </GridItem>
+              <GridItem>
+                <Grid templateColumns={"1fr 1fr"} gap={1}>
+                  {teamData?.quickLinks.map((quickLink: any, index: number) => (
+                    <GridItem>
+                      <a href={quickLink.link} target="_blank">
+                        <Button
+                          key={index}
+                          mb={1}
+                          w="100%"
+                          bgColor="white"
+                          border={`solid 1px ${colors.blue1}`}
+                          borderRadius={"4px"}
+                          fontSize="14px"
+                          fontWeight={400}
+                          _hover={{ fontWeight: 700 }}
+                          leftIcon={
+                            index === 0 ? (
+                              <TbSquareRoundedNumber1Filled />
+                            ) : index === 1 ? (
+                              <TbSquareRoundedNumber2Filled />
+                            ) : index === 2 ? (
+                              <TbSquareRoundedNumber3Filled />
+                            ) : (
+                              <TbSquareRoundedNumber4Filled />
+                            )
+                          }
+                        >
+                          {quickLink.title}
+                        </Button>
+                      </a>
+                    </GridItem>
+                  ))}
+                </Grid>
+              </GridItem>
+            </>
+          )}
         </Grid>
         {/* <Box width="100%" textAlign={"right"}>
           <EditIcon />

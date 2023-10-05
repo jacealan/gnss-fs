@@ -149,7 +149,7 @@ const EditBranch: NextPage = () => {
   useEffect(() => {
     const _ = async () => {
       for (const key in branchData) {
-        console.log(key, branchData[key])
+        // console.log(key, branchData[key])
         await setValue(key, branchData[key])
       }
     }
