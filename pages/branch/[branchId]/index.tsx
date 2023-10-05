@@ -47,7 +47,7 @@ export default function Branch() {
                   height="469"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feOffset dy="3" input="SourceAlpha" />
+                  <feOffset dy="3" />
                   <feGaussianBlur stdDeviation="3" result="blur" />
                   <feFlood flood-opacity="0.161" />
                   <feComposite operator="in" in2="blur" />
@@ -61,7 +61,7 @@ export default function Branch() {
                   height="837"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feOffset dy="3" input="SourceAlpha" />
+                  <feOffset dy="3" />
                   <feGaussianBlur stdDeviation="1" result="blur-2" />
                   <feFlood flood-opacity="0.161" />
                   <feComposite operator="in" in2="blur-2" />
@@ -75,7 +75,7 @@ export default function Branch() {
                   height="69"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feOffset dy="1" input="SourceAlpha" />
+                  <feOffset dy="1" />
                   <feGaussianBlur stdDeviation="3" result="blur-3" />
                   <feFlood flood-opacity="0.161" />
                   <feComposite operator="in" in2="blur-3" />
@@ -213,7 +213,7 @@ export default function Branch() {
                   height="74"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feOffset dy="3" input="SourceAlpha" />
+                  <feOffset dy="3" />
                   <feGaussianBlur stdDeviation="2" result="blur-4" />
                   <feFlood flood-opacity="0.161" />
                   <feComposite operator="in" in2="blur-4" />
@@ -227,7 +227,7 @@ export default function Branch() {
                   height="74"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feOffset dy="3" input="SourceAlpha" />
+                  <feOffset dy="3" />
                   <feGaussianBlur stdDeviation="2" result="blur-5" />
                   <feFlood flood-opacity="0.161" />
                   <feComposite operator="in" in2="blur-5" />
@@ -241,7 +241,7 @@ export default function Branch() {
                   height="74"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feOffset dy="3" input="SourceAlpha" />
+                  <feOffset dy="3" />
                   <feGaussianBlur stdDeviation="2" result="blur-6" />
                   <feFlood flood-opacity="0.161" />
                   <feComposite operator="in" in2="blur-6" />
@@ -255,7 +255,7 @@ export default function Branch() {
                   height="74"
                   filterUnits="userSpaceOnUse"
                 >
-                  <feOffset dy="3" input="SourceAlpha" />
+                  <feOffset dy="3" />
                   <feGaussianBlur stdDeviation="2" result="blur-7" />
                   <feFlood flood-opacity="0.161" />
                   <feComposite operator="in" in2="blur-7" />
