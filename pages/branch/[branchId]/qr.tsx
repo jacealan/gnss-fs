@@ -2710,11 +2710,11 @@ export default function QR() {
             <Image src={"/assets/images/qr_plsj_1.png"} width="100%" />
           </Box>
         </Flex>
-        <Flex justifyContent={"center"} width="100%" bgColor="#de152e">
+        {/* <Flex justifyContent={"center"} width="100%" bgColor="#de152e">
           <Box width="100%" maxWidth="800px">
             <Image src={"/assets/images/qr_plsj_2.png"} width="100%" />
           </Box>
-        </Flex>
+        </Flex> */}
         <Flex justifyContent={"center"} width="100%" bgColor="#de152e">
           <Box width="100%" maxWidth="800px">
             <Image src={"/assets/images/qr_plsj_21.png"} width="100%" />
