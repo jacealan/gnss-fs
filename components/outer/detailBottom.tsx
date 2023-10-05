@@ -47,7 +47,13 @@ export default function DetailBottom({
         fontSize={20}
         fontWeight={700}
       >
-        <a href={`tel://${branch?.phone}`}>
+        <a
+          href={
+            branch &&
+            targetId &&
+            `tel://` + branch[`target${targetId}Phone` as keyof typeof branch]
+          }
+        >
           {branch?.brand} {branch?.location}관{" "}
           {branch &&
             branch[`target${targetId}Phone`] &&
