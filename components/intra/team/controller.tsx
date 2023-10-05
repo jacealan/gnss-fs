@@ -906,7 +906,7 @@ export default function Controller({
               <GridItem>
                 <Grid templateColumns={"1fr 1fr"} gap={1}>
                   {teamData?.quickLinks.map((quickLink: any, index: number) => (
-                    <GridItem>
+                    <GridItem key={index}>
                       <a href={quickLink.link} target="_blank">
                         <Button
                           key={index}
