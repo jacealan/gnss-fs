@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 import colors from "@/theme/colors"
-import { Box, Badge } from "@chakra-ui/react"
+import { Box, Badge, Divider, Flex } from "@chakra-ui/react"
 import { useDisclosure } from "@chakra-ui/react"
 import {
   Modal,
@@ -39,6 +39,7 @@ export default function Info({
 }) {
   const [modalText, setModalText] = useState("")
   const { isOpen, onOpen, onClose } = useDisclosure()
+  // const [sortedMembers, setSortedMembers] = useState<any>(null)
 
   const openModal = (text: string) => {
     setModalText(text)
@@ -68,6 +69,12 @@ export default function Info({
     onOpen()
     setTimeout(onClose, 500)
   }
+
+  // useEffect(() => {
+  //   setSortedMembers(
+  //     teamData?.members.sort((x: any, y: any) => x.userName - y.userName)
+  //   )
+  // }, [teamData])
 
   return (
     <>
@@ -164,6 +171,20 @@ export default function Info({
               <CopyIcon />
             </button>
           </Box>
+        )}
+        {teamData?.members.length > 0 && (
+          <>
+            <Divider border="dashed 1px #aaa" mt={1} mb={1} />
+            <Flex gap={"0px 2px"} flexWrap={"wrap"}>
+              {teamData?.members
+                .sort((a: any, b: any) => a.userName.localeCompare(b.userName))
+                .map((member: any, index: number) => (
+                  <Box w="80px" key={index}>
+                    {member.userName} {member.userIntraPhone}
+                  </Box>
+                ))}
+            </Flex>
+          </>
         )}
       </Box>
       <Modal isOpen={isOpen} onClose={onClose}>

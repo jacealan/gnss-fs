@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react"
 // import Link from "next/link"
 import colors from "@/theme/colors"
 import { CheckIcon, AddIcon } from "@chakra-ui/icons"
@@ -75,6 +76,7 @@ export default function ApplyReserve({
       <Box fontSize="0.6rem" w="100%" textAlign={"right"}>
         시트의 변경사항 적용까지 최대 5분의 시간이 필요합니다
       </Box>
+
       <Box>
         <Flex
           justifyContent={"space-between"}

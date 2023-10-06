@@ -71,7 +71,9 @@ export default function BottomBar({ teams }: { teams: any }) {
             {teams &&
               ["SsDc", "PlDc", "SsMd", "SPAk", "PlCd"].map((teamId, index) => (
                 <Box key={index}>
-                  {workTeams.includes(teamId) || workTeams.includes("gnBiz") ? (
+                  {workTeams.includes(teamId) ||
+                  workTeams.includes("gnBiz") ||
+                  workTeams.includes("gnGa") ? (
                     <Link href={`/intra/team/${teamId}`}>
                       <Box color={colors.primary}>{`${teams[teamId]}`}</Box>
                     </Link>
@@ -89,7 +91,9 @@ export default function BottomBar({ teams }: { teams: any }) {
             {teams &&
               ["SPSc", "PlBb"].map((teamId, index) => (
                 <Box key={index}>
-                  {workTeams.includes(teamId) || workTeams.includes("gnBiz") ? (
+                  {workTeams.includes(teamId) ||
+                  workTeams.includes("gnBiz") ||
+                  workTeams.includes("gnGa") ? (
                     <Link href={`/intra/team/${teamId}`}>
                       <Box color={colors.primary}>{`${teams[teamId]}`}</Box>
                     </Link>
@@ -107,7 +111,9 @@ export default function BottomBar({ teams }: { teams: any }) {
             {teams &&
               ["SPJs", "LbJs"].map((teamId, index) => (
                 <Box key={index}>
-                  {workTeams.includes(teamId) || workTeams.includes("gnBiz") ? (
+                  {workTeams.includes(teamId) ||
+                  workTeams.includes("gnBiz") ||
+                  workTeams.includes("gnGa") ? (
                     <Link href={`/intra/team/${teamId}`}>
                       <Box color={colors.primary}>{`${teams[teamId]}`}</Box>
                     </Link>
@@ -125,7 +131,9 @@ export default function BottomBar({ teams }: { teams: any }) {
             {teams &&
               ["PlPc", "PlSd", "PlSj"].map((teamId, index) => (
                 <Box key={index}>
-                  {workTeams.includes(teamId) || workTeams.includes("gnBiz") ? (
+                  {workTeams.includes(teamId) ||
+                  workTeams.includes("gnBiz") ||
+                  workTeams.includes("gnGa") ? (
                     <Link href={`/intra/team/${teamId}`}>
                       <Box color={colors.primary}>{`${teams[teamId]}`}</Box>
                     </Link>

@@ -23,7 +23,7 @@ import {
   TbSquareRoundedNumber4Filled,
 } from "react-icons/tb"
 
-const joins: string[] = ["PlBb", "PlPc", "PlSd", "PlSj"]
+const joins: string[] = ["PlBb", "PlSd", "PlSj"]
 
 export default function Controller({
   teamData,
@@ -793,7 +793,7 @@ export default function Controller({
                     >
                       <Image src="/assets/icons/gdrive.svg" w="20px" />
                       <Box ml={1} fontSize="0.8rem">
-                        학웝사업부
+                        학원사업부
                       </Box>
                     </Flex>
                   </Button>
