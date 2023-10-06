@@ -326,20 +326,22 @@ export default function Branch() {
                     fill="#fff"
                   />
                 </g>
-                <g
-                  transform="matrix(1, 0, 0, 1, 0, 0)"
-                  filter="url(#사각형_27)"
-                >
-                  <rect
-                    id="사각형_27-2"
-                    data-name="사각형 27"
-                    width="288"
-                    height="51"
-                    rx="25.5"
-                    transform="translate(206 1106)"
-                    fill="#4ddbd0"
-                  />
-                </g>
+                <a href="tel://031-262-4808" target="_blank">
+                  <g
+                    transform="matrix(1, 0, 0, 1, 0, 0)"
+                    filter="url(#사각형_27)"
+                  >
+                    <rect
+                      id="사각형_27-2"
+                      data-name="사각형 27"
+                      width="288"
+                      height="51"
+                      rx="25.5"
+                      transform="translate(206 1106)"
+                      fill="#4ddbd0"
+                    />
+                  </g>
+                </a>
                 <g id="배경_아이콘" data-name="배경 아이콘" opacity="0.38">
                   <g
                     id="Vector_Smart_Object"
@@ -1071,19 +1073,49 @@ export default function Branch() {
                     수학은 개념폴리아
                   </tspan>
                 </text>
-                <g
-                  id="구성_요소_1_1"
-                  data-name="구성 요소 1 – 1"
-                  transform="translate(113 481)"
+                <a
+                  href="https://gnss.co.kr/branch/PlSj/schedule/0"
+                  target="_blank"
                 >
                   <g
-                    transform="matrix(1, 0, 0, 1, -113, -481)"
-                    filter="url(#사각형_22)"
+                    id="구성_요소_1_1"
+                    data-name="구성 요소 1 – 1"
+                    transform="translate(113 481)"
                   >
                     <g
-                      id="사각형_22-2"
-                      data-name="사각형 22"
-                      transform="translate(113 481)"
+                      transform="matrix(1, 0, 0, 1, -113, -481)"
+                      filter="url(#사각형_22)"
+                    >
+                      <g
+                        id="사각형_22-2"
+                        data-name="사각형 22"
+                        transform="translate(113 481)"
+                        fill="#fff"
+                        stroke="#4ddbd0"
+                        stroke-width="1"
+                      >
+                        <rect width="474" height="62" rx="20" stroke="none" />
+                        <rect
+                          x="0.5"
+                          y="0.5"
+                          width="473"
+                          height="61"
+                          rx="19.5"
+                          fill="none"
+                        />
+                      </g>
+                    </g>
+                  </g>
+                </a>
+                <a href="https://forms.gle/vea55q25MsuvSyUR7" target="_blank">
+                  <g
+                    transform="matrix(1, 0, 0, 1, 0, 0)"
+                    filter="url(#사각형_23)"
+                  >
+                    <g
+                      id="사각형_23-2"
+                      data-name="사각형 23"
+                      transform="translate(113 619)"
                       fill="#fff"
                       stroke="#4ddbd0"
                       stroke-width="1"
@@ -1099,76 +1131,60 @@ export default function Branch() {
                       />
                     </g>
                   </g>
-                </g>
-                <g
-                  transform="matrix(1, 0, 0, 1, 0, 0)"
-                  filter="url(#사각형_23)"
+                </a>
+                <a href="https://forms.gle/vea55q25MsuvSyUR7" target="_blank">
+                  <g
+                    transform="matrix(1, 0, 0, 1, 0, 0)"
+                    filter="url(#사각형_28)"
+                  >
+                    <g
+                      id="사각형_28-2"
+                      data-name="사각형 28"
+                      transform="translate(113 757)"
+                      fill="#fff"
+                      stroke="#4ddbd0"
+                      stroke-width="1"
+                    >
+                      <rect width="474" height="62" rx="20" stroke="none" />
+                      <rect
+                        x="0.5"
+                        y="0.5"
+                        width="473"
+                        height="61"
+                        rx="19.5"
+                        fill="none"
+                      />
+                    </g>
+                  </g>
+                </a>
+                <a
+                  href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9A%A9%EC%9D%B8%EC%8B%9C%20%EC%88%98%EC%A7%80%EA%B5%AC%20%ED%92%8D%EB%8D%95%EC%B2%9C%EB%A1%9C%20122%20%ED%95%98%EB%82%98%EB%A1%9C%20%ED%94%84%EB%9D%BC%EC%9E%90%205%EC%B8%B5/address/14148212.776383,4484158.8479641,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9A%A9%EC%9D%B8%EC%8B%9C%20%EC%88%98%EC%A7%80%EA%B5%AC%20%ED%92%8D%EB%8D%95%EC%B2%9C%EB%A1%9C%20122,new?isCorrectAnswer=true"
+                  target="_blank"
                 >
                   <g
-                    id="사각형_23-2"
-                    data-name="사각형 23"
-                    transform="translate(113 619)"
-                    fill="#fff"
-                    stroke="#4ddbd0"
-                    stroke-width="1"
+                    transform="matrix(1, 0, 0, 1, 0, 0)"
+                    filter="url(#사각형_29)"
                   >
-                    <rect width="474" height="62" rx="20" stroke="none" />
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="473"
-                      height="61"
-                      rx="19.5"
-                      fill="none"
-                    />
+                    <g
+                      id="사각형_29-2"
+                      data-name="사각형 29"
+                      transform="translate(113 895)"
+                      fill="#fff"
+                      stroke="#4ddbd0"
+                      stroke-width="1"
+                    >
+                      <rect width="474" height="62" rx="20" stroke="none" />
+                      <rect
+                        x="0.5"
+                        y="0.5"
+                        width="473"
+                        height="61"
+                        rx="19.5"
+                        fill="none"
+                      />
+                    </g>
                   </g>
-                </g>
-                <g
-                  transform="matrix(1, 0, 0, 1, 0, 0)"
-                  filter="url(#사각형_28)"
-                >
-                  <g
-                    id="사각형_28-2"
-                    data-name="사각형 28"
-                    transform="translate(113 757)"
-                    fill="#fff"
-                    stroke="#4ddbd0"
-                    stroke-width="1"
-                  >
-                    <rect width="474" height="62" rx="20" stroke="none" />
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="473"
-                      height="61"
-                      rx="19.5"
-                      fill="none"
-                    />
-                  </g>
-                </g>
-                <g
-                  transform="matrix(1, 0, 0, 1, 0, 0)"
-                  filter="url(#사각형_29)"
-                >
-                  <g
-                    id="사각형_29-2"
-                    data-name="사각형 29"
-                    transform="translate(113 895)"
-                    fill="#fff"
-                    stroke="#4ddbd0"
-                    stroke-width="1"
-                  >
-                    <rect width="474" height="62" rx="20" stroke="none" />
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="473"
-                      height="61"
-                      rx="19.5"
-                      fill="none"
-                    />
-                  </g>
-                </g>
+                </a>
                 <a
                   href="https://gnss.co.kr/branch/PlSj/schedule/0"
                   target="_blank"
