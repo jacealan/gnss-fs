@@ -1132,7 +1132,7 @@ export default function Branch() {
                     </g>
                   </g>
                 </a>
-                <a href="https://forms.gle/vea55q25MsuvSyUR7" target="_blank">
+                <a href="https://forms.gle/h3JuaKo7jAZEZAmn8" target="_blank">
                   <g
                     transform="matrix(1, 0, 0, 1, 0, 0)"
                     filter="url(#사각형_28)"
