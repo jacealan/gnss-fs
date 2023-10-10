@@ -97,6 +97,12 @@ export default function Notice({ teamId }: { teamId: any }) {
                           </Badge>
                         )}
                         {notice.title}
+                        {moment().tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                          moment(notice.endDate)
+                            .tz("Asia/Seoul")
+                            .format("YYYY-MM-DD") && (
+                          <span style={{ fontSize: "1rem" }}> 💢</span>
+                        )}
                       </Box>
                     </Button>
                   </PopoverTrigger>
