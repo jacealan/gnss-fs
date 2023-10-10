@@ -26,7 +26,7 @@ export default async function handler(req: any, res: any) {
             isDeleted: {
               $eq: false,
             },
-          }).sort({ endDate: -1 })
+          }).sort({ startDate: -1 })
         : await Notice.find({
             $or: [{ teamId: teamId }, { teamId: "All" }],
             endDate: {
@@ -35,7 +35,7 @@ export default async function handler(req: any, res: any) {
             isDeleted: {
               $eq: false,
             },
-          }).sort({ endDate: -1 })
+          }).sort({ startDate: -1 })
     // console.log(notices)
     if (notices) {
       res.status(200).json({ success: true, data: notices })
