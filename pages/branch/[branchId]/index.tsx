@@ -1214,7 +1214,7 @@ export default function Branch() {
                     font-weight="500"
                   >
                     <tspan x="0" y="0">
-                      설명회 참석 예약
+                      설명회 예약 신청
                     </tspan>
                   </text>
                 </a>
