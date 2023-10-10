@@ -1228,8 +1228,8 @@ export default function Branch() {
                     font-family="SpoqaHanSansNeo-Medium, Spoqa Han Sans Neo"
                     font-weight="500"
                   >
-                    <tspan x="0" y="0">
-                      상담예약 신청
+                    <tspan x="-50" y="0">
+                      상담/입반테스트 예약신청
                     </tspan>
                   </text>
                 </a>
