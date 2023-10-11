@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
+import Head from "next/head"
 
 import { useRealViewport } from "next-real-viewport"
 import { Flex, Center, Box, Image } from "@chakra-ui/react"
@@ -29,6 +30,9 @@ export default function Branch() {
   if (branchId === "PlSj")
     return (
       <>
+        <Head>
+          <title>{branch?.branchTitle}</title>
+        </Head>
         <Flex justifyContent="center">
           <Box>
             <svg
