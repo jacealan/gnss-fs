@@ -92,6 +92,7 @@ const TeamSchema = new mongoose.Schema(
         link: { type: String, required: true },
       },
     ],
+    tuitions: [Number],
   },
   { versionKey: false, timestamps: true }
 )

@@ -18,6 +18,7 @@ import { Box, Image, Link, Grid, GridItem, Flex } from "@chakra-ui/react"
 import { BiCalendarEdit } from "react-icons/bi"
 
 import team from "@/models/team"
+import Tuition from "@/components/intra/team/tuition"
 
 export default function Team() {
   const router = useRouter()
@@ -79,7 +80,7 @@ export default function Team() {
                 color={colors.grey}
                 fontWeight={700}
                 borderBottom={`solid 1px ${colors.grey}`}
-                mb={4}
+                mb={3}
               >
                 <Box>일정</Box>
                 <Link href={`/intra/team/${teamId}/editEvent/0`}>
@@ -89,6 +90,26 @@ export default function Team() {
               <Box>
                 <Calendar teamId={teamId ?? ""} />
               </Box>
+
+              {teamData?.tuitions?.length > 0 && (
+                <>
+                  <Flex
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                    w="100%"
+                    color={colors.grey}
+                    fontWeight={700}
+                    borderBottom={`solid 1px ${colors.grey}`}
+                    mb={3}
+                    mt={6}
+                  >
+                    <Box>수강료</Box>
+                  </Flex>
+                  <Box>
+                    <Tuition teamData={teamData} teamId={teamId ?? ""} />
+                  </Box>
+                </>
+              )}
             </Box>
             <Info teamData={teamData} teamId={teamId ?? ""} />
           </Flex>
@@ -97,23 +118,6 @@ export default function Team() {
           <Notice teamId={teamId} />
           <Box h="10px" />
           <MessageToHeadquarter />
-          {/* <Box
-            mt={3}
-            mb={3}
-            p={2}
-            textAlign={"center"}
-            bgColor={colors.accents}
-            color={colors.primary}
-            fontWeight={700}
-          >
-            <Box
-              borderTop={"dashed 2px white"}
-              borderBottom={"dashed 2px white"}
-              p={3}
-            >
-              {teamData?.title ?? ""}
-            </Box>
-          </Box> */}
           <Controller teamData={teamData} teamId={teamId ?? ""} />
         </GridItem>
         <GridItem>
