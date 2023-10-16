@@ -91,7 +91,7 @@ const BranchSchema = new mongoose.Schema(
     target1ScheduleTitle: { type: String, default: "" },
     target1ScheduleMonth: { type: String, default: "" },
     target1ScheduleLink: { type: String, default: "" },
-    targetCounselBooking: { type: String, default: "" },
+    target1CounselBooking: { type: String, default: "" },
     target1ScheduleHead0: { type: String, default: "" },
     target1ScheduleImage0: { type: String, default: "" },
     target1ScheduleHead1: { type: String, default: "" },

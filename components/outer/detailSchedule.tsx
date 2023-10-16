@@ -85,7 +85,7 @@ export default function DetailSchedule({
             fontSize={20}
             variant={"outline"}
           >
-            입반테스트 신청하기&nbsp;
+            상담 신청하기&nbsp;
             <EditIcon />
           </Button>
         </a>
