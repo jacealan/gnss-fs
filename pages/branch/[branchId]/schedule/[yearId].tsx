@@ -35,12 +35,12 @@ export default function Schedule() {
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>
           {branch?.brand}&nbsp;
           {branch?.location}관&nbsp;
           {branch?.brand === "개념폴리아"
-            ? `(${branch[`year${yearId}` as keyof typeof branch]}) `
+            ? `${branch[`target${targetId}` as keyof typeof branch]} `
             : ""}
           시간표
         </title>
@@ -51,7 +51,7 @@ export default function Schedule() {
           property="og:image"
           content="//gnss.co.kr/assets/images/og1605x647.png"
         />
-      </Head> */}
+      </Head>
       <main style={{ overflowY: "hidden" }}>
         <Nav />
         <div

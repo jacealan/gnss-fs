@@ -34,15 +34,15 @@ export default function Keynote() {
 
   return (
     <>
-      {/* <Head>
-         <title>
+      <Head>
+        <title>
           {branch?.brand}&nbsp;
           {branch?.location}&nbsp;
           {branch?.brand === "개념폴리아"
-            ? `(${branch[`year${yearId}` as keyof typeof branch]}) `
+            ? `${branch[`target${targetId}` as keyof typeof branch]} `
             : ""}
           설명회
-        </title> 
+        </title>
         <meta name="description" content="수학은 개념상상,개념폴리아" />
         <meta property="og:title" content="개념상상 | 개념폴리아" />
         <meta property="og:description" content="수학은 개념상상,개념폴리아" />
@@ -50,7 +50,7 @@ export default function Keynote() {
           property="og:image"
           content="//gnss.co.kr/assets/images/og1605x647.png"
         />
-      </Head> */}
+      </Head>
       <main>
         <Nav />
         <div
