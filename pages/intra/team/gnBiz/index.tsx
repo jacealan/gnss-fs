@@ -237,9 +237,14 @@ export default function GNBIZ() {
                   link="https://drive.google.com/drive/folders/1WK8QsXCzYwPAhUVcYA3yWGithuS8vG4E"
                   iconTitle="교재주문서"
                 ></IconBtn>
-                {/* </Flex>
+              </Flex>
 
-              <Flex gap={5} wrap="wrap"> */}
+              <Flex gap={5} wrap="wrap">
+                <IconBtn
+                  iconImage="https://cdn.iconscout.com/icon/free/png-256/free-team-1543465-1305963.png"
+                  link="https://docs.google.com/spreadsheets/d/17niR7eIVjTuH8NocDotF-0otOn9EF4P_b5rxDaGMZJ8/edit?usp=sharing"
+                  iconTitle="입학관리"
+                ></IconBtn>
                 <IconBtn
                   iconImage="https://cdn-icons-png.flaticon.com/512/1946/1946058.png"
                   link="https://docs.google.com/spreadsheets/d/1PnkxW6JHnDgBDRdpjrwBQn7etUouIrhXkNNKJa0OIXY/edit#gid=1132987259"
