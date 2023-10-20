@@ -111,32 +111,46 @@ export default function Notice({ teamId }: { teamId: any }) {
                     <PopoverCloseButton />
                     <PopoverHeader>{notice.title}</PopoverHeader>
                     <PopoverBody>
-                      {notice.description
-                        .split("\n")
-                        .map((line: string, index: number) => (
-                          <div key={index}>
-                            {line
-                              .split(" ")
-                              .map((word: string, index: number) =>
-                                word.substring(0, 4) === "http" ? (
-                                  <Link href={word} target="_blank" key={index}>
-                                    <span
-                                      style={{
-                                        fontWeight: 700,
-                                        fontSize: "0.7rem",
-                                      }}
+                      <Box>
+                        {notice.description
+                          .split("\n")
+                          .map((line: string, index: number) => (
+                            <div key={index}>
+                              {line
+                                .split(" ")
+                                .map((word: string, index: number) =>
+                                  word.substring(0, 4) === "http" ? (
+                                    <Link
+                                      href={word}
+                                      target="_blank"
+                                      key={index}
                                     >
-                                      {word}
-                                    </span>
-                                    &nbsp;
-                                  </Link>
-                                ) : (
-                                  <span key={index}>{word}&nbsp;</span>
-                                )
-                              )}
-                            <br />
-                          </div>
-                        ))}
+                                      <span
+                                        style={{
+                                          fontWeight: 700,
+                                          fontSize: "0.7rem",
+                                        }}
+                                      >
+                                        {word}
+                                      </span>
+                                      &nbsp;
+                                    </Link>
+                                  ) : (
+                                    <span key={index}>{word}&nbsp;</span>
+                                  )
+                                )}
+                              <br />
+                            </div>
+                          ))}
+                      </Box>
+                      <Box textAlign={"right"}>
+                        <Badge>
+                          ~
+                          {moment(notice.endDate)
+                            .tz("Asia/Seoul")
+                            .format("YYYY-MM-DD")}
+                        </Badge>
+                      </Box>
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
