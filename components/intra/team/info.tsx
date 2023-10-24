@@ -172,20 +172,27 @@ export default function Info({
             </button>
           </Box>
         )}
-        {/* {teamData?.members.length > 0 && (
+        {teamData?.members.length > 0 && (
           <>
             <Divider border="dashed 1px #aaa" mt={1} mb={1} />
-            <Flex gap={"0px 2px"} flexWrap={"wrap"}>
+            <Flex gap={"4px"} flexWrap={"wrap"}>
               {teamData?.members
                 .sort((a: any, b: any) => a.userName.localeCompare(b.userName))
                 .map((member: any, index: number) => (
-                  <Box w="80px" key={index}>
+                  <Box
+                    w="80px"
+                    key={index}
+                    border="dashed 1px #aaa"
+                    borderRadius={"10px"}
+                    p={1}
+                    textAlign={"center"}
+                  >
                     {member.userName} {member.userIntraPhone}
                   </Box>
                 ))}
             </Flex>
           </>
-        )} */}
+        )}
       </Box>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

@@ -80,6 +80,19 @@ export default async function handler(req: any, res: any) {
         }
         // console.log(user)
         await user.save()
+        user.teams.map(async (team: any, index: number) => {
+          if (team.confirmed) {
+            const teamInTeam = await Team.findOne({ teamId: team.teamId })
+            for (let i = 0; i < teamInTeam.members.length; i++) {
+              if (teamInTeam.members[i].userEmail === email) {
+                teamInTeam.members[i].userName = name
+                teamInTeam.members[i].userIntraPhone = intraPhone
+              }
+            }
+            await teamInTeam.save()
+          }
+        })
+        // console.log(user)
         res.status(200).json({ success: true, data: user })
       } catch (error) {
         res.status(400).json({ success: false })
