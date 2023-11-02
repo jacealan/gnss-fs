@@ -172,7 +172,7 @@ export default function Info({
             </button>
           </Box>
         )}
-        {teamData?.members.length > 0 && (
+        {/* {teamData?.members.length > 0 && (
           <>
             <Divider border="dashed 1px #aaa" mt={1} mb={1} />
             <Flex gap={"4px"} flexWrap={"wrap"}>
@@ -192,7 +192,7 @@ export default function Info({
                 ))}
             </Flex>
           </>
-        )}
+        )} */}
       </Box>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

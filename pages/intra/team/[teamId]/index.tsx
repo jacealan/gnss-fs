@@ -9,6 +9,7 @@ import ApplyReserve from "@/components/intra/team/applyReserve"
 import Controller from "@/components/intra/team/controller"
 import Info from "@/components/intra/team/info"
 import MessageToHeadquarter from "@/components/intra/team/messageToHeadquarter"
+import TeamMember from "@/components/intra/team/teamMember"
 
 import { useSession } from "next-auth/react"
 import getTeam from "@/lib/getTeam"
@@ -91,6 +92,51 @@ export default function Team() {
                 <Calendar teamId={teamId ?? ""} />
               </Box>
 
+              {teamData?.newStatus && (
+                <>
+                  <Flex
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                    w="100%"
+                    color={colors.grey}
+                    fontWeight={700}
+                    borderBottom={`solid 1px ${colors.grey}`}
+                    mb={1}
+                    mt={6}
+                  >
+                    <Box>신입생</Box>
+                  </Flex>
+                  <object
+                    type="text/html"
+                    width="350px"
+                    height="300px"
+                    data={teamData?.newStatus}
+                  ></object>
+                  <Box fontSize="0.6rem" w="100%" textAlign={"right"}>
+                    시트의 변경사항 적용까지 최대 5분의 시간이 필요합니다
+                  </Box>
+                </>
+              )}
+            </Box>
+            <Info teamData={teamData} teamId={teamId ?? ""} />
+          </Flex>
+        </GridItem>
+        <GridItem>
+          <Flex
+            flexDirection={"column"}
+            justifyContent={"space-between"}
+            h="100%"
+          >
+            <Flex
+              flexDirection={"column"}
+              justifyContent={"flex-start"}
+              h="100%"
+            >
+              <Notice teamId={teamId} />
+              <Box h="10px" />
+              <MessageToHeadquarter />
+              <Controller teamData={teamData} teamId={teamId ?? ""} />
+
               {teamData?.tuitions?.length > 0 && (
                 <>
                   <Flex
@@ -110,15 +156,9 @@ export default function Team() {
                   </Box>
                 </>
               )}
-            </Box>
-            <Info teamData={teamData} teamId={teamId ?? ""} />
+            </Flex>
+            <TeamMember teamData={teamData} teamId={teamId ?? ""} />
           </Flex>
-        </GridItem>
-        <GridItem>
-          <Notice teamId={teamId} />
-          <Box h="10px" />
-          <MessageToHeadquarter />
-          <Controller teamData={teamData} teamId={teamId ?? ""} />
         </GridItem>
         <GridItem>
           <Flex

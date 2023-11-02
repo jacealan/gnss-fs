@@ -63,7 +63,7 @@ export default function Controller({
               borderBottom={`solid 1px ${colors.grey}`}
               // mb={4}
             >
-              입학테스트 분석
+              입학테스트 성적 분석
             </Box>
           </GridItem>
           <GridItem>
@@ -596,6 +596,11 @@ export default function Controller({
               </ButtonGroup>
             </GridItem>
           )}
+          {/* <GridItem>
+            {teamData?.branches.map(
+              (branch: any, index: number) => branch.branchId
+            )}
+          </GridItem> */}
           <GridItem>
             <Box
               justifyContent={"space-between"}

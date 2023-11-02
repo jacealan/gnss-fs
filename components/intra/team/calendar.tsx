@@ -175,7 +175,7 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
         </Flex>
       )}
 
-      <Box borderRadius={"12px"} w="100%" textAlign="center" mt={5}>
+      <Box borderRadius={"12px"} w="100%" textAlign="center" mt={2}>
         <Flex
           justifyContent={"center"}
           alignItems={"center"}
