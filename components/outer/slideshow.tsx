@@ -12,7 +12,7 @@ const spanStyle = {
 
 const slideLists = [
   { imageNum: 7, link: "/branch/PlSj" },
-  { imageNum: 6, link: "/branch/SsMd/presentation/0" },
+  { imageNum: 6, link: "/branch/SsMd" },
   { imageNum: 4, link: "/branch/PlCd/qr" },
   { imageNum: 0, link: "/branch/PlBb/qr" },
   {
