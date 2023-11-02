@@ -43,7 +43,7 @@ const qrData = {
       },
       {
         title: "설명회 참석 예약",
-        href: "https://forms.gle/rL1pLMYLpBtnbCtUA",
+        href: "https://forms.gle/buEEfCWx7LUULffL6",
       },
       {
         title: "방배관 위치안내",
