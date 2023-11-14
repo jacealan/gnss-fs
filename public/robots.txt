@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /intra
+Disallow: /api
+
+# Host
+Host: http://localhost:8080
+
+# Sitemaps
+Sitemap: http://localhost:8080/sitemap.xml
+Sitemap: http://localhost:8080/server-sitemap.xml
