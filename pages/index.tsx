@@ -16,10 +16,16 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>개념상상 | 개념폴리아</title>
-        <meta name="description" content="수학은 개념상상,개념폴리아" />
-        <meta property="og:title" content="개념상상 | 개념폴리아" />
-        <meta property="og:description" content="수학은 개념상상,개념폴리아" />
+        <title>개념상상 학원 | 개념폴리아 학원</title>
+        <meta
+          name="description"
+          content="수학은 개념상상 학원, 개념폴리아 학원"
+        />
+        <meta property="og:title" content="개념상상 학원 | 개념폴리아 학원" />
+        <meta
+          property="og:description"
+          content="수학은 개념상상 학원, 개념폴리아 학원"
+        />
         <meta
           property="og:image"
           content="//gnss.co.kr/assets/images/og1605x647.png"
