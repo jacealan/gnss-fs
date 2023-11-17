@@ -17,14 +17,17 @@ export default function Home() {
     <>
       <Head>
         <title>개념상상 학원 | 개념폴리아 학원</title>
+        <meta name="keywords" content="개념상상 학원, 개념폴리아 학원" />
         <meta
           name="description"
-          content="수학은 개념상상 학원, 개념폴리아 학원"
+          // content="수학은 개념상상 학원, 개념폴리아 학원"
+          content="최상급 초중고 수학,과학 전문학원"
         />
         <meta property="og:title" content="개념상상 학원 | 개념폴리아 학원" />
         <meta
           property="og:description"
-          content="수학은 개념상상 학원, 개념폴리아 학원"
+          // content="수학은 개념상상 학원, 개념폴리아 학원"
+          content="최상급 초중고 수학,과학 전문학원"
         />
         <meta
           property="og:image"

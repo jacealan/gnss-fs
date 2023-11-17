@@ -1,8 +1,8 @@
-import { useRealViewport } from "next-real-viewport";
-import { Grid, GridItem, Divider, Center, Box } from "@chakra-ui/react";
+import { useRealViewport } from "next-real-viewport"
+import { Grid, GridItem, Divider, Center, Box } from "@chakra-ui/react"
 
 export default function Tv() {
-  const { vw, vh } = useRealViewport();
+  const { vw, vh } = useRealViewport()
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function Tv() {
             ></iframe>
           </div>
         </GridItem>
-        <GridItem>
+        {/* <GridItem>
           <div className="video">
             <iframe
               src="https://www.youtube.com/embed/wPCAEVlw7L8?start=3&controls=0"
@@ -68,7 +68,7 @@ export default function Tv() {
               allowFullScreen
             ></iframe>
           </div>
-        </GridItem>
+        </GridItem> */}
       </Grid>
 
       <style jsx>{`
@@ -92,5 +92,5 @@ export default function Tv() {
         }
       `}</style>
     </>
-  );
+  )
 }
