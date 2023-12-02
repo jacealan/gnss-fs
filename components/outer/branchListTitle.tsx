@@ -1,4 +1,4 @@
-import { Grid, GridItem, Divider, Center, Box } from "@chakra-ui/react";
+import { Grid, GridItem, Divider, Center, Box } from "@chakra-ui/react"
 
 export default function BranchListTitle() {
   return (
@@ -14,7 +14,9 @@ export default function BranchListTitle() {
           <Divider borderTop="solid 1px black" />
         </GridItem>
         <GridItem>
-          <Center fontSize={"22px"}>개념상상 / 개념폴리아 지점별 소식</Center>
+          <Center fontSize={"22px"}>
+            <h1>개념상상 / 개념폴리아 지점별 소식</h1>
+          </Center>
           <Box height={1} />
           <Center fontSize={"13px"} fontWeight={300} pb={5}>
             학원별 시간표 및 공지사항을 확인하실 수 있습니다
@@ -25,5 +27,5 @@ export default function BranchListTitle() {
         </GridItem>
       </Grid>
     </>
-  );
+  )
 }
