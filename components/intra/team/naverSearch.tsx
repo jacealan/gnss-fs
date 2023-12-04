@@ -47,7 +47,7 @@ export default function NaverSearch() {
         }}
       >
         <FormControl>
-          <HStack w="100%">
+          <HStack w="100%" bgColor="#fff">
             {/* <FormLabel>NAVER</FormLabel> */}
             <InputGroup>
               <InputLeftElement pointerEvents="none">

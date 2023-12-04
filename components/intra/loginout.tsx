@@ -129,6 +129,7 @@ export default function LogInOut() {
               p="0 10px 0 10px"
               borderRadius={10}
               ml="auto"
+              bgColor="#fff"
             >
               로그인
             </Box>
@@ -137,7 +138,7 @@ export default function LogInOut() {
         {session && (
           <Flex alignItems={"center"} gap={2}>
             {/* <Image src={session.user?.image ?? ""} h="2rem" borderRadius={10} /> */}
-            <Box>
+            <Box bgColor="#fff">
               <Popover
                 isOpen={isOpen}
                 initialFocusRef={firstFieldRef}
@@ -278,7 +279,7 @@ export default function LogInOut() {
                 // router.push("/intra")
               }}
             >
-              로그아웃
+              <Box bgColor="#fff">로그아웃</Box>
             </Link>
           </Flex>
         )}

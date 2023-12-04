@@ -24,15 +24,19 @@ export default function NavBar({ teams }: { teams: any }) {
         templateColumns={"3fr 6fr 3fr"}
         alignItems={"center"}
         p={"5px 40px 5px 40px"}
-        bgColor={colors.primary}
+        // bgColor={colors.primary}
+        bgImage={"/assets/images/bg/topbarBg01Christmas.png"}
+        bgSize={"contain"}
         w="100%"
       >
         <GridItem>
           <Flex direction={"row"} alignItems={"center"}>
             <Link href="/intra" target="_blank">
-              <Image src="/assets/logos/logo.png" w="23px" h="40px" />
+              <Box bgColor="#fff">
+                <Image src="/assets/logos/logo.png" w="23px" h="40px" />
+              </Box>
             </Link>
-            <Box ml="10px" fontWeight={700} fontSize="18px">
+            <Box ml="10px" fontWeight={700} fontSize="18px" bgColor="#fff">
               {teams && teamId ? (
                 <Link href={`/intra/team/${teamId}`}>
                   {teams[teamId.toString()]}
