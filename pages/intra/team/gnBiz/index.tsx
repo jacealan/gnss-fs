@@ -237,6 +237,11 @@ export default function GNBIZ() {
                   link="https://drive.google.com/drive/folders/1WK8QsXCzYwPAhUVcYA3yWGithuS8vG4E"
                   iconTitle="교재주문서"
                 ></IconBtn>
+                <IconBtn
+                  iconImage="https://m.jidoshop.co.kr/web/product/extra/big/202012/5e6c84d2e129b0f63632d806b2e01efe.jpg"
+                  link="https://drive.google.com/drive/folders/1Pu5BG9VmE-zERHmrQYq-A0KKNBaUFGO0?usp=sharing"
+                  iconTitle="모의고사"
+                ></IconBtn>
               </Flex>
 
               <Flex gap={5} wrap="wrap">
