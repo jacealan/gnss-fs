@@ -35,13 +35,18 @@ export default function Keynote() {
   return (
     <>
       <Head>
+        <link
+          rel="canonical"
+          href={`https://gnss.co.kr/branch/${branchId}/presentation/${targetId}`}
+        />
         <title>
-          {branch?.brand}&nbsp;
+          {/* {branch?.brand}&nbsp;
           {branch?.location}&nbsp;
           {branch?.brand === "개념폴리아"
             ? `${branch[`target${targetId}` as keyof typeof branch]} `
             : ""}
-          설명회
+          설명회 */}
+          {branch?.branchTitle} 학원
         </title>
         <meta name="description" content="수학은 개념상상,개념폴리아" />
         <meta property="og:title" content="개념상상 | 개념폴리아" />
@@ -50,6 +55,7 @@ export default function Keynote() {
           property="og:image"
           content="//gnss.co.kr/assets/images/og1605x647.png"
         />
+        <meta property="og:type" content="website" />
       </Head>
       <main>
         <Nav />

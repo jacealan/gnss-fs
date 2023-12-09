@@ -1,9 +1,12 @@
+import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 // import { Link } from "next/link"
 import { useRealViewport } from "next-real-viewport"
 import { Flex, Center, Box, Image } from "@chakra-ui/react"
 
 import Head from "next/head"
+
+import getBranch from "@/lib/getBranch"
 
 const qrData = {
   PlBb: {
@@ -58,14 +61,32 @@ export default function QR() {
   const { vw, vh } = useRealViewport()
   const router = useRouter()
   const { branchId } = router.query
+  const [branch, setBranch] = useState<any>(null)
+
+  useEffect(() => {
+    // if (teamId !== "" && teamId !== undefined) getTeam(teamId)
+    if (branchId) {
+      const _ = async () => {
+        setBranch(await getBranch(branchId))
+      }
+      _()
+    }
+
+    // if (branchId === "PlSj") router.push("/branch/PlSj/qr")
+  }, [branchId])
 
   if (branchId === "PlBb") {
     return (
       <>
         <Head>
-          <title>{qrData[branchId].name}</title>
+          <link
+            rel="canonical"
+            href={`https://gnss.co.kr/branch/${branchId}/qr`}
+          />
+          <title>{branch?.branchTitle} 학원</title>
+          <meta name="keywords" content="개념상상 학원, 개념폴리아 학원" />
           <meta name="description" content="수학은 개념상상,개념폴리아" />
-          <meta property="og:title" content={qrData[branchId].name} />
+          <meta property="og:title" content="개념상상 | 개념폴리아" />
           <meta
             property="og:description"
             content="수학은 개념상상,개념폴리아"
@@ -74,6 +95,7 @@ export default function QR() {
             property="og:image"
             content="//gnss.co.kr/assets/images/og1605x647.png"
           />
+          <meta property="og:type" content="website" />
         </Head>
         <Flex justifyContent="center">
           <Box>
@@ -1389,8 +1411,23 @@ export default function QR() {
     return (
       <>
         <Head>
-          <title>{qrData[branchId].name}</title>
+          <link
+            rel="canonical"
+            href={`https://gnss.co.kr/branch/${branchId}/qr`}
+          />
+          <title>{branch?.branchTitle} 학원</title>
+          <meta name="keywords" content="개념상상 학원, 개념폴리아 학원" />
           <meta name="description" content="수학은 개념상상,개념폴리아" />
+          <meta property="og:title" content="개념상상 | 개념폴리아" />
+          <meta
+            property="og:description"
+            content="수학은 개념상상,개념폴리아"
+          />
+          <meta
+            property="og:image"
+            content="//gnss.co.kr/assets/images/og1605x647.png"
+          />
+          <meta property="og:type" content="website" />
         </Head>
         <Flex justifyContent="center">
           <Box>
@@ -2693,9 +2730,14 @@ export default function QR() {
     return (
       <>
         <Head>
-          <title>개념폴리아 수지관 오픈설명회</title>
+          <link
+            rel="canonical"
+            href={`https://gnss.co.kr/branch/${branchId}/qr`}
+          />
+          <title>{branch?.branchTitle} 학원</title>
+          <meta name="keywords" content="개념상상 학원, 개념폴리아 학원" />
           <meta name="description" content="수학은 개념상상,개념폴리아" />
-          <meta property="og:title" content="개념폴리아 수지관 오픈설명회" />
+          <meta property="og:title" content="개념상상 | 개념폴리아" />
           <meta
             property="og:description"
             content="수학은 개념상상,개념폴리아"
@@ -2704,6 +2746,7 @@ export default function QR() {
             property="og:image"
             content="//gnss.co.kr/assets/images/og1605x647.png"
           />
+          <meta property="og:type" content="website" />
         </Head>
         <Flex justifyContent={"center"} width="100%" bgColor="#181615">
           <Box width="100%" maxWidth="800px">
