@@ -62,6 +62,38 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       })
   })
 
+  /////
+  additionalFields.push({
+    loc: `${process.env.URL}/branch/SsMd`,
+    lastmod: new Date().toISOString(),
+    // changefreq
+    // priority
+  })
+  additionalFields.push({
+    loc: `${process.env.URL}/branch/PlSj`,
+    lastmod: new Date().toISOString(),
+    // changefreq
+    // priority
+  })
+  additionalFields.push({
+    loc: `${process.env.URL}/branch/PlBb/qr`,
+    lastmod: new Date().toISOString(),
+    // changefreq
+    // priority
+  })
+  additionalFields.push({
+    loc: `${process.env.URL}/branch/PlCd/qr`,
+    lastmod: new Date().toISOString(),
+    // changefreq
+    // priority
+  })
+  additionalFields.push({
+    loc: `${process.env.URL}/branch/PlSj/qr`,
+    lastmod: new Date().toISOString(),
+    // changefreq
+    // priority
+  })
+
   const fields: ISitemapField[] = [...defaultField, ...additionalFields]
 
   return getServerSideSitemapLegacy(ctx, fields)
