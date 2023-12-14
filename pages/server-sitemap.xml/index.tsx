@@ -37,25 +37,25 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const additionalFields: ISitemapField[] = []
   branches.map((branchId: string) => {
     additionalFields.push({
-      loc: `${process.env.URL}/branch/schedule/0`,
+      loc: `${process.env.URL}/branch/${branchId}/schedule/0`,
       lastmod: new Date().toISOString(),
       // changefreq
       // priority
     }),
       additionalFields.push({
-        loc: `${process.env.URL}/branch/schedule/1`,
+        loc: `${process.env.URL}/branch/${branchId}/schedule/1`,
         lastmod: new Date().toISOString(),
         // changefreq
         // priority
       }),
       additionalFields.push({
-        loc: `${process.env.URL}/branch/presentation/0`,
+        loc: `${process.env.URL}/branch/${branchId}/presentation/0`,
         lastmod: new Date().toISOString(),
         // changefreq
         // priority
       }),
       additionalFields.push({
-        loc: `${process.env.URL}/branch/presentation/1`,
+        loc: `${process.env.URL}/branch/${branchId}/presentation/1`,
         lastmod: new Date().toISOString(),
         // changefreq
         // priority
