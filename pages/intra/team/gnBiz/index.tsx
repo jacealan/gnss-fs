@@ -238,9 +238,14 @@ export default function GNBIZ() {
                   iconTitle="교재주문서"
                 ></IconBtn>
                 <IconBtn
-                  iconImage="https://m.jidoshop.co.kr/web/product/extra/big/202012/5e6c84d2e129b0f63632d806b2e01efe.jpg"
-                  link="https://drive.google.com/drive/folders/1Pu5BG9VmE-zERHmrQYq-A0KKNBaUFGO0?usp=sharing"
+                  iconImage="/assets/icons/mockTest.png"
+                  link="https://drive.google.com/drive/folders/1B_Ub7EryOlPiIWgL7XsQ8y8GMxCIf2WA"
                   iconTitle="모의고사"
+                ></IconBtn>
+                <IconBtn
+                  iconImage="/assets/icons/youtube.svg"
+                  link="https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A"
+                  iconTitle="개상TV"
                 ></IconBtn>
               </Flex>
 
@@ -269,7 +274,7 @@ export default function GNBIZ() {
                   iconTitle="GMail"
                 ></IconBtn>
                 <IconBtn
-                  iconImage="https://icons-for-free.com/download-icon-google+drive-1331419555346638624_512.png"
+                  iconImage="/assets/icons/cabinet.ico"
                   link="https://drive.google.com/drive/folders/1-2Mf_ful3n3oEXZXSI6y8ox7UY-Uy-Aj?usp=sharing"
                   iconTitle="서류함"
                 ></IconBtn>
@@ -285,6 +290,23 @@ export default function GNBIZ() {
                 ></IconBtn>
               </Flex>
 
+              <Flex
+                gap={"0px 20px"}
+                wrap="wrap"
+                // border="dashed 1px #aaa"
+                borderRadius={"5px"}
+                w="318px"
+                m={0}
+                p={0}
+                h={2}
+              >
+                <Box w="64px"></Box>
+                <Box w="64px" textAlign={"center"}>
+                  ▲
+                </Box>
+                <Box></Box>
+                <Box></Box>
+              </Flex>
               <Flex
                 gap={"4px 20px"}
                 wrap="wrap"

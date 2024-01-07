@@ -7,6 +7,7 @@ mongoose.set("debug", JSON.parse(process.env.MONGOOSE_DEBUG ?? ""))
 const { Schema } = mongoose
 const TeamSchema = new mongoose.Schema(
   {
+    // info
     teamId: { type: String },
     title: { type: String },
     brand: { type: String },
@@ -15,6 +16,7 @@ const TeamSchema = new mongoose.Schema(
     isElementSchool: { type: Boolean },
     isMiddleSchool: { type: Boolean },
     isHighSchool: { type: Boolean },
+    // phone, address
     phone: { type: String },
     address: { type: String },
     phoneElement: { type: String },
@@ -23,24 +25,29 @@ const TeamSchema = new mongoose.Schema(
     addressMiddle: { type: String },
     phoneHigh: { type: String },
     addressHigh: { type: String },
+    // link
     blog: { type: String },
     blogElement: { type: String },
     blogMiddle: { type: String },
     blogHigh: { type: String },
     blogScience: { type: String },
     email: { type: String },
+    // Ask Counseling
     askInput: { type: String },
     askForm: { type: String },
     askSheet: { type: String },
     askStatus: { type: String },
+    // Application Test
     applyElementSheet: { type: String },
     applyMiddleSheet: { type: String },
     applyHighSheet: { type: String },
+    // Management New Student
     applyReserveSheet: { type: String },
     applyReserveStatus: { type: String },
     applyReserve: { type: String }, //
     applyReserveForm: { type: String }, //
     newStatus: { type: String },
+    // Keynote
     keynoteReserveSheet: { type: String },
     keynoteReserve: { type: String },
     keynoteReserveForm: { type: String },
@@ -56,10 +63,13 @@ const TeamSchema = new mongoose.Schema(
     keynoteScienceReserveSheet: { type: String },
     keynoteScienceReserve: { type: String },
     keynoteScienceReserveForm: { type: String },
+    // Internet Resources
     gdriveFolder: { type: String },
     gdriveFolderGa: { type: String },
     gdriveFolderGaSc: { type: String },
     notionPage: { type: String },
+    mockTest: { type: String },
+    //
     members: [
       {
         userId: { type: Schema.Types.ObjectId, ref: "User", required: true },

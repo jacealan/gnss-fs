@@ -642,7 +642,7 @@ export default function Controller({
                           alignItems={"center"}
                           // w="100%"
                         >
-                          <Image src="/assets/icons/cubes.png" w="20px" />
+                          <Image src="/assets/icons/board.png" w="20px" />
                           <Box ml={1}>
                             {branches &&
                               branches[branch.branchId].split(" ")[0]}
@@ -796,7 +796,7 @@ export default function Controller({
                       alignItems={"center"}
                       w="100%"
                     >
-                      <Image src="/assets/icons/gdrive.svg" w="20px" />
+                      <Image src="/assets/icons/edubiz.png" w="20px" />
                       <Box ml={1} fontSize="0.8rem">
                         학원사업부
                       </Box>
@@ -865,6 +865,7 @@ export default function Controller({
               w="100%"
               gap={1}
               bgColor={colors.blue0}
+              mb={2}
             >
               <Box w="100%">
                 {teamData?.notionPage && (
@@ -890,6 +891,69 @@ export default function Controller({
                   </a>
                 )}
               </Box>
+            </Flex>
+            <Flex
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              flexGrow={"1"}
+              w="100%"
+              gap={1}
+              bgColor={colors.blue0}
+              mb={2}
+            >
+              <Box w="100%">
+                <a
+                  href={`https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A`}
+                  target="_blank"
+                >
+                  <Button
+                    w="100%"
+                    bgColor="white"
+                    border={`solid 1px ${colors.blue1}`}
+                    borderRadius={"4px"}
+                    fontSize="14px"
+                    fontWeight={400}
+                    _hover={{ fontWeight: 700 }}
+                  >
+                    <Flex
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w="100%"
+                    >
+                      <Image src="/assets/icons/youtube.svg" w="20px" />
+                      <Box ml={1} fontSize="0.8rem">
+                        개상TV
+                      </Box>
+                    </Flex>
+                  </Button>
+                </a>
+              </Box>
+              {teamData?.mockTest && (
+                <Box w="100%">
+                  <a href={`${teamData?.mockTest}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/mockTest.png" w="20px" />
+                        <Box ml={1} fontSize="0.8rem">
+                          전국연합모의고사
+                        </Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
             </Flex>
           </GridItem>
 
