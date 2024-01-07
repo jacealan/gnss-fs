@@ -301,11 +301,11 @@ export default function GNBIZ() {
                 h={2}
               >
                 <Box w="64px"></Box>
+                <Box w="64px"></Box>
                 <Box w="64px" textAlign={"center"}>
                   ▲
                 </Box>
-                <Box></Box>
-                <Box></Box>
+                <Box w="64px"></Box>
               </Flex>
               <Flex
                 gap={"4px 20px"}
