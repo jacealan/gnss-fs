@@ -52,13 +52,34 @@ export default function Messages({
         messages?.map((messageObj: any, index: number) => (
           <>
             <Box
-              border={`solid 1px ${colors.secondary}`}
+              border={`dashed 1px ${colors.grey}`}
               p={3}
               borderRadius={10}
               mb={2}
               key={index}
               w="330px"
             >
+              <Flex justifyContent={"flex-start"} w="300px">
+                <Badge>
+                  {teams && teams[messageObj.createdFrom]}(
+                  {/* {messageObj.createdBy.split("@")[0]} */}
+                  {users && users[messageObj.createdBy]})
+                </Badge>
+                {/* →
+              <Badge>
+                {messageObj.toTeamId === "gnBiz"
+                  ? "학원사업부"
+                  : "경영지원부"}
+              </Badge> */}
+              </Flex>
+              <Box style={{ fontSize: "0.7rem" }} w="300px" textAlign="left">
+                {moment(messageObj.createdAt)
+                  .tz("Asia/Seoul")
+                  .format("YYYY-MM-DD HH:mm")}
+                &nbsp;
+                <br />
+                <br />
+              </Box>
               <Box>
                 {messageObj.message
                   .split("\n")
@@ -84,25 +105,6 @@ export default function Messages({
                       <br />
                     </div>
                   ))}
-              </Box>
-              <Flex justifyContent={"flex-end"} w="300px">
-                <Badge>
-                  {teams && teams[messageObj.createdFrom]}(
-                  {/* {messageObj.createdBy.split("@")[0]} */}
-                  {users && users[messageObj.createdBy]})
-                </Badge>
-                {/* →
-                <Badge>
-                  {messageObj.toTeamId === "gnBiz"
-                    ? "학원사업부"
-                    : "경영지원부"}
-                </Badge> */}
-              </Flex>
-              <Box style={{ fontSize: "0.7rem" }} w="300px" textAlign="right">
-                {moment(messageObj.createdAt)
-                  .tz("Asia/Seoul")
-                  .format("YYYY-MM-DD HH:mm")}
-                &nbsp;
               </Box>
             </Box>
           </>
