@@ -243,7 +243,7 @@ export default function GNBIZ() {
                   iconTitle="모의고사"
                 ></IconBtn>
                 <IconBtn
-                  iconImage="/assets/icons/youtube.png"
+                  iconImage="/assets/icons/youtube_square.png"
                   link="https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A"
                   iconTitle="개상TV"
                 ></IconBtn>
