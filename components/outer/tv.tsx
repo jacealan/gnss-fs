@@ -32,7 +32,27 @@ export default function Tv() {
         <GridItem>
           <div className="video">
             <iframe
-              src="https://www.youtube.com/embed/sO5j8iJPDg8"
+              src="https://www.youtube.com/embed/kdx2Ixh_zno?si=-qFFfT9EmgqClUUG"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </GridItem>
+        <GridItem>
+          <div className="video">
+            <iframe
+              src="https://www.youtube.com/embed/or7gCaL1M5w?si=HbVVFPnsO0RXzgeK"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </GridItem>
+        <GridItem>
+          <div className="video">
+            <iframe
+              src="https://www.youtube.com/embed/OzMuY1NQdHg?si=cuE6woDuWTs09-Uz"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -49,26 +69,6 @@ export default function Tv() {
             ></iframe>
           </div>
         </GridItem>
-        {/* <GridItem>
-          <div className="video">
-            <iframe
-              src="https://www.youtube.com/embed/wPCAEVlw7L8?start=3&controls=0"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </GridItem>
-        <GridItem>
-          <div className="video">
-            <iframe
-              src="https://www.youtube.com/embed/laa2xvl-ZNo?start=3&controls=0"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </GridItem> */}
       </Grid>
 
       <style jsx>{`
