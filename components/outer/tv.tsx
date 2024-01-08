@@ -62,7 +62,7 @@ export default function Tv() {
         <GridItem>
           <div className="video">
             <iframe
-              src="https://www.youtube.com/embed/FQg7D4lkkO8"
+              src="https://www.youtube.com/embed/m8Dy3lc5Xhk?si=z-yLJ98mNPaDsj5n"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
