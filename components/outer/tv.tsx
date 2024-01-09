@@ -17,7 +17,7 @@ export default function Tv() {
           <Divider borderTop="solid 1px black" />
         </GridItem>
         <GridItem>
-          <Center fontSize={"22px"}>상상TV</Center>
+          <Center fontSize={"22px"}>개상TV</Center>
         </GridItem>
         <GridItem>
           <Divider borderTop="solid 1px black" />

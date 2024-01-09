@@ -20,6 +20,8 @@ import {
 } from "@chakra-ui/react"
 import { SearchIcon } from "@chakra-ui/icons"
 
+import colors from "@/theme/colors"
+
 export default function NaverSearch() {
   const [keywordNaver, setKeywordNaver] = useState("")
   // const [keywordGoogle, setKeywordGoogle] = useState("")
@@ -47,7 +49,7 @@ export default function NaverSearch() {
         }}
       >
         <FormControl>
-          <HStack w="100%" bgColor="#fff">
+          <HStack w="100%" bgColor={colors.primary}>
             {/* <FormLabel>NAVER</FormLabel> */}
             <InputGroup>
               <InputLeftElement pointerEvents="none">
@@ -58,9 +60,7 @@ export default function NaverSearch() {
                 value={keywordNaver}
                 onChange={(e) => setKeywordNaver(e.target.value)}
                 focusBorderColor="green.400"
-                placeholder={
-                  "본인 아이디, 본인 이름으로 접속 이용해주시기 바랍니다"
-                }
+                placeholder={"(네이버) 검색어를 입력해주세요"}
               />
               <InputRightElement>
                 <Button colorScheme="green" type="submit">
