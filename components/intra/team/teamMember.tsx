@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 import colors from "@/theme/colors"
-import { Box, Badge, Divider, Flex } from "@chakra-ui/react"
+import { Box, Badge, Divider, Flex, Link } from "@chakra-ui/react"
 import { useDisclosure } from "@chakra-ui/react"
 import {
   Modal,
@@ -46,9 +46,27 @@ export default function TeamMember({
         bgColor={colors.primary}
         borderRadius={"20px 20px 0 0"}
       >
-        <Box fontWeight={700} mb={1} fontSize={"0.8rem"}>
-          {teamData?.title} : 팀원-내선번호
-        </Box>
+        <Flex
+          justifyContent={"space-between"}
+          alignItems={"flex-end"}
+          fontWeight={700}
+          mb={1}
+          fontSize={"0.8rem"}
+        >
+          <Box>{teamData?.title} : 팀원-내선번호</Box>
+          <Box fontSize={"0.7rem"} fontWeight={500}>
+            {teamData?.worklog && (
+              <a href={teamData?.worklog} target="_blank">
+                근무일지
+              </a>
+            )}
+            {teamData?.worklogSci && (
+              <a href={teamData?.worklogSci} target="_blank">
+                &nbsp;/ 과학
+              </a>
+            )}
+          </Box>
+        </Flex>
         {teamData?.members.length > 0 && (
           <>
             <Divider border="dashed 1px #aaa" mt={1} mb={1} />

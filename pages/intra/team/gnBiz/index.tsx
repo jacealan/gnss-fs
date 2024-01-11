@@ -424,14 +424,14 @@ export default function GNBIZ() {
                   iconTitle="Notion"
                 ></IconBtn>
                 <IconBtn
+                  iconImage="/assets/icons/worklog.png"
+                  link="https://docs.google.com/spreadsheets/d/1nDkM117tmrGhVech9AsIp3eMsf46w_NUcefqN-MBryU/edit#gid=872999154"
+                  iconTitle="근무일지"
+                ></IconBtn>
+                <IconBtn
                   iconImage="https://s3-alpha.figma.com/hub/file/3152337111/0e0f44e4-8de2-49c9-b8f0-406ece8fd1b6-cover.png"
                   link="https://www.figma.com/"
                   iconTitle="Figma"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://image.rocketpunch.com/company/72377/alrineunsaramdeul_logo_1583212120.png?s=400x400&t=inside"
-                  link="https://smartsms.aligo.in/"
-                  iconTitle="ALIGO문자"
                 ></IconBtn>
               </Flex>
 
@@ -455,6 +455,14 @@ export default function GNBIZ() {
                   iconImage="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg"
                   link="https://analytics.google.com/analytics/web/#/p357454198/"
                   iconTitle="GA4"
+                ></IconBtn>
+              </Flex>
+
+              <Flex gap={5} wrap="wrap">
+                <IconBtn
+                  iconImage="https://image.rocketpunch.com/company/72377/alrineunsaramdeul_logo_1583212120.png?s=400x400&t=inside"
+                  link="https://smartsms.aligo.in/"
+                  iconTitle="ALIGO문자"
                 ></IconBtn>
               </Flex>
 
