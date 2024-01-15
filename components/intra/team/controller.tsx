@@ -867,8 +867,8 @@ export default function Controller({
               bgColor={colors.blue0}
               mb={2}
             >
-              <Box w="100%">
-                {teamData?.notionPage && (
+              {teamData?.notionPage && (
+                <Box w="100%">
                   <a href={`${teamData?.notionPage}`} target="_blank">
                     <Button
                       w="100%"
@@ -885,12 +885,69 @@ export default function Controller({
                         w="100%"
                       >
                         <Image src="/assets/icons/notion.svg" w="20px" />
-                        <Box ml={2}>노션 자료실</Box>
+
+                        <Box ml={1} fontSize="0.8rem">
+                          노션자료실
+                        </Box>
                       </Flex>
                     </Button>
                   </a>
-                )}
-              </Box>
+                </Box>
+              )}
+              {teamData?.worklog && (
+                <Box w="100%">
+                  <a href={teamData?.worklog} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/worklog.png" w="20px" />
+
+                        <Box ml={1} fontSize="0.8rem">
+                          근무일지
+                        </Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.worklogSci && (
+                <Box w="100%">
+                  <a href={teamData?.worklogSci} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/worklog.png" w="20px" />
+                        <Box ml={1} fontSize="0.8rem">
+                          근무일지
+                          <span style={{ fontSize: "0.6rem" }}>(과학)</span>
+                        </Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
             </Flex>
             <Flex
               justifyContent={"space-between"}
