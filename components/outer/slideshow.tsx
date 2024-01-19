@@ -11,6 +11,10 @@ const spanStyle = {
 }
 
 const slideLists = [
+  {
+    imageNum: 9,
+    link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A",
+  },
   { imageNum: 8 },
   { imageNum: 7, link: "/branch/PlSj" },
   { imageNum: 6, link: "/branch/SsMd" },
