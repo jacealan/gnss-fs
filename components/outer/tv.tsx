@@ -42,7 +42,7 @@ export default function Tv() {
         <GridItem>
           <div className="video">
             <iframe
-              src="https://www.youtube.com/embed/or7gCaL1M5w?si=HbVVFPnsO0RXzgeK"
+              src="https://www.youtube.com/embed/0F2ZVbPTb_A?si=vkfBgQtFGfITMGRw"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -52,7 +52,7 @@ export default function Tv() {
         <GridItem>
           <div className="video">
             <iframe
-              src="https://www.youtube.com/embed/OzMuY1NQdHg?si=cuE6woDuWTs09-Uz"
+              src="https://www.youtube.com/embed/xIhoHia1UCc?si=gxAEt8e-eiM0uVy5"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
