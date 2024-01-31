@@ -63,6 +63,10 @@ const TeamSchema = new mongoose.Schema(
     keynoteScienceReserveSheet: { type: String },
     keynoteScienceReserve: { type: String },
     keynoteScienceReserveForm: { type: String },
+    // Order
+    order: { type: String },
+    orderElement: { type: String },
+    orderMiddle: { type: String },
     // Internet Resources
     gdriveFolder: { type: String },
     gdriveFolderGa: { type: String },

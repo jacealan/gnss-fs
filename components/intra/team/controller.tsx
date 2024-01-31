@@ -766,6 +766,233 @@ export default function Controller({
               fontWeight={700}
               borderBottom={`solid 1px ${colors.grey}`}
               mt={2}
+              // mb={4}
+            >
+              교재/물품 주문, 업무 요청(학원사업부)
+            </Box>
+          </GridItem>
+          <GridItem>
+            <Flex
+              justifyContent={"space-between"}
+              flexGrow={"1"}
+              w="100%"
+              gap={1}
+              bgColor={colors.blue0}
+            >
+              {teamData?.order && (
+                <Box w="100%">
+                  <a href={`${teamData?.order}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Box ml={2}>{teamData?.title} 주문서</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.orderElement && (
+                <Box w="100%">
+                  <a href={`${teamData?.orderElement}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Box ml={2}>주문서(초)</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.orderMiddle && (
+                <Box w="100%">
+                  <a href={`${teamData?.orderMiddle}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Box ml={2}>주문서(중)</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.orderHigh && (
+                <Box w="100%">
+                  <a href={`${teamData?.orderHigh}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Box ml={2}>주문서(고)</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+            </Flex>
+          </GridItem>
+          <GridItem>
+            <Flex
+              justifyContent={"space-between"}
+              flexGrow={"1"}
+              w="100%"
+              gap={1}
+              bgColor={colors.blue0}
+            >
+              {teamData?.orderDesign && (
+                <Box w="100%">
+                  <a href={`${teamData?.orderDesign}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Box ml={2}>{teamData?.title} 요청서</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.orderDesignElement && (
+                <Box w="100%">
+                  <a href={`${teamData?.orderDesignElement}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Box ml={2}>요청서(초)</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.orderDesignMiddle && (
+                <Box w="100%">
+                  <a href={`${teamData?.orderDesignMiddle}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Box ml={2}>요청서(중)</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.orderDesignHigh && (
+                <Box w="100%">
+                  <a href={`${teamData?.orderDesignHigh}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Box ml={2}>요청서(고)</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+            </Flex>
+          </GridItem>
+
+          <GridItem>
+            <Box
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              w="100%"
+              color={colors.grey}
+              fontWeight={700}
+              borderBottom={`solid 1px ${colors.grey}`}
+              mt={2}
             >
               웹클라우드
             </Box>
