@@ -233,10 +233,18 @@ export default function GNBIZ() {
                   iconTitle="물품대장"
                 ></IconBtn>
                 <IconBtn
-                  iconImage="https://cdn-icons-png.flaticon.com/512/3696/3696901.png"
+                  iconImage="/assets/icons/orderBook.png"
                   link="https://drive.google.com/drive/folders/1WK8QsXCzYwPAhUVcYA3yWGithuS8vG4E"
                   iconTitle="교재주문서"
                 ></IconBtn>
+                <IconBtn
+                  iconImage="/assets/icons/orderDesign.png"
+                  link="https://drive.google.com/drive/folders/1Z4xBNNXL0_nrbvs6cgU--TKbPPGbKMe7"
+                  iconTitle="업무요청서"
+                ></IconBtn>
+              </Flex>
+
+              <Flex gap={5} wrap="wrap">
                 <IconBtn
                   iconImage="/assets/icons/mockTest.png"
                   link="https://drive.google.com/drive/folders/1B_Ub7EryOlPiIWgL7XsQ8y8GMxCIf2WA"
@@ -246,24 +254,6 @@ export default function GNBIZ() {
                   iconImage="/assets/icons/youtube_square.png"
                   link="https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A"
                   iconTitle="개상TV"
-                ></IconBtn>
-              </Flex>
-
-              <Flex gap={5} wrap="wrap">
-                <IconBtn
-                  iconImage="https://cdn.iconscout.com/icon/free/png-256/free-team-1543465-1305963.png"
-                  link="https://docs.google.com/spreadsheets/d/17niR7eIVjTuH8NocDotF-0otOn9EF4P_b5rxDaGMZJ8/edit?usp=sharing"
-                  iconTitle="입학관리"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://cdn-icons-png.flaticon.com/512/1946/1946058.png"
-                  link="https://docs.google.com/spreadsheets/d/1PnkxW6JHnDgBDRdpjrwBQn7etUouIrhXkNNKJa0OIXY/edit#gid=1132987259"
-                  iconTitle="입테-초등부"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://cdn.icon-icons.com/icons2/1617/PNG/512/3700468-archive-document-education-exam-file-test_108747.png"
-                  link="https://docs.google.com/spreadsheets/d/17FRY2yEpF8otE_OCJCvLHzMZnwEnXW5ylCG0GXoYCVQ/edit#gid=1250364125"
-                  iconTitle="입테-중등부"
                 ></IconBtn>
               </Flex>
 
@@ -297,6 +287,7 @@ export default function GNBIZ() {
                 borderRadius={"5px"}
                 w="318px"
                 m={0}
+                mt={-4}
                 p={0}
                 h={2}
               >
@@ -410,6 +401,24 @@ export default function GNBIZ() {
                     경영지원부
                   </Button>
                 </Link>
+              </Flex>
+
+              <Flex gap={5} wrap="wrap">
+                <IconBtn
+                  iconImage="https://cdn.iconscout.com/icon/free/png-256/free-team-1543465-1305963.png"
+                  link="https://docs.google.com/spreadsheets/d/17niR7eIVjTuH8NocDotF-0otOn9EF4P_b5rxDaGMZJ8/edit?usp=sharing"
+                  iconTitle="입학관리"
+                ></IconBtn>
+                <IconBtn
+                  iconImage="https://cdn-icons-png.flaticon.com/512/1946/1946058.png"
+                  link="https://docs.google.com/spreadsheets/d/1PnkxW6JHnDgBDRdpjrwBQn7etUouIrhXkNNKJa0OIXY/edit#gid=1132987259"
+                  iconTitle="입테-초등부"
+                ></IconBtn>
+                <IconBtn
+                  iconImage="https://cdn.icon-icons.com/icons2/1617/PNG/512/3700468-archive-document-education-exam-file-test_108747.png"
+                  link="https://docs.google.com/spreadsheets/d/17FRY2yEpF8otE_OCJCvLHzMZnwEnXW5ylCG0GXoYCVQ/edit#gid=1250364125"
+                  iconTitle="입테-중등부"
+                ></IconBtn>
               </Flex>
 
               <Flex gap={5} wrap="wrap">
