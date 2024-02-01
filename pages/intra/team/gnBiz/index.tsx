@@ -242,6 +242,11 @@ export default function GNBIZ() {
                   link="https://drive.google.com/drive/folders/1Z4xBNNXL0_nrbvs6cgU--TKbPPGbKMe7"
                   iconTitle="업무요청서"
                 ></IconBtn>
+                <IconBtn
+                  iconImage="/assets/icons/distFolder.png"
+                  link="https://drive.google.com/drive/folders/1LAMIlQdEc_RYkZ9c9z3ML0-fX_gQA6Nx"
+                  iconTitle="관별배포시트"
+                ></IconBtn>
               </Flex>
 
               <Flex gap={5} wrap="wrap">
