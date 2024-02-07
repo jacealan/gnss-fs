@@ -821,7 +821,10 @@ export default function Controller({
                         w="100%"
                       >
                         <Image src="/assets/icons/orderBook.png" w="20px" />
-                        <Box ml={2}>주문서(초)</Box>
+                        <Box ml={2}>
+                          주문서
+                          <span style={{ fontSize: "0.8rem" }}>(초등)</span>
+                        </Box>
                       </Flex>
                     </Button>
                   </a>
@@ -845,7 +848,10 @@ export default function Controller({
                         w="100%"
                       >
                         <Image src="/assets/icons/orderBook.png" w="20px" />
-                        <Box ml={2}>주문서(중)</Box>
+                        <Box ml={2}>
+                          주문서
+                          <span style={{ fontSize: "0.8rem" }}>(중등)</span>
+                        </Box>
                       </Flex>
                     </Button>
                   </a>
@@ -869,7 +875,10 @@ export default function Controller({
                         w="100%"
                       >
                         <Image src="/assets/icons/orderBook.png" w="20px" />
-                        <Box ml={2}>주문서(고)</Box>
+                        <Box ml={2}>
+                          주문서
+                          <span style={{ fontSize: "0.8rem" }}>(고등)</span>
+                        </Box>
                       </Flex>
                     </Button>
                   </a>
@@ -930,7 +939,7 @@ export default function Controller({
                         <Box ml={2}>
                           요청서
                           <br />
-                          (초등)
+                          <span style={{ fontSize: "0.8rem" }}>(초등)</span>
                         </Box>
                       </Flex>
                     </Button>
@@ -958,7 +967,7 @@ export default function Controller({
                         <Box ml={2}>
                           요청서
                           <br />
-                          (중등)
+                          <span style={{ fontSize: "0.8rem" }}>(중등)</span>
                         </Box>
                       </Flex>
                     </Button>
@@ -986,7 +995,7 @@ export default function Controller({
                         <Box ml={2}>
                           요청서
                           <br />
-                          (고등)
+                          <span style={{ fontSize: "0.8rem" }}>(고등)</span>
                         </Box>
                       </Flex>
                     </Button>
@@ -1014,7 +1023,7 @@ export default function Controller({
                         <Box ml={2}>
                           요청서
                           <br />
-                          (과학)
+                          <span style={{ fontSize: "0.8rem" }}>(과학)</span>
                         </Box>
                       </Flex>
                     </Button>
