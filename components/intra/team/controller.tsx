@@ -927,7 +927,11 @@ export default function Controller({
                         w="100%"
                       >
                         <Image src="/assets/icons/orderDesign.png" w="20px" />
-                        <Box ml={2}>요청서(초)</Box>
+                        <Box ml={2}>
+                          요청서
+                          <br />
+                          (초등)
+                        </Box>
                       </Flex>
                     </Button>
                   </a>
@@ -951,7 +955,11 @@ export default function Controller({
                         w="100%"
                       >
                         <Image src="/assets/icons/orderDesign.png" w="20px" />
-                        <Box ml={2}>요청서(중)</Box>
+                        <Box ml={2}>
+                          요청서
+                          <br />
+                          (중등)
+                        </Box>
                       </Flex>
                     </Button>
                   </a>
@@ -975,7 +983,39 @@ export default function Controller({
                         w="100%"
                       >
                         <Image src="/assets/icons/orderDesign.png" w="20px" />
-                        <Box ml={2}>요청서(고)</Box>
+                        <Box ml={2}>
+                          요청서
+                          <br />
+                          (고등)
+                        </Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.orderDesignScience && (
+                <Box w="100%">
+                  <a href={`${teamData?.orderDesignScience}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Box ml={2}>
+                          요청서
+                          <br />
+                          (과학)
+                        </Box>
                       </Flex>
                     </Button>
                   </a>
