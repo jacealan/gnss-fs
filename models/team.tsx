@@ -72,6 +72,7 @@ const TeamSchema = new mongoose.Schema(
     orderDesignElement: { type: String },
     orderDesignMiddle: { type: String },
     orderDesignHigh: { type: String },
+    orderDesignScience: { type: String },
     // Internet Resources
     gdriveFolder: { type: String },
     gdriveFolderGa: { type: String },
