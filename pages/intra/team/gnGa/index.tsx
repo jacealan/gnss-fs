@@ -168,6 +168,27 @@ export default function GNBIZ() {
                     </a>
                   </Box>
                   <Box>
+                    <a
+                      href="https://docs.google.com/spreadsheets/d/1lra4_ftBgtf3QRVvDRGrlaB_wvnuqXwkRKeDnCgYPiI/edit?usp=sharing"
+                      target="_blank"
+                    >
+                      <Button
+                        leftIcon={<BsFileEarmarkSpreadsheet />}
+                        colorScheme="teal"
+                        variant={"outline"}
+                      >
+                        학원사업부 업무요청내역
+                      </Button>
+                    </a>
+                  </Box>
+                </Flex>
+              </HStack>
+
+              <Divider />
+
+              <HStack>
+                <Flex gap={2} wrap="wrap">
+                  <Box>
                     <a href="/intra/user" target="_blank">
                       <Button
                         leftIcon={<SlPeople />}
