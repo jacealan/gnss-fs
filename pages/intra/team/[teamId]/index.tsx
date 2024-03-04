@@ -106,15 +106,15 @@ export default function Team() {
                   >
                     <Box>신입생</Box>
                   </Flex>
+                  <Box fontSize="0.6rem" w="100%" textAlign={"right"}>
+                    시트의 변경사항 적용까지 최대 5분의 시간이 필요합니다
+                  </Box>
                   <object
                     type="text/html"
                     width="350px"
                     height="300px"
-                    data={teamData?.newStatus}
+                    data={teamData?.newStatus.split("?").join("/sheet?")}
                   ></object>
-                  <Box fontSize="0.6rem" w="100%" textAlign={"right"}>
-                    시트의 변경사항 적용까지 최대 5분의 시간이 필요합니다
-                  </Box>
                 </>
               )}
             </Box>
