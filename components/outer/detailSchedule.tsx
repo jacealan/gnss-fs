@@ -26,7 +26,7 @@ export default function DetailSchedule({
         }}
       >
         {numbers.map((i: number) => (
-          <>
+          <div key={i}>
             {branch && (
               <>
                 {i % 2 ? (
@@ -69,7 +69,7 @@ export default function DetailSchedule({
                 )}
               </>
             )}
-          </>
+          </div>
         ))}
       </Box>
       {branch && branch[`target${targetId}CounselBooking`] && (
