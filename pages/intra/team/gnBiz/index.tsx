@@ -167,7 +167,7 @@ export default function GNBIZ() {
                 href={`https://map.naver.com/v5/search/${teamData?.address}`}
                 target="_blank"
               >
-                <Button leftIcon={<BiBuildingHouse />} fontSize="0.9rem">
+                <Button leftIcon={<BiBuildingHouse />} fontSize="0.8rem">
                   {teamData?.address}
                 </Button>
               </a>
