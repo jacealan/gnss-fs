@@ -203,28 +203,6 @@ export default function GNBIZ() {
                 ></IconBtn>
               </Flex>
               <Divider />
-              {/* <Flex gap={5} wrap="wrap" alignItems={"center"}>
-                <IconBtn
-                  iconImage="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg"
-                  link="https://analytics.google.com/analytics/web/#/p357454198/"
-                  iconTitle="GA4"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://upload.wikimedia.org/wikipedia/commons/e/e3/KakaoTalk_logo.svg"
-                  link="https://open.kakao.com/o/gfzvbAef"
-                  iconTitle="오픈카톡"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://images.sftcdn.net/images/t_app-icon-m/p/5ca0fbd4-7c44-47a8-87eb-f0193af7077f/327614066/client-for-google-sheets-apps.60810.14498078752458836.435a5906-097a-47d8-a8cc-196843670561.jpg"
-                  link="https://docs.google.com/spreadsheets/d/1-i7GucH--ChkDTCJZX8IonLm6g-rglFJWjrVdPuIw8g/edit#gid=227963569"
-                  iconTitle="시간표 시트"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://pipedream.com/s.v0/app_1M0hkk/logo/orig"
-                  link="https://imgbb.com/"
-                  iconTitle="ImgBB"
-                ></IconBtn>
-              </Flex> */}
 
               <Flex gap={5} wrap="wrap">
                 <IconBtn
@@ -259,6 +237,11 @@ export default function GNBIZ() {
                   iconImage="/assets/icons/youtube_square.png"
                   link="https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A"
                   iconTitle="개상TV"
+                ></IconBtn>
+                <IconBtn
+                  iconImage="/assets/icons/youtube_edit1.png"
+                  link="/intra/team/gnBiz/gstv"
+                  iconTitle="개상TV List on GNSS"
                 ></IconBtn>
               </Flex>
 
