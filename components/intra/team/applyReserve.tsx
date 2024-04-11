@@ -7,10 +7,12 @@ import { Box, Flex, Button, Link, Center } from "@chakra-ui/react"
 export default function ApplyReserve({
   askStatus,
   applyReserveStatus,
+  applyChart,
   teamData,
 }: {
   askStatus: string
   applyReserveStatus: string
+  applyChart: string
   teamData: any
 }) {
   return (
@@ -122,8 +124,34 @@ export default function ApplyReserve({
           <object
             type="text/html"
             width="350px"
-            height="500px"
+            height="400px"
             data={applyReserveStatus.split("?").join("/sheet?")}
+          ></object>
+        </Box>
+
+        <Box>
+          <Flex
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            width="350px"
+            color={colors.grey}
+            fontWeight={700}
+            borderBottom={`solid 1px ${colors.grey}`}
+            mt={4}
+            mb={1}
+          >
+            <Box>응시인원(예약포함) 차트</Box>
+          </Flex>
+          <Box fontSize="0.6rem" w="100%" textAlign={"right"}>
+            입학관리 시트의 [응시추이]탭에서 자세한 내용을 확인할 수 있습니다
+          </Box>
+
+          <object
+            type="text/html"
+            width="350px"
+            height="220px"
+            data={applyChart}
+            // data={applyReserveStatus.split("?").join("/sheet?")}
           ></object>
         </Box>
       </Flex>

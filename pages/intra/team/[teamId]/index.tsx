@@ -169,9 +169,10 @@ export default function Team() {
             <ApplyReserve
               askStatus={teamData?.askStatus ?? ""}
               applyReserveStatus={teamData?.applyReserveStatus ?? ""}
+              applyChart={teamData?.applyChart ?? ""}
               teamData={teamData}
             />
-            <Box w="100%" h="40px" mt={10} textAlign="right">
+            <Box w="100%" h="40px" mt={1} textAlign="right">
               <a href="/" target="_blank">
                 <img
                   src="/assets/logos/gnssgnpolya.png"
