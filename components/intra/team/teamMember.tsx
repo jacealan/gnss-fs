@@ -53,18 +53,38 @@ export default function TeamMember({
           mb={1}
           fontSize={"0.8rem"}
         >
-          <Box>{teamData?.title} : 팀원-내선번호</Box>
-          <Box fontSize={"0.7rem"} fontWeight={500}>
-            {teamData?.worklog && (
-              <a href={teamData?.worklog} target="_blank">
-                근무일지
-              </a>
-            )}
-            {teamData?.worklogSci && (
-              <a href={teamData?.worklogSci} target="_blank">
-                &nbsp;/ 과학
-              </a>
-            )}
+          <Box>{teamData?.title}: 팀원-내선번호</Box>
+          <Box>
+            <Box fontSize={"0.7rem"} fontWeight={500}>
+              {teamData?.worklog && (
+                <a href={teamData?.worklog} target="_blank">
+                  🗓️근무일지
+                </a>
+              )}
+              {teamData?.worklogSci && (
+                <a href={teamData?.worklogSci} target="_blank">
+                  &nbsp;/ 과학
+                </a>
+              )}
+            </Box>
+            <Box fontSize={"0.7rem"} fontWeight={500}>
+              {(teamId == "SsDc" ||
+                teamId == "PlDc" ||
+                teamId == "SsMd" ||
+                teamId == "SPAk" ||
+                teamId == "PlCd" ||
+                teamId == "SPSc" ||
+                teamId == "SPJs" ||
+                teamId == "LbJs" ||
+                teamId == "PlPc") && (
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfB23qoeLdHvY-9wlFGJzUaVFGAa3sondnhnYWItIO1_WBNKw/viewform"
+                  target="_blank"
+                >
+                  ✉️서류발급 신청서
+                </a>
+              )}
+            </Box>
           </Box>
         </Flex>
         {teamData?.members.length > 0 && (
