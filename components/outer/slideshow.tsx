@@ -11,11 +11,11 @@ const spanStyle = {
 }
 
 const slideLists = [
+  { imageNum: 8 }, // 모의고사
   {
     imageNum: 9,
     link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
   },
-  // { imageNum: 8 }, // 모의고사
   { imageNum: 7, link: "/branch/PlSj" },
   { imageNum: 6, link: "/branch/SsMd" },
   { imageNum: 4, link: "/branch/PlCd/qr" },
