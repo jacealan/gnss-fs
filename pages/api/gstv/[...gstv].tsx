@@ -6,7 +6,7 @@ import moment from "moment-timezone"
 export default async function handler(req: any, res: any) {
   const {
     // query: { teamId },
-    body: { gstv1, gstv2, gstv3, gstv4 },
+    body: { gstv1, gstv2, gstv3, gstv4, gstv5, gstv6 },
     method,
   } = req
 
@@ -59,11 +59,19 @@ export default async function handler(req: any, res: any) {
           { order: 4 },
           { link: gstv4 }
         )
+        const gstv5db = await Gstv.findOneAndUpdate(
+          { order: 5 },
+          { link: gstv5 }
+        )
+        const gstv6db = await Gstv.findOneAndUpdate(
+          { order: 6 },
+          { link: gstv6 }
+        )
         // console.log(gstv1db)
 
         const updatedTime: string = moment().tz("Asia/Seoul").format("a hh:mm")
         const discordMessage = {
-          content: `개상tv of HOMEPAGE is Updated at ${updatedTime}\nno. 1 : ${gstv1}\nno. 2 : ${gstv2}\nno. 3 : ${gstv3}\nno. 4 : ${gstv4}`,
+          content: `개상tv of HOMEPAGE is Updated at ${updatedTime}\nno. 1 : ${gstv1}\nno. 2 : ${gstv2}\nno. 3 : ${gstv3}\nno. 4 : ${gstv4}\nno. 5 : ${gstv5}\nno. 6 : ${gstv6}`,
         }
         await fetch(process.env.DISCORD_WEBHOOKURL_SCHEDULE ?? "", {
           method: "POST",

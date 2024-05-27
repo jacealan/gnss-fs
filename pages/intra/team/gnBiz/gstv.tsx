@@ -157,6 +157,8 @@ const GsTv: NextPage = () => {
     await setValue("gstv2", gstvData && gstvData[1] ? gstvData[1].link : "")
     await setValue("gstv3", gstvData && gstvData[2] ? gstvData[2].link : "")
     await setValue("gstv4", gstvData && gstvData[3] ? gstvData[3].link : "")
+    await setValue("gstv5", gstvData && gstvData[4] ? gstvData[4].link : "")
+    await setValue("gstv6", gstvData && gstvData[5] ? gstvData[5].link : "")
   }
 
   const __ = async () => {
@@ -292,7 +294,7 @@ const GsTv: NextPage = () => {
                     id="gstv3"
                     placeholder="no. 3"
                     defaultValue={
-                      gstvData && (gstvData[2] ? gstvData[1].link : "")
+                      gstvData && (gstvData[2] ? gstvData[2].link : "")
                     }
                     {...register("gstv3")}
                   />
@@ -325,7 +327,7 @@ const GsTv: NextPage = () => {
                     id="gstv4"
                     placeholder="no. 4"
                     defaultValue={
-                      gstvData && (gstvData[3] ? gstvData[1].link : "")
+                      gstvData && (gstvData[3] ? gstvData[3].link : "")
                     }
                     {...register("gstv4")}
                   />
@@ -347,9 +349,73 @@ const GsTv: NextPage = () => {
                 )}
               </FormControl>
             </GridItem>
+            <GridItem>
+              <FormControl
+                isInvalid={Boolean(errors.gstv5)}
+                // isReadOnly={true}
+              >
+                <InputGroup>
+                  <InputLeftAddon color="#888">no. 5</InputLeftAddon>
+                  <Input
+                    id="gstv5"
+                    placeholder="no. 5"
+                    defaultValue={
+                      gstvData && (gstvData[4] ? gstvData[4].link : "")
+                    }
+                    {...register("gstv5")}
+                  />
+                </InputGroup>
+                <FormErrorMessage>
+                  {errors.gstv5 && errors.gstv5.message?.toString()}
+                </FormErrorMessage>
+                {previewData && previewData.gstv5 && (
+                  <iframe
+                    width="464"
+                    height="261"
+                    src={`https://www.youtube.com/embed/${youtubeId(
+                      previewData.gstv5
+                    )}`}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                )}
+              </FormControl>
+            </GridItem>
+            <GridItem>
+              <FormControl
+                isInvalid={Boolean(errors.gstv6)}
+                // isReadOnly={true}
+              >
+                <InputGroup>
+                  <InputLeftAddon color="#888">no. 6</InputLeftAddon>
+                  <Input
+                    id="gstv6"
+                    placeholder="no. 6"
+                    defaultValue={
+                      gstvData && (gstvData[5] ? gstvData[5].link : "")
+                    }
+                    {...register("gstv6")}
+                  />
+                </InputGroup>
+                <FormErrorMessage>
+                  {errors.gstv6 && errors.gstv6.message?.toString()}
+                </FormErrorMessage>
+                {previewData && previewData.gstv6 && (
+                  <iframe
+                    width="464"
+                    height="261"
+                    src={`https://www.youtube.com/embed/${youtubeId(
+                      previewData.gstv6
+                    )}`}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                )}
+              </FormControl>
+            </GridItem>
           </Grid>
-          {/* </Stack>
-          </Stack> */}
         </form>
       </>
     )
