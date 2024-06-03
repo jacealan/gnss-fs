@@ -85,14 +85,19 @@ export default function Notice({ teamId }: { teamId: any }) {
                       p={0}
                       h="1.2rem"
                     >
-                      <Box textAlign={"left"} w="100%" pl={3}>
+                      <Flex
+                        textAlign={"left"}
+                        w="100%"
+                        pl={1}
+                        alignItems={"center"}
+                      >
                         {notice.createdFrom === "gnBiz" && (
-                          <Badge colorScheme="red" mr={1}>
+                          <Badge colorScheme="red" mr={1} fontSize={"0.5rem"}>
                             학원사업부
                           </Badge>
                         )}
                         {notice.createdFrom === "gnGa" && (
-                          <Badge colorScheme="green" mr={1}>
+                          <Badge colorScheme="green" mr={1} fontSize={"0.5rem"}>
                             경영지원부
                           </Badge>
                         )}
@@ -103,13 +108,56 @@ export default function Notice({ teamId }: { teamId: any }) {
                             .format("YYYY-MM-DD") && (
                           <span style={{ fontSize: "1rem" }}> 💢</span>
                         )}
+                      </Flex>
+                      <Box
+                        fontSize={"0.6rem"}
+                        color={
+                          moment().tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                          moment(notice.startDate)
+                            .tz("Asia/Seoul")
+                            .format("YYYY-MM-DD")
+                            ? "red"
+                            : "black"
+                        }
+                        fontWeight={
+                          moment().tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                          moment(notice.startDate)
+                            .tz("Asia/Seoul")
+                            .format("YYYY-MM-DD")
+                            ? 700
+                            : 400
+                        }
+                      >
+                        [
+                        {moment(notice.startDate)
+                          .tz("Asia/Seoul")
+                          .format("M/DD")}
+                        ]
                       </Box>
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent>
                     <PopoverArrow />
                     <PopoverCloseButton />
-                    <PopoverHeader>{notice.title}</PopoverHeader>
+                    <PopoverHeader>
+                      {notice.createdFrom === "gnBiz" && (
+                        <>
+                          <Badge colorScheme="red" mr={1}>
+                            학원사업부
+                          </Badge>
+                          <br />
+                        </>
+                      )}
+                      {notice.createdFrom === "gnGa" && (
+                        <>
+                          <Badge colorScheme="green" mr={1}>
+                            경영지원부
+                          </Badge>
+                          <br />
+                        </>
+                      )}
+                      {notice.title}
+                    </PopoverHeader>
                     <PopoverBody>
                       <Box>
                         {notice.description
