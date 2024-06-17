@@ -18,12 +18,6 @@ const slideLists = [
   },
   { imageNum: 7, link: "/branch/PlSj" },
   { imageNum: 6, link: "/branch/SsMd" },
-  { imageNum: 4, link: "/branch/PlCd/qr" },
-  { imageNum: 0, link: "/branch/PlBb/qr" },
-  {
-    imageNum: 2,
-    link: "https://blog.naver.com/PostView.naver?blogId=dhgbstudy&logNo=223033480560&proxyReferer=http:%2F%2Fwww.gnss.co.kr%2F",
-  },
 ]
 
 const buttonStyle = {
