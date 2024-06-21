@@ -4,7 +4,7 @@ import Link from "next/link"
 import { signIn, signOut, useSession } from "next-auth/react"
 
 import colors from "@/theme/colors"
-import { Box, Divider, Flex, Stack, Center } from "@chakra-ui/react"
+import { Box, Divider, Flex, Stack, Center, VStack } from "@chakra-ui/react"
 
 export default function BottomBar({ teams }: { teams: any }) {
   const { data: session, status } = useSession()
@@ -164,13 +164,34 @@ export default function BottomBar({ teams }: { teams: any }) {
         </Flex>
         <Divider border={"solid 1px #333"} />
         <Center>
-          <Stack direction={"row"}>
-            <Box>원리상상(주)</Box>
-            <Box>서울특별시 강남구 도곡로 418, 4층(대치동)</Box>
-            <Link href="/" target="_blank">
-              https://gnss.co.kr
-            </Link>
-          </Stack>
+          <Box>
+            <Stack direction={"row"}>
+              <Box>원리상상(주)</Box>
+              <Box>서울특별시 강남구 도곡로 418 강원빌딩 4층</Box>
+              <Link href="/" target="_blank">
+                https://gnss.co.kr
+              </Link>
+            </Stack>
+            {/* <Stack direction={"row"}>
+              <Box>경영지원부</Box>
+              <Link
+                href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B4%91%ED%8F%89%EB%A1%9C56%EA%B8%B8%208-13%20%08%EC%88%98%EC%84%9C%ED%83%80%EC%9B%8C%201519%ED%98%B8"
+                target="_blank"
+              >
+                서울시 강남구 광평로56길 8-13 수서타워 1519호
+              </Link>
+            </Stack> */}
+            <Stack direction={"row"}>
+              <Box>학원사업부</Box>
+              <Link href="tel://02-566-0508">02-566-0508</Link>
+              <Link
+                href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B4%91%ED%8F%89%EB%A1%9C56%EA%B8%B8%208-13%20%08%EC%88%98%EC%84%9C%ED%83%80%EC%9B%8C%201519%ED%98%B8"
+                target="_blank"
+              >
+                서울시 강남구 광평로56길 8-13 수서타워 1519호
+              </Link>
+            </Stack>
+          </Box>
         </Center>
       </Box>
     </>
