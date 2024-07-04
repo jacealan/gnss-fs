@@ -4,6 +4,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 
 import Calendar from "@/components/intra/team/calendar"
+import NewStat from "@/components/intra/team/newStat"
 import Notice from "@/components/intra/team/notice"
 import ApplyReserve from "@/components/intra/team/applyReserve"
 import Controller from "@/components/intra/team/controller"
@@ -91,33 +92,14 @@ export default function Team() {
               <Box>
                 <Calendar teamId={teamId ?? ""} />
               </Box>
-
-              {teamData?.newStatus && (
-                <>
-                  <Flex
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    w="100%"
-                    color={colors.grey}
-                    fontWeight={700}
-                    borderBottom={`solid 1px ${colors.grey}`}
-                    mb={1}
-                    mt={6}
-                  >
-                    <Box>신입생</Box>
-                  </Flex>
-                  <Box fontSize="0.6rem" w="100%" textAlign={"right"}>
-                    시트의 변경사항 적용까지 최대 5분의 시간이 필요합니다
-                  </Box>
-                  <object
-                    type="text/html"
-                    width="350px"
-                    height="300px"
-                    data={teamData?.newStatus.split("?").join("/sheet?")}
-                  ></object>
-                </>
-              )}
             </Box>
+
+            <NewStat
+              newStatus={teamData?.newStatus ?? ""}
+              newChart={teamData?.newChart ?? ""}
+              teamData={teamData}
+            />
+
             <Info teamData={teamData} teamId={teamId ?? ""} />
           </Flex>
         </GridItem>
@@ -172,6 +154,7 @@ export default function Team() {
               applyChart={teamData?.applyChart ?? ""}
               teamData={teamData}
             />
+
             <Box w="100%" h="40px" mt={1} textAlign="right">
               <a href="/" target="_blank">
                 <img
@@ -183,14 +166,6 @@ export default function Team() {
             </Box>
           </Flex>
         </GridItem>
-
-        {/* <GridItem>
-          <iframe
-            src="https://gnss.co.kr/branch/PlCd/schedule/0"
-            width="400px"
-            height="700pxx"
-          ></iframe>
-        </GridItem> */}
       </Grid>
     </>
   )
