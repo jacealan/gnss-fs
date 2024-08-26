@@ -11,7 +11,6 @@ const spanStyle = {
 }
 
 const slideLists = [
-  { imageNum: 8 }, // 모의고사
   {
     imageNum: 9,
     link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
