@@ -14,6 +14,8 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
   const [value, onChange] = useState<any>(new Date())
   const [today, setToday] = useState<any>(new Date())
   const [holidays, setHolidays] = useState<any>([])
+  const [mocktests, setMocktests] = useState<any>([])
+  const [univtests, setUnivtests] = useState<any>([])
   const [events, setEvents] = useState<any>([])
   const [nowTime, setNowTime] = useState<any>(new Date())
 
@@ -21,6 +23,14 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
     const resHoliday = await fetch("/api/event/holiday")
     const resHolidayData = await resHoliday.json()
     setHolidays(resHolidayData.data)
+
+    const resMocktest = await fetch("/api/event/mocktest")
+    const resMocktestData = await resMocktest.json()
+    setMocktests(resMocktestData.data)
+
+    const resUnivtest = await fetch("/api/event/univtest")
+    const resUnivtestData = await resUnivtest.json()
+    setUnivtests(resUnivtestData.data)
 
     const res = await fetch(`/api/event/${teamId}`)
     const resData = await res.json()
@@ -37,8 +47,10 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
   useEffect(() => {
     getEvents()
   }, [teamId])
-  // console.log(holidays)
-  // console.log(events)
+  console.log(holidays)
+  console.log(mocktests)
+  console.log(univtests)
+  console.log(events)
 
   //
   // react-calendar refrash
@@ -75,6 +87,9 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
           showNeighboringMonth={true}
           tileContent={({ date, view }) => {
             let holiday: string | null = ""
+            let mocktest: string | null = ""
+            let univtest: string | null = ""
+
             let event: number = 0
             let teamEvent: number = events
               ? events?.filter(
@@ -100,53 +115,69 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
                   moment(date).format("YYYY-MM-DD")
               ).title
             }
-            // console.log(date, holiday, holidays)
-            // if (
-            //   view === "month" &&
-            //   gantt.events[
-            //     moment(date).format("YYYY-MM-DD") as keyof typeof gantt.events
-            //   ]
-            // ) {
-            //   event = gantt.events[
-            //     moment(date).format("YYYY-MM-DD") as keyof typeof gantt.events
-            //   ]?.split("\n").length
-            //     ? gantt.events[
-            //         moment(date).format(
-            //           "YYYY-MM-DD"
-            //         ) as keyof typeof gantt.events
-            //       ]!.split("\n").length
-            //     : 0
-            // }
 
-            // if (
-            //   view === "month" &&
-            //   gantt[branchId as keyof typeof gantt][
-            //     moment(date).format("YYYY-MM-DD") as keyof typeof gantt.events
-            //   ]
-            // ) {
-            //   teamEvent = gantt[branchId as keyof typeof gantt][
-            //     moment(date).format("YYYY-MM-DD") as keyof typeof gantt.events
-            //   ]?.split("\n").length
-            //     ? gantt[branchId as keyof typeof gantt][
-            //         moment(date).format(
-            //           "YYYY-MM-DD"
-            //         ) as keyof typeof gantt.events
-            //       ]!.split("\n").length
-            //     : 0
-            // }
+            if (
+              view === "month" &&
+              mocktests.some(
+                (event: any) =>
+                  moment(event.onDate).tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                  moment(date).format("YYYY-MM-DD")
+              )
+            ) {
+              mocktest = mocktests.find(
+                (event: any) =>
+                  moment(event.onDate).tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                  moment(date).format("YYYY-MM-DD")
+              ).title
+            }
+
+            if (
+              view === "month" &&
+              univtests.some(
+                (event: any) =>
+                  moment(event.onDate).tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                  moment(date).format("YYYY-MM-DD")
+              )
+            ) {
+              univtest = univtests.find(
+                (event: any) =>
+                  moment(event.onDate).tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                  moment(date).format("YYYY-MM-DD")
+              ).title
+            }
 
             return (
               <>
-                <Box fontSize="0.6rem" color="red">
-                  {holiday ? (
-                    holiday.length > 5 ? (
-                      `${holiday.substring(0, 4)}…`
-                    ) : (
-                      holiday
-                    )
-                  ) : (
+                <Box fontSize="0.6rem">
+                  {holiday === "" && mocktest === "" && univtest === "" && (
                     <>&nbsp;</>
                   )}
+                  {holiday &&
+                    (holiday.length > 5 ? (
+                      <Box color="red">{`${holiday.substring(0, 4)}…`}</Box>
+                    ) : (
+                      <Box color="red">{holiday}</Box>
+                    ))}
+                  {mocktest &&
+                    (mocktest.length > 5 ? (
+                      <Box color="#4785EC">{`${mocktest.substring(
+                        0,
+                        4
+                      )}…`}</Box>
+                    ) : (
+                      <Box color="#4785EC">{mocktest}</Box>
+                    ))}
+                  {univtest &&
+                    (univtest.length > 5 ? (
+                      <Box color="#4785EC">{`${univtest.substring(
+                        0,
+                        4
+                      )}…`}</Box>
+                    ) : (
+                      <Box color="#4785EC" fontWeight={900}>
+                        {univtest}
+                      </Box>
+                    ))}
                 </Box>
                 {/* <span style={{ fontSize: "0.5rem", color: "purple" }}>
                   {event ? "★★★★★★★★★★".slice(0, event) : <>&nbsp;</>}
