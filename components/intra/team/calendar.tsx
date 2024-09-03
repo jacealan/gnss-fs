@@ -269,6 +269,30 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
                   {holiday.title}
                 </Badge>
               ))}
+          {univtests &&
+            univtests
+              .filter(
+                (event: any) =>
+                  moment(event.onDate).tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                  moment(value).format("YYYY-MM-DD")
+              )
+              .map((univtest: any, index: number) => (
+                <Badge colorScheme={"blue"} key={index} ml={1} mr={1}>
+                  {univtest.title}
+                </Badge>
+              ))}
+          {mocktests &&
+            mocktests
+              .filter(
+                (event: any) =>
+                  moment(event.onDate).tz("Asia/Seoul").format("YYYY-MM-DD") ===
+                  moment(value).format("YYYY-MM-DD")
+              )
+              .map((mocktest: any, index: number) => (
+                <Badge colorScheme={"blue"} key={index} ml={1} mr={1}>
+                  {mocktest.title}
+                </Badge>
+              ))}
           {events &&
             events
               ?.filter(
