@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import branchesIdTitle from "@/lib/branchesIdTitle"
 
 import colors from "@/theme/colors"
-import { Box, Grid, GridItem, Flex } from "@chakra-ui/react"
+import { Box, Grid, GridItem, Flex, HStack, Link } from "@chakra-ui/react"
 import { Button, ButtonGroup, Image } from "@chakra-ui/react"
 
 import {
@@ -758,9 +758,9 @@ export default function Controller({
           </GridItem>
 
           <GridItem>
-            <Box
+            <HStack
               justifyContent={"space-between"}
-              alignItems={"center"}
+              alignItems={"end"}
               w="100%"
               color={colors.grey}
               fontWeight={700}
@@ -768,8 +768,26 @@ export default function Controller({
               mt={2}
               // mb={4}
             >
-              교재/물품 주문, 업무 요청(학원사업부)
-            </Box>
+              <Box>교재/물품 주문, 업무 요청(학원사업부)</Box>
+              <Box
+                color={"#999"}
+                fontSize={"0.6rem"}
+                fontWeight={500}
+                border="1px dashed #ccc"
+                borderRadius={6}
+                p={1}
+                mb={1}
+              >
+                <Link
+                  href="/assets/images/approvalrequired.png"
+                  target="_blank"
+                >
+                  승인필요
+                  <br />
+                  처리방법
+                </Link>
+              </Box>
+            </HStack>
           </GridItem>
           <GridItem>
             <Flex
