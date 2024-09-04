@@ -82,10 +82,11 @@ export default function UsersList() {
                     )
                     return (
                       <GridItem _hover={{ bgColor: "#f5f5f5" }} key={index}>
-                        <Grid templateColumns={"1fr 1fr 1fr"}>
+                        <Grid templateColumns={"2fr 3fr 1fr 2fr"}>
                           <GridItem>{showUser?.name}</GridItem>
                           <GridItem>{showUser?.email}</GridItem>
                           <GridItem>{showUser?.intraPhone}</GridItem>
+                          <GridItem>{showUser?.phone}</GridItem>
                         </Grid>
                       </GridItem>
                     )

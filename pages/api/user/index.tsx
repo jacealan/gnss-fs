@@ -11,7 +11,7 @@ export default async function handler(req: any, res: any) {
   await dbConnect()
 
   try {
-    const users = await User.find({}, "email name intraPhone")
+    const users = await User.find({}, "email name intraPhone phone")
     // console.log(users)
     if (users) {
       res.status(200).json({ success: true, data: users })
