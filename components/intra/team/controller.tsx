@@ -1052,17 +1052,33 @@ export default function Controller({
           </GridItem>
 
           <GridItem>
-            <Box
+            <HStack
               justifyContent={"space-between"}
-              alignItems={"center"}
+              alignItems={"end"}
               w="100%"
               color={colors.grey}
               fontWeight={700}
               borderBottom={`solid 1px ${colors.grey}`}
               mt={2}
+              // mb={4}
             >
-              웹클라우드
-            </Box>
+              <Box>웹클라우드</Box>
+              <Box
+                color={"#999"}
+                fontSize={"0.6rem"}
+                fontWeight={500}
+                border="1px dashed #ccc"
+                borderRadius={6}
+                p={1}
+                mb={1}
+              >
+                <Link href="/assets/images/wwwfromsheet.png" target="_blank">
+                  게시오류
+                  <br />
+                  처리방법
+                </Link>
+              </Box>
+            </HStack>
           </GridItem>
           <GridItem bgColor={colors.blue0}>
             <Flex
