@@ -384,14 +384,6 @@ export default function GNBIZ() {
                   </Button>
                 </Link>
                 <Link
-                  href="https://drive.google.com/drive/folders/14ka5FnFik80Obd_dEJByDf087yv5Wy1_?usp=sharing"
-                  target="_blank"
-                >
-                  <Button w="64px" fontSize="0.8rem">
-                    송도 개폴
-                  </Button>
-                </Link>
-                <Link
                   href="https://drive.google.com/drive/folders/1d6wynnCfD56t2z9VJLf890Kz4xI473vi?usp=sharing"
                   target="_blank"
                 >
@@ -400,11 +392,35 @@ export default function GNBIZ() {
                   </Button>
                 </Link>
                 <Link
+                  href="https://drive.google.com/drive/folders/1VMnmeYMT9j6j2cq4k3FSzy4xz1G0t_ew?usp=drive_link"
+                  target="_blank"
+                >
+                  <Button w="64px" fontSize="0.8rem">
+                    남동탄 개폴
+                  </Button>
+                </Link>
+                <Link
+                  href="https://drive.google.com/drive/folders/1mESPvDFYTVSyxpIAmTtu4jyRAVoAqo08?usp=sharing"
+                  target="_blank"
+                >
+                  <Button w="64px" fontSize="0.8rem">
+                    다산 개폴
+                  </Button>
+                </Link>
+                <Link
                   href="https://drive.google.com/drive/folders/1IqAs3GfalUScKYeaJySyNCfzFBBFAFkK?usp=sharing"
                   target="_blank"
                 >
                   <Button w="64px" fontSize="0.8rem">
                     경영지원부
+                  </Button>
+                </Link>
+                <Link
+                  href="https://drive.google.com/drive/folders/14ka5FnFik80Obd_dEJByDf087yv5Wy1_?usp=sharing"
+                  target="_blank"
+                >
+                  <Button w="64px" fontSize="0.8rem">
+                    송도 개폴
                   </Button>
                 </Link>
               </Flex>
