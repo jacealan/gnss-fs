@@ -11,6 +11,7 @@ const spanStyle = {
 }
 
 const slideLists = [
+  { imageNum: 1, link: "" },
   {
     imageNum: 9,
     link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
