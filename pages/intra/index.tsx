@@ -89,7 +89,7 @@ export default function Home() {
                 borderRadius={20}
                 p={3}
                 w="300px"
-                mt="150px"
+                mt="110px"
                 bgColor={"white"}
                 color={"black"}
                 textAlign={"center"}
@@ -123,8 +123,10 @@ export default function Home() {
                     "LbJs",
                     "-",
                     "PlPc",
-                    "PlSd",
                     "PlSj",
+                    "PlDt",
+                    "PlDs",
+                    "PlSd",
                     "-",
                     "gnBiz",
                     "gnGa",

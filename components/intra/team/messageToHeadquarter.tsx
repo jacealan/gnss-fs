@@ -45,7 +45,7 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react"
 
-const joins: string[] = ["PlBb", "PlSd", "PlSj"]
+const joins: string[] = ["PlBb", "PlSd", "PlSj", "PlDt", "PlDs"]
 
 export default function MessageToHeadquarter() {
   const router = useRouter()

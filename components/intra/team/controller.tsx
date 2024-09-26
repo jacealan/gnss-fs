@@ -23,7 +23,7 @@ import {
   TbSquareRoundedNumber4Filled,
 } from "react-icons/tb"
 
-const joins: string[] = ["PlBb", "PlSd", "PlSj"]
+const joins: string[] = ["PlBb", "PlSd", "PlSj", "PlDt", "PlDs"]
 
 export default function Controller({
   teamData,

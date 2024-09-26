@@ -267,11 +267,17 @@ const SignUp: NextPage = () => {
               <Checkbox value="PlPc" {...register("teams")} m={3}>
                 개념폴리아 평촌관
               </Checkbox>
-              <Checkbox value="PlSd" {...register("teams")} m={3}>
-                개념폴리아 송도관
-              </Checkbox>
               <Checkbox value="PlSj" {...register("teams")} m={3}>
                 개념폴리아 수지관
+              </Checkbox>
+              <Checkbox value="PlDt" {...register("teams")} m={3}>
+                개념폴리아 남동탄관
+              </Checkbox>
+              <Checkbox value="PlDs" {...register("teams")} m={3}>
+                개념폴리아 다산관
+              </Checkbox>
+              <Checkbox value="PlSd" {...register("teams")} m={3}>
+                개념폴리아 송도관
               </Checkbox>
               <hr />
               <Checkbox value="gnBiz" {...register("teams")} m={3}>
