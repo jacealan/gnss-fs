@@ -303,6 +303,14 @@ export default function EditNotice() {
                     개폴 대치관
                   </Checkbox>
                   <Checkbox
+                    value="PlPc"
+                    {...register("teamsId")}
+                    m={3}
+                    isDisabled={!isAdd}
+                  >
+                    평촌관
+                  </Checkbox>
+                  <Checkbox
                     value="SsMd"
                     {...register("teamsId")}
                     m={3}
@@ -352,21 +360,32 @@ export default function EditNotice() {
                   >
                     잠실관
                   </Checkbox>
+
                   <Checkbox
-                    value="LbJs"
+                    value="PlSj"
                     {...register("teamsId")}
                     m={3}
                     isDisabled={!isAdd}
                   >
-                    독한공부
+                    수지관
                   </Checkbox>
+
                   <Checkbox
-                    value="PlPc"
+                    value="PlDt"
                     {...register("teamsId")}
                     m={3}
                     isDisabled={!isAdd}
                   >
-                    평촌관
+                    동탄관
+                  </Checkbox>
+
+                  <Checkbox
+                    value="PlDs"
+                    {...register("teamsId")}
+                    m={3}
+                    isDisabled={!isAdd}
+                  >
+                    다산관
                   </Checkbox>
 
                   <Checkbox
@@ -378,14 +397,14 @@ export default function EditNotice() {
                     송도관
                   </Checkbox>
 
-                  <Checkbox
-                    value="PlSj"
+                  {/* <Checkbox
+                    value="LbJs"
                     {...register("teamsId")}
                     m={3}
                     isDisabled={!isAdd}
                   >
-                    수지관
-                  </Checkbox>
+                    독한공부
+                  </Checkbox> */}
                 </CheckboxGroup>
               </FormControl>
 
