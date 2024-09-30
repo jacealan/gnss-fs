@@ -11,7 +11,7 @@ import { HiChevronRight } from "react-icons/hi2"
 import { TbPhoneCall } from "react-icons/tb"
 import { FaBusAlt } from "react-icons/fa"
 
-export default function Branch() {
+export default function EventPlDt() {
   const { vw, vh } = useRealViewport()
   const [vwC, setVwC] = useState(350)
   const router = useRouter()
