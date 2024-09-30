@@ -11,13 +11,15 @@ const BranchSchema = new mongoose.Schema(
     updatedFrom: { type: String, required: true },
     branchId: { type: String, required: true },
 
-    branchTitle: { type: String },
+    branchTitle: { type: String, default: "" },
+    branchShort: { type: String, default: "" },
     concept: { type: String, default: "수학실력과 학습습관을 잡다" },
     brand: { type: String, default: "" },
     location: { type: String, default: "" },
     area: { type: String, default: "" },
     target: { type: String, default: "" },
     blog: { type: String, default: "" },
+    instragram: { type: String, default: "" },
 
     target0: { type: String, default: "" },
     target0Phone: { type: String, default: "" },
@@ -148,6 +150,18 @@ const BranchSchema = new mongoose.Schema(
     target1KeynoteTopic7: { type: String, default: "" },
     target1KeynoteTopic8: { type: String, default: "" },
     target1KeynoteTopic9: { type: String, default: "" },
+
+    boardBGColor: { type: String, default: "white" },
+    boardColor: { type: String, default: "#555" },
+    boardConcept: { type: String, default: "" },
+    boardButton: [
+      {
+        title: { type: String, default: "" },
+        link: { type: String, default: "" },
+      },
+    ],
+    boardBlog: { type: Boolean, default: false },
+    boardInstagram: { type: Boolean, default: false },
 
     timezoneOffset: { type: Number, default: 0 },
   },
