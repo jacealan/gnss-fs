@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
+import Link from "next/link"
 
 import { useRealViewport } from "next-real-viewport"
 import { Flex, Center, Box, Image } from "@chakra-ui/react"
 import getBranch from "@/lib/getBranch"
-
 import EventPlDt from "@/components/outer/event/PlDt"
+
+import { HiChevronRight } from "react-icons/hi2"
+import { TbPhoneCall } from "react-icons/tb"
 
 export default function Branch() {
   const { vw, vh } = useRealViewport()
+  const [vwC, setVwC] = useState(350)
   const router = useRouter()
   const { branchId: branchId, yearId: targetId } = router.query
   // const branch = branches[branchId as keyof typeof branches]
@@ -19,13 +23,26 @@ export default function Branch() {
     // if (teamId !== "" && teamId !== undefined) getTeam(teamId)
     if (branchId) {
       const _ = async () => {
-        setBranch(await getBranch(branchId))
+        await setBranch(await getBranch(branchId))
       }
       _()
     }
 
     // if (branchId === "PlSj") router.push("/branch/PlSj/qr")
   }, [branchId])
+
+  useEffect(() => {
+    if (vw) {
+      if (vw * 100 > 760) {
+        setVwC(760)
+      } else if (vw * 100 > 350) {
+        setVwC(vw * 100)
+      } else {
+        setVwC(350)
+      }
+    }
+  }, [vw])
+
   return (
     <>
       <Head>
@@ -48,8 +65,8 @@ export default function Branch() {
         >
           {branchId == "PlDt" && (
             <EventPlDt
-              width={vw ? (vw * 100 > 700 ? "700" : "100vw") : ""}
-              height={vw ? (vw * 100 > 700 ? "889" : "auto") : ""}
+            // width={vw ? (vw * 100 > 700 ? "700" : "100vw") : ""}
+            // height={vw ? (vw * 100 > 700 ? "889" : "auto") : ""}
             />
           )}
         </Box>
