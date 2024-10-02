@@ -46,7 +46,7 @@ export default function Branch() {
     }
   }, [vw])
   return (
-    <>
+    <Box>
       <Head>
         <link
           rel="canonical"
@@ -211,6 +211,6 @@ export default function Branch() {
       {/* <Box>
         {vw},{vh}
       </Box> */}
-    </>
+    </Box>
   )
 }

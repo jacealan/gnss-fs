@@ -44,7 +44,7 @@ export default function Branch() {
   }, [vw])
 
   return (
-    <>
+    <Box>
       <Head>
         <link rel="canonical" href={`https://gnss.co.kr/branch/${branchId}`} />
         <title>{branch?.branchTitle} 학원</title>
@@ -71,6 +71,6 @@ export default function Branch() {
           )}
         </Box>
       </Flex>
-    </>
+    </Box>
   )
 }
