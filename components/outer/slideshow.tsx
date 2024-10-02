@@ -11,7 +11,7 @@ const spanStyle = {
 }
 
 const slideLists = [
-  { imageNum: 1, "https://forms.gle/XhHZ9J956Xmoo41R8" },
+  { imageNum: 1, link: "https://forms.gle/XhHZ9J956Xmoo41R8" },
   {
     imageNum: 9,
     link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
