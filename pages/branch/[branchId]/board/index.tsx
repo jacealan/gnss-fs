@@ -200,7 +200,7 @@ export default function Branch() {
             </Link>
 
             <Image
-              src="/assets/logos/gnssgnpolya.png"
+              src="/assets/logos/gnpolya_t.png"
               width="36%"
               mt={vwC * 0.08}
               mb={vwC * 0.06}
