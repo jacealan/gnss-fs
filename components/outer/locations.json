@@ -11,5 +11,8 @@
     "location": "서울 잠실지역",
     "branchIds": ["SsJs", "PlJs", "ScJs"]
   },
-  { "location": "수도권 경기지역", "branchIds": ["PlPc", "PlSd", "PlSj"] }
+  {
+    "location": "수도권 경기지역",
+    "branchIds": ["PlPc", "PlSj", "PlDt", "PlSd"]
+  }
 ]
