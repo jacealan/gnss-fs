@@ -57,9 +57,9 @@ export default function EventPlDt() {
       <Box>
         <Image src="/assets/events/event1.png"></Image>
       </Box>
-      <Box>
+      {/* <Box>
         <Image src="/assets/events/event2.png"></Image>
-      </Box>
+      </Box> */}
       <Box>
         <Link href="https://forms.gle/XhHZ9J956Xmoo41R8" target="_blank">
           <Image src="/assets/events/event3.png"></Image>
