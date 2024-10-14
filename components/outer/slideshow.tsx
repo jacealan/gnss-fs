@@ -17,7 +17,7 @@ const slideLists = [
     link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
   },
   { imageNum: 7, link: "/branch/PlSj" },
-  { imageNum: 6, link: "/branch/SsMd" },
+  // { imageNum: 6, link: "/branch/SsMd" },
 ]
 
 const buttonStyle = {
