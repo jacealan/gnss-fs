@@ -162,6 +162,7 @@ const BranchSchema = new mongoose.Schema(
     ],
     boardBlog: { type: Boolean, default: false },
     boardInstagram: { type: Boolean, default: false },
+    boardLogo: { type: String, default: "/assets/logos/gnssgnpolya.png" },
 
     timezoneOffset: { type: Number, default: 0 },
   },

@@ -94,8 +94,8 @@ export default function Branch() {
             <Center
               color={branch?.boardColor}
               fontSize={vw && (86 / (760 / vwC)).toString() + "px"}
-              fontFamily={"GmarketSans"}
-              fontWeight={700}
+              fontFamily={"Gmarket Sans"}
+              fontWeight={900}
               mt={-vwC / 40}
             >
               {branch?.brand}
@@ -103,8 +103,8 @@ export default function Branch() {
             <Center
               color="white"
               fontSize={vw && (86 / (760 / vwC)).toString() + "px"}
-              fontFamily={"GmarketSans"}
-              fontWeight={700}
+              fontFamily={"Gmarket Sans"}
+              fontWeight={900}
               mt={-vwC / 20}
             >
               {branch?.branchShort}
@@ -114,7 +114,7 @@ export default function Branch() {
                 color="white"
                 bgColor="#1e1e1e"
                 fontSize={vw && (40 / (760 / vwC)).toString() + "px"}
-                fontFamily={"GmarketSans"}
+                fontFamily={"Gmarket Sans"}
                 fontWeight={700}
                 mt={-vwC / 40}
                 mb={vwC / 10}
@@ -167,40 +167,44 @@ export default function Branch() {
                 </Link>
               </div>
             ))}
-            <Link href={`tel://${branch?.target0Phone}`}>
-              <Flex
-                justifyContent={"center"}
-                bgColor={branch?.boardBGColor}
-                color="#fff"
-                border={`solid 2px ${branch?.boardBGColor}`}
-                borderRadius={8}
-                width={vwC * 0.63}
-                height={vwC * 0.09}
-                fontSize={vwC * 0.037}
-                fontFamily={"Noto Sans KR"}
-                mt={vwC * 0.08}
-                boxShadow={"base"}
-              >
-                <Center ml={vwC * 0.05} width={vwC * 0.1} height="100%">
-                  <TbPhoneCall />
-                </Center>
-                <Center
-                  width="100%"
-                  fontSize={vwC * 0.037}
-                  fontFamily={"Noto Sans KR"}
-                >
-                  상담문의 전화
-                </Center>
-                <Center
-                  mr={vwC * 0.05}
-                  width={vwC * 0.1}
-                  height="100%"
-                ></Center>
-              </Flex>
-            </Link>
+            {branch && branch.target0Phone && (
+              <>
+                <Link href={`tel://${branch?.target0Phone}`}>
+                  <Flex
+                    justifyContent={"center"}
+                    bgColor={branch?.boardBGColor}
+                    color="#fff"
+                    border={`solid 2px ${branch?.boardBGColor}`}
+                    borderRadius={8}
+                    width={vwC * 0.63}
+                    height={vwC * 0.09}
+                    fontSize={vwC * 0.037}
+                    fontFamily={"Noto Sans KR"}
+                    mt={vwC * 0.08}
+                    boxShadow={"base"}
+                  >
+                    <Center ml={vwC * 0.05} width={vwC * 0.1} height="100%">
+                      <TbPhoneCall />
+                    </Center>
+                    <Center
+                      width="100%"
+                      fontSize={vwC * 0.037}
+                      fontFamily={"Noto Sans KR"}
+                    >
+                      상담문의 전화
+                    </Center>
+                    <Center
+                      mr={vwC * 0.05}
+                      width={vwC * 0.1}
+                      height="100%"
+                    ></Center>
+                  </Flex>
+                </Link>
+              </>
+            )}
 
             <Image
-              src="/assets/logos/gnpolya_t.png"
+              src={branch?.boardLogo}
               width="36%"
               mt={vwC * 0.08}
               mb={vwC * 0.06}

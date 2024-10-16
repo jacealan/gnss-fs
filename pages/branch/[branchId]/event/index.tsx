@@ -47,7 +47,7 @@ export default function Branch() {
     <Box>
       <Head>
         <link rel="canonical" href={`https://gnss.co.kr/branch/${branchId}`} />
-        <title>{branch?.branchTitle} 학원</title>
+        <title>개념폴리아 {branch?.branchShort} 학원</title>
         <meta name="keywords" content="개념상상 학원, 개념폴리아 학원" />
         <meta name="description" content="수학은 개념상상,개념폴리아" />
         <meta property="og:title" content="개념상상 | 개념폴리아" />
