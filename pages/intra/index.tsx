@@ -120,7 +120,7 @@ export default function Home() {
                     "PlBb",
                     "-",
                     "SPJs",
-                    "LbJs",
+                    // "LbJs",
                     "-",
                     "PlPc",
                     "PlSj",

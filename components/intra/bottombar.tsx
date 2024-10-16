@@ -109,7 +109,7 @@ export default function BottomBar({ teams }: { teams: any }) {
             </Box>
 
             {teams &&
-              ["SPJs", "LbJs"].map((teamId, index) => (
+              ["SPJs"].map((teamId, index) => (
                 <Box key={index}>
                   {workTeams.includes(teamId) ||
                   workTeams.includes("gnBiz") ||
