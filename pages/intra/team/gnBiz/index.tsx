@@ -261,6 +261,11 @@ export default function GNBIZ() {
                   link="/intra/team/gnBiz/gstv"
                   iconTitle="개상TV List on GNSS"
                 ></IconBtn>
+                <IconBtn
+                  iconImage="/assets/icons/googlecalendar.png"
+                  link="https://calendar.google.com/"
+                  iconTitle="구글 캘린더"
+                ></IconBtn>
               </Flex>
 
               <Flex gap={5} wrap="wrap">
