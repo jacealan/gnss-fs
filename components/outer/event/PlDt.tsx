@@ -146,7 +146,7 @@ export default function EventPlDt() {
         fontWeight={900}
         p={6}
       >
-        <Link href={`tell://${branch?.phone}`}>상담문의: 031. 375. 4808</Link>
+        <Link href={`tel://${branch?.phone}`}>상담문의: 031. 375. 4808</Link>
       </Center>
     </Box>
   )
