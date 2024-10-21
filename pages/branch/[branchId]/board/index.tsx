@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
 import Link from "next/link"
+import { GetServerSidePropsContext } from "next" // SSR
 
 import { useRealViewport } from "next-real-viewport"
 import { Flex, Center, Box, Image } from "@chakra-ui/react"
@@ -10,25 +11,46 @@ import getBranch from "@/lib/getBranch"
 import { HiChevronRight } from "react-icons/hi2"
 import { TbPhoneCall } from "react-icons/tb"
 
-export default function Branch() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const queryData = await context.query
+  const branchData = await getBranch(queryData.branchId || "")
+
+  return {
+    props: {
+      branchId: queryData.branchId,
+      // targetId: queryData.yearId,
+      branch: branchData,
+    },
+  }
+}
+
+export default function Board({
+  branchId,
+  // targetId,
+  branch,
+}: {
+  branchId: string
+  // targetId: number
+  branch: any
+}) {
   const { vw, vh } = useRealViewport()
   const [vwC, setVwC] = useState(350)
   const router = useRouter()
-  const { branchId: branchId, yearId: targetId } = router.query
-  // const branch = branches[branchId as keyof typeof branches]
-  const [branch, setBranch] = useState<any>(null)
+  // const { branchId: branchId, yearId: targetId } = router.query
+  // // const branch = branches[branchId as keyof typeof branches]
+  // const [branch, setBranch] = useState<any>(null)
 
-  useEffect(() => {
-    // if (teamId !== "" && teamId !== undefined) getTeam(teamId)
-    if (branchId) {
-      const _ = async () => {
-        await setBranch(await getBranch(branchId))
-      }
-      _()
-    }
+  // useEffect(() => {
+  //   // if (teamId !== "" && teamId !== undefined) getTeam(teamId)
+  //   if (branchId) {
+  //     const _ = async () => {
+  //       await setBranch(await getBranch(branchId))
+  //     }
+  //     _()
+  //   }
 
-    // if (branchId === "PlSj") router.push("/branch/PlSj/qr")
-  }, [branchId])
+  //   // if (branchId === "PlSj") router.push("/branch/PlSj/qr")
+  // }, [branchId])
 
   if (branch && branch.boardButton.length == 0) {
     router.push("/")
@@ -45,6 +67,7 @@ export default function Branch() {
       }
     }
   }, [vw])
+
   return (
     <Box>
       <Head>

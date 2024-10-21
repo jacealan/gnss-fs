@@ -9,7 +9,7 @@ export default function Document() {
         <Main />
         <NextScript />
         <Script
-          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f98236e82573952e8a9a9afe39fa7460&libraries=services,clusterer&autoload=false"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAOMAP_APIKEY}&libraries=services,clusterer&autoload=false`}
           strategy="beforeInteractive"
         />
       </body>

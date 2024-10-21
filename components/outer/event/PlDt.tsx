@@ -52,6 +52,7 @@ export default function EventPlDt() {
       }
     }
   }, [vw])
+
   return (
     <Box>
       <Box>
