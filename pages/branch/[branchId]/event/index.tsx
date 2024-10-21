@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
 import Link from "next/link"
+import { GetServerSidePropsContext } from "next" // SSR
 
 import { useRealViewport } from "next-real-viewport"
 import { Flex, Center, Box, Image } from "@chakra-ui/react"
@@ -11,25 +12,46 @@ import EventPlDt from "@/components/outer/event/PlDt"
 import { HiChevronRight } from "react-icons/hi2"
 import { TbPhoneCall } from "react-icons/tb"
 
-export default function Branch() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const queryData = await context.query
+  const branchData = await getBranch(queryData.branchId || "")
+
+  return {
+    props: {
+      branchId: queryData.branchId,
+      // targetId: queryData.yearId,
+      branch: branchData,
+    },
+  }
+}
+
+export default function Event({
+  branchId,
+  // targetId,
+  branch,
+}: {
+  branchId: string
+  // targetId: number
+  branch: any
+}) {
   const { vw, vh } = useRealViewport()
   const [vwC, setVwC] = useState(350)
-  const router = useRouter()
-  const { branchId: branchId, yearId: targetId } = router.query
-  // const branch = branches[branchId as keyof typeof branches]
-  const [branch, setBranch] = useState<any>(null)
+  // const router = useRouter()
+  // const { branchId: branchId, yearId: targetId } = router.query
+  // // const branch = branches[branchId as keyof typeof branches]
+  // const [branch, setBranch] = useState<any>(null)
 
-  useEffect(() => {
-    // if (teamId !== "" && teamId !== undefined) getTeam(teamId)
-    if (branchId) {
-      const _ = async () => {
-        await setBranch(await getBranch(branchId))
-      }
-      _()
-    }
+  // useEffect(() => {
+  //   // if (teamId !== "" && teamId !== undefined) getTeam(teamId)
+  //   if (branchId) {
+  //     const _ = async () => {
+  //       await setBranch(await getBranch(branchId))
+  //     }
+  //     _()
+  //   }
 
-    // if (branchId === "PlSj") router.push("/branch/PlSj/qr")
-  }, [branchId])
+  //   // if (branchId === "PlSj") router.push("/branch/PlSj/qr")
+  // }, [branchId])
 
   useEffect(() => {
     if (vw) {
@@ -47,7 +69,7 @@ export default function Branch() {
     <Box>
       <Head>
         <link rel="canonical" href={`https://gnss.co.kr/branch/${branchId}`} />
-        <title>개념폴리아 {branch?.branchShort} 학원</title>
+        <title>{`${branch?.branchTitle} 학원`}</title>
         <meta name="keywords" content="개념상상 학원, 개념폴리아 학원" />
         <meta name="description" content="수학은 개념상상,개념폴리아" />
         <meta property="og:title" content="개념상상 | 개념폴리아" />
