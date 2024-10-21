@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
 import Link from "next/link"
+import { GetServerSidePropsContext } from "next" // SSR
 
 import { Center, VStack, Box } from "@chakra-ui/react"
 
@@ -16,21 +17,43 @@ import Footer from "@/components/outer/footer"
 
 import getBranch from "@/lib/getBranch"
 
-export default function Keynote() {
-  const router = useRouter()
-  const { branchId: branchId, yearId: targetId } = router.query
-  // const branch = branches[branchId as keyof typeof branches]
-  const [branch, setBranch] = useState<any>(null)
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const queryData = await context.query
+  const branchData = await getBranch(queryData.branchId || "")
 
-  useEffect(() => {
-    // if (teamId !== "" && teamId !== undefined) getTeam(teamId)
-    if (branchId) {
-      const _ = async () => {
-        setBranch(await getBranch(branchId))
-      }
-      _()
-    }
-  }, [branchId])
+  return {
+    props: {
+      branchId: queryData.branchId,
+      targetId: queryData.yearId,
+      // targetId: queryData.yearId,
+      branch: branchData,
+    },
+  }
+}
+
+export default function Keynote({
+  branchId,
+  targetId,
+  branch,
+}: {
+  branchId: string
+  targetId: number
+  branch: any
+}) {
+  // const router = useRouter()
+  // const { branchId: branchId, yearId: targetId } = router.query
+  // const branch = branches[branchId as keyof typeof branches]
+  // const [branch, setBranch] = useState<any>(null)
+
+  // useEffect(() => {
+  //   // if (teamId !== "" && teamId !== undefined) getTeam(teamId)
+  //   if (branchId) {
+  //     const _ = async () => {
+  //       setBranch(await getBranch(branchId))
+  //     }
+  //     _()
+  //   }
+  // }, [branchId])
 
   return (
     <>
@@ -39,15 +62,7 @@ export default function Keynote() {
           rel="canonical"
           href={`https://gnss.co.kr/branch/${branchId}/presentation/${targetId}`}
         />
-        <title>
-          {/* {branch?.brand}&nbsp;
-          {branch?.location}&nbsp;
-          {branch?.brand === "개념폴리아"
-            ? `${branch[`target${targetId}` as keyof typeof branch]} `
-            : ""}
-          설명회 */}
-          {branch?.branchTitle} 학원
-        </title>
+        <title>{`${branch?.branchTitle} 학원 설명회`}</title>
         <meta name="description" content="수학은 개념상상,개념폴리아" />
         <meta property="og:title" content="개념상상 | 개념폴리아" />
         <meta property="og:description" content="수학은 개념상상,개념폴리아" />
