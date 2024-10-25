@@ -56,23 +56,18 @@ export default function EventPlDt() {
   return (
     <Box>
       <Box>
-        <Image src="/assets/events/PlDt1.png"></Image>
+        <Image src="/assets/events/event1.png"></Image>
       </Box>
+      {/* <Box>
+        <Image src="/assets/events/event2.png"></Image>
+      </Box> */}
       <Box>
         <Link href="https://forms.gle/XhHZ9J956Xmoo41R8" target="_blank">
-          <Image src="/assets/events/PlDt2.png"></Image>
+          <Image src="/assets/events/event3.png"></Image>
         </Link>
       </Box>
       <Box>
-        <Image src="/assets/events/PlDt3.png"></Image>
-      </Box>
-      <Box>
-        <Link href="https://forms.gle/XhHZ9J956Xmoo41R8" target="_blank">
-          <Image src="/assets/events/PlDt2.png"></Image>
-        </Link>
-      </Box>
-      <Box>
-        <Image src="/assets/events/PlDt4.png"></Image>
+        <Image src="/assets/events/event4.png"></Image>
       </Box>
       <Box width="100%">
         <Image src="/assets/events/event6.png"></Image>
@@ -141,18 +136,18 @@ export default function EventPlDt() {
         {/* </Link> */}
       </Box>
       <Box>
-        <Link href={`tel://031-375-4808`}>
-          <Image src="/assets/events/PlDt5.png"></Image>
+        <Link href="https://forms.gle/XhHZ9J956Xmoo41R8" target="_blank">
+          <Image src="/assets/events/event3.png"></Image>
         </Link>
       </Box>
-      {/* <Center
+      <Center
         fontSize={vw && (50 / (760 / vwC)).toString() + "px"}
         fontFamily={"GmarketSans"}
         fontWeight={900}
         p={6}
       >
         <Link href={`tel://${branch?.phone}`}>상담문의: 031. 375. 4808</Link>
-      </Center> */}
+      </Center>
     </Box>
   )
 }
