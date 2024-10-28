@@ -13,7 +13,7 @@ const spanStyle = {
 const slideLists = [
   { imageNum: 1, link: "https://gnss.co.kr/branch/PlDt/event" },
   { imageNum: 0, link: "https://blog.naver.com/gnsssmedu" },
-  { imageNum: 6 },
+  { imageNum: 6, link: "https://forms.gle/MY93ReDiJqc5H12p6" },
   {
     imageNum: 9,
     link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
