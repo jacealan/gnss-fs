@@ -8,6 +8,7 @@ import { useRealViewport } from "next-real-viewport"
 import { Flex, Center, Box, Image } from "@chakra-ui/react"
 import getBranch from "@/lib/getBranch"
 import EventPlDt from "@/components/outer/event/PlDt"
+import EventPlDs from "@/components/outer/event/PlDs"
 
 import { HiChevronRight } from "react-icons/hi2"
 import { TbPhoneCall } from "react-icons/tb"
@@ -87,6 +88,12 @@ export default function Event({
         >
           {branchId == "PlDt" && (
             <EventPlDt
+            // width={vw ? (vw * 100 > 700 ? "700" : "100vw") : ""}
+            // height={vw ? (vw * 100 > 700 ? "889" : "auto") : ""}
+            />
+          )}
+          {branchId == "PlDs" && (
+            <EventPlDs
             // width={vw ? (vw * 100 > 700 ? "700" : "100vw") : ""}
             // height={vw ? (vw * 100 > 700 ? "889" : "auto") : ""}
             />
