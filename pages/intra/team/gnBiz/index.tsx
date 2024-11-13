@@ -432,24 +432,6 @@ export default function GNBIZ() {
 
               <Flex gap={5} wrap="wrap">
                 <IconBtn
-                  iconImage="https://cdn.iconscout.com/icon/free/png-256/free-team-1543465-1305963.png"
-                  link="https://docs.google.com/spreadsheets/d/17niR7eIVjTuH8NocDotF-0otOn9EF4P_b5rxDaGMZJ8/edit?usp=sharing"
-                  iconTitle="입학관리"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://cdn-icons-png.flaticon.com/512/1946/1946058.png"
-                  link="https://docs.google.com/spreadsheets/d/1PnkxW6JHnDgBDRdpjrwBQn7etUouIrhXkNNKJa0OIXY/edit#gid=1132987259"
-                  iconTitle="입테-초등부"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://cdn.icon-icons.com/icons2/1617/PNG/512/3700468-archive-document-education-exam-file-test_108747.png"
-                  link="https://docs.google.com/spreadsheets/d/17FRY2yEpF8otE_OCJCvLHzMZnwEnXW5ylCG0GXoYCVQ/edit#gid=1250364125"
-                  iconTitle="입테-중등부"
-                ></IconBtn>
-              </Flex>
-
-              <Flex gap={5} wrap="wrap">
-                <IconBtn
                   iconImage="https://static-00.iconduck.com/assets.00/discord-icon-512x511-blfje7wy.png"
                   link="https://discord.com/channels/1088002442060386376/1088002442651762760"
                   iconTitle="Discord"
@@ -460,9 +442,9 @@ export default function GNBIZ() {
                   iconTitle="Notion"
                 ></IconBtn>
                 <IconBtn
-                  iconImage="/assets/icons/worklog.png"
-                  link="https://docs.google.com/spreadsheets/d/1nDkM117tmrGhVech9AsIp3eMsf46w_NUcefqN-MBryU/edit#gid=872999154"
-                  iconTitle="근무일지"
+                  iconImage="https://play-lh.googleusercontent.com/UcVVF38hFqysYyLVSX_wckqw5ZXHR1Uuv4k0xqIOaZPo8ig5lyCUqePxM5EdivQ_J7Mt=w240-h480-rw"
+                  link="https://www.coupang.com/"
+                  iconTitle="쿠팡"
                 ></IconBtn>
                 <IconBtn
                   iconImage="https://s3-alpha.figma.com/hub/file/3152337111/0e0f44e4-8de2-49c9-b8f0-406ece8fd1b6-cover.png"
