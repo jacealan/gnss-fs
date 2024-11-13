@@ -47,10 +47,10 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
   useEffect(() => {
     getEvents()
   }, [teamId])
-  console.log(holidays)
-  console.log(mocktests)
-  console.log(univtests)
-  console.log(events)
+  // console.log(holidays)
+  // console.log(mocktests)
+  // console.log(univtests)
+  // console.log(events)
 
   //
   // react-calendar refrash
