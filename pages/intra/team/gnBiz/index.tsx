@@ -539,7 +539,7 @@ export default function GNBIZ() {
                 ></IconBtn>
                 <IconBtn
                   iconImage="/assets/icons/worklog.png"
-                  link="https://www.notion.so/37fcd76e112e4ba5b992b710d63e9c38"
+                  link="https://docs.google.com/spreadsheets/d/1nDkM117tmrGhVech9AsIp3eMsf46w_NUcefqN-MBryU/edit#gid=872999154"
                   iconTitle="근무일지"
                 ></IconBtn>
                 <IconBtn
