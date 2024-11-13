@@ -538,14 +538,14 @@ export default function GNBIZ() {
                   iconTitle="Notion"
                 ></IconBtn>
                 <IconBtn
+                  iconImage="/assets/icons/worklog.png"
+                  link="https://www.notion.so/37fcd76e112e4ba5b992b710d63e9c38"
+                  iconTitle="근무일지"
+                ></IconBtn>
+                <IconBtn
                   iconImage="https://play-lh.googleusercontent.com/UcVVF38hFqysYyLVSX_wckqw5ZXHR1Uuv4k0xqIOaZPo8ig5lyCUqePxM5EdivQ_J7Mt=w240-h480-rw"
                   link="https://www.coupang.com/"
                   iconTitle="쿠팡"
-                ></IconBtn>
-                <IconBtn
-                  iconImage="https://s3-alpha.figma.com/hub/file/3152337111/0e0f44e4-8de2-49c9-b8f0-406ece8fd1b6-cover.png"
-                  link="https://www.figma.com/"
-                  iconTitle="Figma"
                 ></IconBtn>
               </Flex>
 
@@ -561,9 +561,9 @@ export default function GNBIZ() {
                   iconTitle="가비아"
                 ></IconBtn>
                 <IconBtn
-                  iconImage="https://pipedream.com/s.v0/app_1M0hkk/logo/orig"
-                  link="https://imgbb.com/"
-                  iconTitle="ImgBB"
+                  iconImage="https://s3-alpha.figma.com/hub/file/3152337111/0e0f44e4-8de2-49c9-b8f0-406ece8fd1b6-cover.png"
+                  link="https://www.figma.com/"
+                  iconTitle="Figma"
                 ></IconBtn>
                 <IconBtn
                   iconImage="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg"
@@ -577,6 +577,11 @@ export default function GNBIZ() {
                   iconImage="https://image.rocketpunch.com/company/72377/alrineunsaramdeul_logo_1583212120.png?s=400x400&t=inside"
                   link="https://smartsms.aligo.in/"
                   iconTitle="ALIGO문자"
+                ></IconBtn>
+                <IconBtn
+                  iconImage="https://pipedream.com/s.v0/app_1M0hkk/logo/orig"
+                  link="https://imgbb.com/"
+                  iconTitle="ImgBB"
                 ></IconBtn>
               </Flex>
 
