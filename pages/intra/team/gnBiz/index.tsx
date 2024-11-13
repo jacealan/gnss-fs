@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import Head from "next/head"
+import { useForm, SubmitHandler } from "react-hook-form"
 
 import { useSession } from "next-auth/react"
 import getTeam from "@/lib/getTeam"
@@ -9,6 +10,24 @@ import Calendar from "@/components/intra/team/calendar"
 import colors from "@/theme/colors"
 import { Box, Button, Divider, Grid, GridItem } from "@chakra-ui/react"
 import { Flex, VStack, HStack, Image, Center } from "@chakra-ui/react"
+import {
+  InputAddon,
+  FormErrorMessage,
+  FormLabel,
+  FormControl,
+  Input,
+  FormHelperText,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
+  InputLeftElement,
+  InputRightElement,
+  RadioGroup,
+  Radio,
+  CheckboxGroup,
+  Checkbox,
+  Textarea,
+} from "@chakra-ui/react"
 
 import {
   PhoneIcon,
@@ -85,6 +104,48 @@ export default function GNBIZ() {
 
   const [modalText, setModalText] = useState("")
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const {
+    handleSubmit,
+    reset,
+    register,
+    formState: { errors, isSubmitting },
+  } = useForm()
+
+  async function onSubmitHJ(formData: any) {
+    const values = {
+      sid: formData.sid,
+    }
+
+    // console.log(values.sid)
+    window.open(
+      `https://www.hanjin.com/kor/CMS/DeliveryMgr/WaybillResult.do?mCode=MN038&wblnum=${values.sid
+        .split("-")
+        .join("")}&schLang=KR&wblnumText=`
+    )
+  }
+
+  async function onSubmitCJ(formData: any) {
+    const values = {
+      sid: formData.sid,
+    }
+
+    // console.log(values.sid)
+    window.open(
+      `https://trace.cjlogistics.com/web/info.jsp?slipno=${values.sid}`
+    )
+  }
+
+  async function onSubmitPost(formData: any) {
+    const values = {
+      sid: formData.sid,
+    }
+
+    // console.log(values.sid)
+    window.open(
+      `https://service.epost.go.kr/trace.RetrieveDomRigiTraceList.comm?sid1=${values.sid}`
+    )
+  }
 
   const openModal = (text: string) => {
     setModalText(text)
@@ -175,8 +236,43 @@ export default function GNBIZ() {
                 <CopyIcon />
               </button>
             </Box>
+
             <Divider />
             <Calendar teamId={"gnBiz"} />
+
+            <Box
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              w="100%"
+              color={colors.grey}
+              fontWeight={700}
+              borderBottom={`solid 1px ${colors.grey}`}
+              mt={10}
+            >
+              택배조회
+            </Box>
+            <Box border="solid 1px #4682FE" borderRadius={10} mt={2} p={2}>
+              <Box>
+                <form onSubmit={handleSubmit(onSubmitHJ)}>
+                  <InputGroup>
+                    <InputAddon>한진택배</InputAddon>
+                    <Input placeholder="송장번호" {...register("sid")} />
+                  </InputGroup>
+                </form>
+                <form onSubmit={handleSubmit(onSubmitCJ)}>
+                  <InputGroup>
+                    <InputAddon>CJ대한통운</InputAddon>
+                    <Input placeholder="송장번호" {...register("sid")} />
+                  </InputGroup>
+                </form>
+                <form onSubmit={handleSubmit(onSubmitPost)}>
+                  <InputGroup>
+                    <InputAddon>우체국택배</InputAddon>
+                    <Input placeholder="송장번호" {...register("sid")} />
+                  </InputGroup>
+                </form>
+              </Box>
+            </Box>
           </GridItem>
           <GridItem>
             <VStack align="left">
