@@ -114,7 +114,7 @@ export default function GNBIZ() {
 
   async function onSubmitHJ(formData: any) {
     const values = {
-      sid: formData.sid,
+      sid: formData.sidHJ,
     }
 
     // console.log(values.sid)
@@ -127,7 +127,7 @@ export default function GNBIZ() {
 
   async function onSubmitCJ(formData: any) {
     const values = {
-      sid: formData.sid,
+      sid: formData.sidCJ,
     }
 
     // console.log(values.sid)
@@ -138,7 +138,7 @@ export default function GNBIZ() {
 
   async function onSubmitPost(formData: any) {
     const values = {
-      sid: formData.sid,
+      sid: formData.sidPost,
     }
 
     // console.log(values.sid)
@@ -256,19 +256,19 @@ export default function GNBIZ() {
                 <form onSubmit={handleSubmit(onSubmitHJ)}>
                   <InputGroup>
                     <InputAddon>한진택배</InputAddon>
-                    <Input placeholder="송장번호" {...register("sid")} />
+                    <Input placeholder="송장번호" {...register("sidHJ")} />
                   </InputGroup>
                 </form>
                 <form onSubmit={handleSubmit(onSubmitCJ)}>
                   <InputGroup>
                     <InputAddon>CJ대한통운</InputAddon>
-                    <Input placeholder="송장번호" {...register("sid")} />
+                    <Input placeholder="송장번호" {...register("sidCJ")} />
                   </InputGroup>
                 </form>
                 <form onSubmit={handleSubmit(onSubmitPost)}>
                   <InputGroup>
                     <InputAddon>우체국택배</InputAddon>
-                    <Input placeholder="송장번호" {...register("sid")} />
+                    <Input placeholder="송장번호" {...register("sidPost")} />
                   </InputGroup>
                 </form>
               </Box>
