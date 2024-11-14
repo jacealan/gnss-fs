@@ -121,6 +121,8 @@ export default function GNBIZ() {
     window.open(
       `https://www.hanjin.com/kor/CMS/DeliveryMgr/WaybillResult.do?mCode=MN038&wblnum=${values.sid
         .split("-")
+        .join("")
+        .split(" ")
         .join("")}&schLang=KR&wblnumText=`
     )
   }
@@ -132,7 +134,9 @@ export default function GNBIZ() {
 
     // console.log(values.sid)
     window.open(
-      `https://trace.cjlogistics.com/web/info.jsp?slipno=${values.sid}`
+      `https://trace.cjlogistics.com/web/info.jsp?slipno=${values.sid
+        .split(" ")
+        .join("")}`
     )
   }
 
@@ -143,7 +147,9 @@ export default function GNBIZ() {
 
     // console.log(values.sid)
     window.open(
-      `https://service.epost.go.kr/trace.RetrieveDomRigiTraceList.comm?sid1=${values.sid}`
+      `https://service.epost.go.kr/trace.RetrieveDomRigiTraceList.comm?sid1=${values.sid
+        .split(" ")
+        .join("")}`
     )
   }
 
