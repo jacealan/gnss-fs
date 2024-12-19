@@ -26,6 +26,7 @@
     "form-data": "^4.0.0",
     "formidable": "^3.5.0",
     "framer-motion": "^10.12.18",
+    "googleapis": "^144.0.0",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
     "mongodb": "^5.7.0",
@@ -46,5 +47,6 @@
   },
   "devDependencies": {
     "next-sitemap": "^4.2.3"
-  }
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
