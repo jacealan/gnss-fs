@@ -1116,6 +1116,32 @@ export default function Controller({
                   </a>
                 </Box>
               )}
+              {teamData?.teacherLog && (
+                <Box w="100%">
+                  <a href={`${teamData?.teacherLog}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/teacherLog.png" w="20px" />
+                        <Box ml={1} fontSize="0.8rem">
+                          강사 수업기록
+                        </Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
             </Flex>
 
             <Flex
