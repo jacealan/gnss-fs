@@ -1090,6 +1090,43 @@ export default function Controller({
               bgColor={colors.blue0}
               mb={2}
             >
+              {teamData?.scoreboard && (
+                <Box w="100%">
+                  <a href={`${teamData?.scoreboard}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/scoreboard.png" w="20px" />
+                        <Box ml={1} fontSize="0.8rem">
+                          학습보고서
+                        </Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+            </Flex>
+
+            <Flex
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              flexGrow={"1"}
+              w="100%"
+              gap={1}
+              bgColor={colors.blue0}
+              mb={2}
+            >
               <Box w="100%">
                 <a href={`${teamData?.gdriveFolder}`} target="_blank">
                   <Button

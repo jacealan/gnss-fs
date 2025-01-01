@@ -355,6 +355,11 @@ export default function GNBIZ() {
                   link="https://drive.google.com/drive/folders/1LAMIlQdEc_RYkZ9c9z3ML0-fX_gQA6Nx"
                   iconTitle="관별배포시트"
                 ></IconBtn>
+                <IconBtn
+                  iconImage="/assets/icons/scoreboard.png"
+                  link="https://drive.google.com/drive/folders/1_uqKuV8iGm6qV46hoadsjZ6_o06NRDth?usp=sharing"
+                  iconTitle="학습보고서"
+                ></IconBtn>
               </Flex>
 
               <Flex gap={5} wrap="wrap">
