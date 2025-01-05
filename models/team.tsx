@@ -115,6 +115,8 @@ const TeamSchema = new mongoose.Schema(
       },
     ],
     tuitions: [Number],
+    studyboard: { type: String },
+    studyTeacherLog: { type: String },
   },
   { versionKey: false, timestamps: true }
 )

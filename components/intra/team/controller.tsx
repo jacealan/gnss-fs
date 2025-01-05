@@ -1090,9 +1090,9 @@ export default function Controller({
               bgColor={colors.blue0}
               mb={2}
             >
-              {teamData?.scoreboard && (
+              {teamData?.studyboard && (
                 <Box w="100%">
-                  <a href={`${teamData?.scoreboard}`} target="_blank">
+                  <a href={`${teamData?.studyboard}`} target="_blank">
                     <Button
                       w="100%"
                       bgColor="white"
@@ -1116,9 +1116,9 @@ export default function Controller({
                   </a>
                 </Box>
               )}
-              {teamData?.teacherLog && (
+              {teamData?.studyTeacherLog && (
                 <Box w="100%">
-                  <a href={`${teamData?.teacherLog}`} target="_blank">
+                  <a href={`${teamData?.studyTeacherLog}`} target="_blank">
                     <Button
                       w="100%"
                       bgColor="white"
