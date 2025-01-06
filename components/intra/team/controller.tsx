@@ -1063,21 +1063,57 @@ export default function Controller({
               // mb={4}
             >
               <Box>웹클라우드</Box>
-              <Box
-                color={"#999"}
-                fontSize={"0.6rem"}
-                fontWeight={500}
-                border="1px dashed #ccc"
-                borderRadius={6}
-                p={1}
-                mb={1}
-              >
-                <Link href="/assets/images/wwwfromsheet.png" target="_blank">
-                  게시오류
-                  <br />
-                  처리방법
-                </Link>
-              </Box>
+              <HStack>
+                <Box
+                  color={"#999"}
+                  fontSize={"0.6rem"}
+                  fontWeight={500}
+                  border="1px dashed #ccc"
+                  borderRadius={6}
+                  p={1}
+                  mb={1}
+                >
+                  <Link href="/assets/images/uploadGdrive.gif" target="_blank">
+                    웹클라우드
+                    <br />
+                    업로드
+                  </Link>
+                </Box>
+                <Box
+                  color={"#999"}
+                  fontSize={"0.6rem"}
+                  fontWeight={500}
+                  border="1px dashed #ccc"
+                  borderRadius={6}
+                  p={1}
+                  mb={1}
+                >
+                  <Link href="/assets/images/wwwfromsheet.png" target="_blank">
+                    게시오류
+                    <br />
+                    처리방법
+                  </Link>
+                </Box>
+                <Box
+                  color={"#999"}
+                  fontSize={"0.6rem"}
+                  fontWeight={500}
+                  border="1px dashed #ccc"
+                  borderRadius={6}
+                  p={1}
+                  mb={1}
+                  textAlign={"center"}
+                >
+                  <Link
+                    href="https://docs.google.com/document/d/1I1oxYm7Jv7xqKD0oMbfdaOGGWp02NHaHI0wlZXdB_kE/edit?usp=sharing"
+                    target="_blank"
+                  >
+                    학습보고서
+                    <br />
+                    사용법
+                  </Link>
+                </Box>
+              </HStack>
             </HStack>
           </GridItem>
           <GridItem bgColor={colors.blue0}>
