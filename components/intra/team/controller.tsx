@@ -1413,7 +1413,7 @@ export default function Controller({
                       >
                         <Image src="/assets/icons/mockTest.png" w="20px" />
                         <Box ml={1} fontSize="0.8rem">
-                          전국연합모의고사
+                          전국연합학력고사
                         </Box>
                       </Flex>
                     </Button>
