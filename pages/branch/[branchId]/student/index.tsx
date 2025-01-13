@@ -82,7 +82,7 @@ export default function CheckStudent({
       // timezoneOffset: new Date().getTimezoneOffset() * 60 * 1000,
     }
 
-    console.log(values)
+    // console.log(values)
 
     const res = await fetch("/api/student", {
       method: "POST",
@@ -95,7 +95,13 @@ export default function CheckStudent({
     if (res.status === 200) {
       student.current = await res.json()
       setIsLog(true)
-      console.log(student)
+      // console.log(student)
+      // console.log(student.current.data.link1.split("="))
+      // console.log(student.current.data.link1.split("=")[2])
+      // student.current.data.pubhtml +
+      //                     "/sheet?gid=" +
+      //                     student.current.data.link1.split("=")[-1] +
+      //                     "&single=true"
     } else {
       alert("학생이름, 암호를 확인해주시기 바랍니다")
     }
@@ -223,58 +229,108 @@ export default function CheckStudent({
                   {student.current.data.name} 학생
                 </Box>
                 <Divider width="20%" border="solid 1px #aaa" mb={4} />
-                <Button
-                  width="80%"
-                  colorScheme="blue"
-                  bgColor="#0C073B"
-                  color="white"
-                  onClick={() =>
-                    window.open(
-                      student.current.data.link1.split("?").join("/sheet?")
-                    )
-                  }
-                >
-                  {student.current.data.title1}
-                </Button>
-                <Button
-                  width="80%"
-                  colorScheme="blue"
-                  bgColor="#0C073B"
-                  color="white"
-                  onClick={() =>
-                    window.open(
-                      student.current.data.link2.split("?").join("/sheet?")
-                    )
-                  }
-                >
-                  {student.current.data.title2}
-                </Button>
-                <Button
-                  width="80%"
-                  colorScheme="blue"
-                  bgColor="#0C073B"
-                  color="white"
-                  onClick={() =>
-                    window.open(
-                      student.current.data.link3.split("?").join("/sheet?")
-                    )
-                  }
-                >
-                  {student.current.data.title3}
-                </Button>
-                <Button
-                  width="80%"
-                  colorScheme="blue"
-                  bgColor="#0C073B"
-                  color="white"
-                  onClick={() =>
-                    window.open(
-                      student.current.data.link4.split("?").join("/sheet?")
-                    )
-                  }
-                >
-                  {student.current.data.title4}
-                </Button>
+                {student.current.data.class1 && (
+                  <Button
+                    width="80%"
+                    colorScheme="blue"
+                    bgColor="#0C073B"
+                    color="white"
+                    onClick={() =>
+                      window.open(
+                        // student.current.data.link1.split("?").join("/sheet?")
+                        student.current.data.pubhtml +
+                          "/sheet?gid=" +
+                          student.current.data.link1.split("=")[2] +
+                          "&single=true"
+                      )
+                    }
+                  >
+                    {/* 정규반 과정1 */}
+                    {student.current.data.title1}
+                  </Button>
+                )}
+                {student.current.data.class2 && (
+                  <Button
+                    width="80%"
+                    colorScheme="blue"
+                    bgColor="#0C073B"
+                    color="white"
+                    onClick={() =>
+                      window.open(
+                        // student.current.data.link2.split("?").join("/sheet?")
+                        student.current.data.pubhtml +
+                          "/sheet?gid=" +
+                          student.current.data.link2.split("=")[2] +
+                          "&single=true"
+                      )
+                    }
+                  >
+                    {/* 정규반 과정2 */}
+                    {student.current.data.title2}
+                  </Button>
+                )}
+
+                {student.current.data.class3 && (
+                  <Button
+                    width="80%"
+                    colorScheme="blue"
+                    bgColor="#0C073B"
+                    color="white"
+                    onClick={() =>
+                      window.open(
+                        // student.current.data.link3.split("?").join("/sheet?")
+                        student.current.data.pubhtml +
+                          "/sheet?gid=" +
+                          student.current.data.link3.split("=")[2] +
+                          "&single=true"
+                      )
+                    }
+                  >
+                    {/* 개별특강 과정1*/}
+                    {student.current.data.title3}
+                  </Button>
+                )}
+                {student.current.data.class4 && (
+                  <Button
+                    width="80%"
+                    colorScheme="blue"
+                    bgColor="#0C073B"
+                    color="white"
+                    onClick={() =>
+                      window.open(
+                        // student.current.data.link4.split("?").join("/sheet?")
+                        student.current.data.pubhtml +
+                          "/sheet?gid=" +
+                          student.current.data.link4.split("=")[2] +
+                          "&single=true"
+                      )
+                    }
+                  >
+                    {/* 개별특강 과정2 */}
+                    {student.current.data.title4}
+                  </Button>
+                )}
+
+                {student.current.data.class5 && (
+                  <Button
+                    width="80%"
+                    colorScheme="blue"
+                    bgColor="#0C073B"
+                    color="white"
+                    onClick={() =>
+                      window.open(
+                        // student.current.data.link5.split("?").join("/sheet?")
+                        student.current.data.pubhtml +
+                          "/sheet?gid=" +
+                          student.current.data.link5.split("=")[2] +
+                          "&single=true"
+                      )
+                    }
+                  >
+                    내신대비
+                    {student.current.data.title5}
+                  </Button>
+                )}
                 <Divider mt={30} />
                 <Image src="/assets/logos/gnssgnpolya.png" width="50%" />
               </Flex>

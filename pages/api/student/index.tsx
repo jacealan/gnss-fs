@@ -18,6 +18,40 @@ export default async function handler(
   }
 
   const body = req.body
+
+  let spreadsheetId = ""
+  switch (body.branchId) {
+    case "PlDs":
+      spreadsheetId = "1doHkPEAVsECnKATopNWHG4DR5IHDPNRiP0uc8fj62oU"
+      break
+    case "PlDt":
+      spreadsheetId = "1X83Ge2hxQe35IEzKU1NoN1drLUePgjvAt-LHAbIMcWk"
+      break
+    case "PlBb":
+      spreadsheetId = "1jRd4v5wvCIUB_JYTcEmaOowBOV4vNvVo4ir4o2wlbvM"
+      break
+    case "PlCd":
+      spreadsheetId = "1KXHBo-Mp4YAJ5G7SuFDLLBQ5I58bT2XAkHnXN-m8uNo"
+      break
+    case "PlSj":
+      spreadsheetId = "1V7R78rk1cS4nAnaFXNbr8sn1PR-TrTJELh4_wwPlEhc"
+      break
+    case "PlSc":
+      spreadsheetId = "1UPvs84EyiT-CGhkmU0Kgd_ujikkWwmgKtNXORbXB1FI"
+      break
+    case "SsSc":
+      spreadsheetId = "1UPvs84EyiT-CGhkmU0Kgd_ujikkWwmgKtNXORbXB1FI"
+      break
+    case "PlJs":
+      spreadsheetId = "13xCKr92K4n2dhUPx_vQW4ZjRi-kMrwYfr3bSZhPJma4"
+      break
+    case "SsJs":
+      spreadsheetId = "13xCKr92K4n2dhUPx_vQW4ZjRi-kMrwYfr3bSZhPJma4"
+      break
+    default:
+      spreadsheetId = ""
+  }
+
   console.log(body)
 
   try {
@@ -36,7 +70,7 @@ export default async function handler(
     })
 
     const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: "1_d6eRWxwWG1FEtunSWPtm2KhJsURDKsfgJwOsBon_k0",
+      spreadsheetId: spreadsheetId,
       range: "student!A4:AA",
       // valueInputOption: "USER_ENTERED",
       // requestBody: {
@@ -56,16 +90,25 @@ export default async function handler(
       for (let student of students) {
         if (student[1] === body.name && student[2] === body.password) {
           result = {
-            branchId: body.branchId,
+            // branchId: body.branchId,
+            teamId: body.teamId,
             name: body.name,
-            title1: student[17],
-            link1: student[18],
-            title2: student[19],
-            link2: student[20],
-            title3: student[21],
-            link3: student[22],
-            title4: student[23],
-            link4: student[24],
+            pubhtml: student[15],
+            class1: student[10],
+            title1: student[16],
+            link1: student[17],
+            class2: student[11],
+            title2: student[18],
+            link2: student[19],
+            class3: student[12],
+            title3: student[20],
+            link3: student[21],
+            class4: student[13],
+            title4: student[22],
+            link4: student[23],
+            class5: student[14],
+            title5: student[24],
+            link5: student[25],
           }
           console.log(result)
         }
