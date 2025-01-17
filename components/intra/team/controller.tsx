@@ -1357,6 +1357,33 @@ export default function Controller({
                   </a>
                 </Box>
               )}
+              {teamData?.worklogSs && (
+                <Box w="100%">
+                  <a href={teamData?.worklogSs} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/worklog.png" w="20px" />
+                        <Box ml={1} fontSize="0.8rem">
+                          근무일지
+                          <span style={{ fontSize: "0.6rem" }}>(상상)</span>
+                        </Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
             </Flex>
             <Flex
               justifyContent={"space-between"}

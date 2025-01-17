@@ -66,6 +66,11 @@ export default function TeamMember({
                   &nbsp;/ 과학
                 </a>
               )}
+              {teamData?.worklogSs && (
+                <a href={teamData?.worklogSs} target="_blank">
+                  &nbsp;/ 상상
+                </a>
+              )}
             </Box>
             <Box fontSize={"0.7rem"} fontWeight={500}>
               {(teamId == "SsDc" ||
