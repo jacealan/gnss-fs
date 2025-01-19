@@ -95,7 +95,11 @@ export default function CheckStudent({
     if (res.status === 200) {
       student.current = await res.json()
       setIsLog(true)
-      // console.log(student)
+      console.log(student.current)
+      window.localStorage.setItem(
+        "studentData",
+        JSON.stringify(student.current)
+      )
       // console.log(student.current.data.link1.split("="))
       // console.log(student.current.data.link1.split("=")[2])
       // student.current.data.pubhtml +
@@ -106,6 +110,16 @@ export default function CheckStudent({
       alert("학생이름, 암호를 확인해주시기 바랍니다")
     }
   }
+
+  useEffect(() => {
+    let studentData = window.localStorage.getItem("studentData")
+    console.log(studentData)
+    if (studentData) {
+      setIsLog(true)
+      student.current = JSON.parse(studentData)
+      console.log("login")
+    }
+  }, [])
 
   return (
     <>
@@ -156,6 +170,7 @@ export default function CheckStudent({
                 </FormControl>
                 <FormControl isInvalid={Boolean(errors.password)}>
                   <Input
+                    type="password"
                     // borderRadius={"10px 10px 0 0"}
                     // h={120}
                     placeholder={`비밀번호`}
@@ -225,8 +240,28 @@ export default function CheckStudent({
                 alignItems={"center"}
                 gap={4}
               >
-                <Box fontSize="1.5rem" fontWeight="900">
-                  {student.current.data.name} 학생
+                <Box>
+                  <Box fontSize="1.5rem" fontWeight="900">
+                    {student.current.data.name} 학생
+                  </Box>
+                  <Center width="100%">
+                    <a href="">
+                      <Box
+                        color="gray"
+                        fontSize="0.7rem"
+                        border="1px #aaa solid"
+                        borderRadius={10}
+                        pl={2}
+                        pr={2}
+                        onClick={() => {
+                          window.localStorage.removeItem("studentData")
+                          setIsLog(false)
+                        }}
+                      >
+                        logout
+                      </Box>
+                    </a>
+                  </Center>
                 </Box>
                 <Divider width="20%" border="solid 1px #aaa" mb={4} />
                 {student.current.data.class1 && (

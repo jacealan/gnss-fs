@@ -40,7 +40,7 @@ export default function Tv() {
   useEffect(() => {
     _()
   }, [])
-  console.log(gstvData)
+  // console.log(gstvData)
 
   return (
     <>
