@@ -115,6 +115,9 @@ const TeamSchema = new mongoose.Schema(
       },
     ],
     tuitions: [Number],
+
+    student: { type: String },
+    studentSs: { type: String },
     studyboard: { type: String },
     studyTeacherLog: { type: String },
   },

@@ -758,6 +758,65 @@ export default function Controller({
           </GridItem>
 
           <GridItem>
+            <Flex
+              justifyContent={"space-between"}
+              flexGrow={"1"}
+              w="100%"
+              gap={1}
+              bgColor={colors.blue0}
+            >
+              {teamData?.student && (
+                <Box w={teamData?.studentSs ? "50%" : "100%"}>
+                  <a href={`${teamData?.student}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/student.png" w="20px" />
+                        <Box ml={2}>학습보고서(to학생)</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+              {teamData?.studentSs && (
+                <Box w="50%">
+                  <a href={`${teamData?.studentSs}`} target="_blank">
+                    <Button
+                      w="100%"
+                      bgColor="white"
+                      border={`solid 1px ${colors.blue1}`}
+                      borderRadius={"4px"}
+                      fontSize="14px"
+                      fontWeight={400}
+                      _hover={{ fontWeight: 700 }}
+                    >
+                      <Flex
+                        justifyContent={"center"}
+                        alignItems={"center"}
+                        w="100%"
+                      >
+                        <Image src="/assets/icons/student.png" w="20px" />
+                        <Box ml={2}>개념상상</Box>
+                      </Flex>
+                    </Button>
+                  </a>
+                </Box>
+              )}
+            </Flex>
+          </GridItem>
+
+          <GridItem>
             <HStack
               justifyContent={"space-between"}
               alignItems={"end"}
@@ -1145,7 +1204,7 @@ export default function Controller({
                       >
                         <Image src="/assets/icons/scoreboard.png" w="20px" />
                         <Box ml={1} fontSize="0.8rem">
-                          학습보고서
+                          학습보고서 관리
                         </Box>
                       </Flex>
                     </Button>
