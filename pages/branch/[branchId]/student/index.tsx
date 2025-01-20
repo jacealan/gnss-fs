@@ -281,7 +281,9 @@ export default function CheckStudent({
                     }
                   >
                     {/* 정규반 과정1 */}
-                    {student.current.data.title1}
+                    {student.current.data.title1
+                      ? student.current.data.title1
+                      : "정규반 과정1"}
                   </Button>
                 )}
                 {student.current.data.class2 && (
@@ -301,7 +303,9 @@ export default function CheckStudent({
                     }
                   >
                     {/* 정규반 과정2 */}
-                    {student.current.data.title2}
+                    {student.current.data.title2
+                      ? student.current.data.title2
+                      : "정규반 과정2"}
                   </Button>
                 )}
 
@@ -322,7 +326,9 @@ export default function CheckStudent({
                     }
                   >
                     {/* 개별특강 과정1*/}
-                    {student.current.data.title3}
+                    {student.current.data.title3
+                      ? student.current.data.title3
+                      : "개별특강 과정1"}
                   </Button>
                 )}
                 {student.current.data.class4 && (
@@ -342,7 +348,9 @@ export default function CheckStudent({
                     }
                   >
                     {/* 개별특강 과정2 */}
-                    {student.current.data.title4}
+                    {student.current.data.title4
+                      ? student.current.data.title4
+                      : "개별특강 과정2"}
                   </Button>
                 )}
 
@@ -363,7 +371,9 @@ export default function CheckStudent({
                     }
                   >
                     내신대비
-                    {student.current.data.title5}
+                    {student.current.data.title5
+                      ? student.current.data.title5
+                      : "내신대비"}
                   </Button>
                 )}
                 <Divider mt={30} />
