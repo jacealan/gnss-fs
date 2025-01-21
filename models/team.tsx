@@ -68,6 +68,8 @@ const TeamSchema = new mongoose.Schema(
     order: { type: String },
     orderElement: { type: String },
     orderMiddle: { type: String },
+    orderMiddle1: { type: String },
+    orderMiddle23: { type: String },
     orderHigh: { type: String },
     orderDesign: { type: String },
     orderDesignElement: { type: String },
