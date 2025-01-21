@@ -162,6 +162,8 @@ export default function CheckStudent({
                     size="sm"
                     resize="none"
                     maxLength={10}
+                    pt={6}
+                    pb={6}
                     {...register("name")}
                   />
                   <FormErrorMessage>
@@ -177,6 +179,8 @@ export default function CheckStudent({
                     size="sm"
                     resize="none"
                     maxLength={20}
+                    pt={6}
+                    pb={6}
                     {...register("password")}
                   />
                   <FormErrorMessage>
