@@ -164,6 +164,8 @@ const BranchSchema = new mongoose.Schema(
     boardInstagram: { type: Boolean, default: false },
     boardLogo: { type: String, default: "/assets/logos/gnssgnpolya.png" },
 
+    student: { type: String },
+
     timezoneOffset: { type: Number, default: 0 },
   },
   { versionKey: false, timestamps: true }

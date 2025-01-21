@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import { useRealViewport } from "next-real-viewport"
 import { Flex, HStack, Box, Divider } from "@chakra-ui/react"
 import { PhoneIcon, CalendarIcon, ChatIcon } from "@chakra-ui/icons"
+import { PiStudentFill } from "react-icons/pi"
 
 import theme from "@/components/outer/theme.json"
 import locations from "@/components/outer/locations.json"
@@ -93,22 +94,30 @@ export default function BranchBox({
             alignItems: "baseline",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              borderRadius: "10px 10px 0 0",
-              width: "250px",
-              alignItems: "baseline",
-              backgroundColor: `${branchColor}`,
-              color: theme.white,
-              padding: "8px",
-            }}
-          >
-            <Box>&nbsp;{branch?.branchTitle}</Box>
-            {/* {branch?.target && (
+          <Flex alignItems={"center"}>
+            <div
+              style={{
+                display: "flex",
+                borderRadius: "10px 10px 0 0",
+                width: "250px",
+                alignItems: "baseline",
+                backgroundColor: `${branchColor}`,
+                color: theme.white,
+                padding: "8px",
+                marginRight: "6px",
+              }}
+            >
+              <Box>&nbsp;{branch?.branchTitle}</Box>
+              {/* {branch?.target && (
               <Box fontSize={"13px"}>&nbsp;( {branch.target} )</Box>
             )} */}
-          </div>
+            </div>
+            {branch?.student && (
+              <a href={branch?.student} title="학습보고서" target="_blank">
+                <PiStudentFill size="1.5rem" />
+              </a>
+            )}
+          </Flex>
           <div
             style={{
               display: "flex",
