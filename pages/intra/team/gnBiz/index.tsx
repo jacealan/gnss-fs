@@ -560,7 +560,7 @@ export default function GNBIZ() {
                 ></IconBtn>
                 <IconBtn
                   iconImage="/assets/icons/worklog.png"
-                  link="https://docs.google.com/spreadsheets/d/1nDkM117tmrGhVech9AsIp3eMsf46w_NUcefqN-MBryU/edit#gid=872999154"
+                  link="https://docs.google.com/spreadsheets/d/1TVUtD0k_gPGidgWNQyP2rC6Mx3vtjnG2R7i-X2C8Nok/edit?gid=872999154#gid=872999154"
                   iconTitle="근무일지"
                 ></IconBtn>
                 <IconBtn
