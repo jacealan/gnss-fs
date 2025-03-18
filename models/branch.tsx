@@ -20,6 +20,7 @@ const BranchSchema = new mongoose.Schema(
     target: { type: String, default: "" },
     blog: { type: String, default: "" },
     instragram: { type: String, default: "" },
+    map: { type: String, default: "" },
 
     target0: { type: String, default: "" },
     target0Phone: { type: String, default: "" },
@@ -162,6 +163,7 @@ const BranchSchema = new mongoose.Schema(
     ],
     boardBlog: { type: Boolean, default: false },
     boardInstagram: { type: Boolean, default: false },
+    boardMap: { type: Boolean, default: false },
     boardLogo: { type: String, default: "/assets/logos/gnssgnpolya.png" },
 
     student: { type: String },

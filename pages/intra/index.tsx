@@ -117,6 +117,7 @@ export default function Home() {
                     "PlCd",
                     "-",
                     "SPSc",
+                    "SsSc",
                     "PlBb",
                     "-",
                     "SPJs",

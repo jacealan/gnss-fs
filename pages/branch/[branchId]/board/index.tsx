@@ -5,7 +5,7 @@ import Link from "next/link"
 import { GetServerSidePropsContext } from "next" // SSR
 
 import { useRealViewport } from "next-real-viewport"
-import { Flex, Center, Box, Image } from "@chakra-ui/react"
+import { Flex, Center, Box, Image, Divider } from "@chakra-ui/react"
 import getBranch from "@/lib/getBranch"
 
 import { HiChevronRight } from "react-icons/hi2"
@@ -102,7 +102,11 @@ export default function Board({
             width="100%"
             height=""
             bgColor={branch?.boardBGColor}
-            bgImage="/assets/images/board_top_pattern.png"
+            bgImage={
+              branchId === "SsSc"
+                ? "/assets/images/board_top_pattern_ss.png"
+                : "/assets/images/board_top_pattern.png"
+            }
             bgSize={"cover"}
             boxShadow={"md"}
           >
@@ -112,7 +116,11 @@ export default function Board({
               fontFamily={"Noto Sans KR"}
               color="#fff"
             >
-              최상급 초중등 수학/과학 전문학원
+              {branchId === "SsSc" ? (
+                <br />
+              ) : (
+                "최상급 초중등 수학/과학 전문학원"
+              )}
             </Center>
             <Center
               color={branch?.boardColor}
@@ -121,7 +129,7 @@ export default function Board({
               fontWeight={900}
               mt={-vwC / 40}
             >
-              {branch?.brand}
+              {branchId === "SsSc" ? <br /> : branch?.brand}
             </Center>
             <Center
               color="white"
@@ -130,12 +138,12 @@ export default function Board({
               fontWeight={900}
               mt={-vwC / 20}
             >
-              {branch?.branchShort}
+              {branchId === "SsSc" ? <br /> : branch?.branchShort}
             </Center>
             <Center width="100%">
               <Center
-                color="white"
-                bgColor="#1e1e1e"
+                color={branchId === "SsSc" ? "#1e1e1e" : "white"}
+                bgColor={branchId === "SsSc" ? "white" : "#1e1e1e"}
                 fontSize={vw && (40 / (760 / vwC)).toString() + "px"}
                 fontFamily={"Gmarket Sans"}
                 fontWeight={700}
@@ -163,7 +171,7 @@ export default function Board({
                   <Flex
                     justifyContent={"center"}
                     border={`solid 1px ${branch?.boardBGColor}`}
-                    borderRadius={8}
+                    borderRadius={4}
                     width={vwC * 0.63}
                     height={vwC * 0.09}
                     fontSize={vwC * 0.037}
@@ -196,9 +204,9 @@ export default function Board({
                   <Flex
                     justifyContent={"center"}
                     bgColor={branch?.boardBGColor}
-                    color="#fff"
+                    color={branchId === "SsSc" ? "#FFF200" : "#fff"}
                     border={`solid 2px ${branch?.boardBGColor}`}
-                    borderRadius={8}
+                    borderRadius={4}
                     width={vwC * 0.63}
                     height={vwC * 0.09}
                     fontSize={vwC * 0.037}
@@ -226,10 +234,51 @@ export default function Board({
               </>
             )}
 
+            <Center>
+              {branch.boardBlog && (
+                <Link href={branch.blog}>
+                  <Image
+                    src="/assets/icons/blog.png"
+                    width="24px"
+                    mt={vwC * 0.04}
+                    ml={vwC * 0.02}
+                    mr={vwC * 0.02}
+                  ></Image>
+                </Link>
+              )}
+              {branch.boardInstagram && (
+                <Link href={branch.blog}>
+                  <Image
+                    src="/assets/icons/instagram.png"
+                    width="24px"
+                    mt={vwC * 0.04}
+                    ml={vwC * 0.02}
+                    mr={vwC * 0.02}
+                  ></Image>
+                </Link>
+              )}
+              {branch.boardMap && (
+                <Link href={branch.blog}>
+                  <Image
+                    src="/assets/icons/map.png"
+                    width="24px"
+                    mt={vwC * 0.04}
+                    ml={vwC * 0.02}
+                    mr={vwC * 0.02}
+                  ></Image>
+                </Link>
+              )}
+            </Center>
+
+            <Divider
+              width="80%"
+              borderBottom="solid 1px #aaa"
+              mt={vwC * 0.08}
+            />
             <Image
               src={branch?.boardLogo}
               width="36%"
-              mt={vwC * 0.08}
+              mt={vwC * 0.02}
               mb={vwC * 0.06}
             />
           </Center>
