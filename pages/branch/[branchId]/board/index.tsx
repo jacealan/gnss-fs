@@ -236,10 +236,10 @@ export default function Board({
 
             <Center>
               {branch.boardBlog && (
-                <Link href={branch.blog}>
+                <Link href={branch.blog} target="_blank">
                   <Image
                     src="/assets/icons/blog.png"
-                    width="24px"
+                    width="2rem"
                     mt={vwC * 0.04}
                     ml={vwC * 0.02}
                     mr={vwC * 0.02}
@@ -247,10 +247,10 @@ export default function Board({
                 </Link>
               )}
               {branch.boardInstagram && (
-                <Link href={branch.blog}>
+                <Link href={branch.instagram} target="_blank">
                   <Image
                     src="/assets/icons/instagram.png"
-                    width="24px"
+                    width="2rem"
                     mt={vwC * 0.04}
                     ml={vwC * 0.02}
                     mr={vwC * 0.02}
@@ -258,10 +258,10 @@ export default function Board({
                 </Link>
               )}
               {branch.boardMap && (
-                <Link href={branch.blog}>
+                <Link href={branch.map} target="_blank">
                   <Image
                     src="/assets/icons/map.png"
-                    width="24px"
+                    width="2rem"
                     mt={vwC * 0.04}
                     ml={vwC * 0.02}
                     mr={vwC * 0.02}
