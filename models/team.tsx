@@ -82,6 +82,7 @@ const TeamSchema = new mongoose.Schema(
     gdriveFolderGaSc: { type: String },
     notionPage: { type: String },
     mockTest: { type: String },
+    gdriveBooks: { type: String },
     //
     members: [
       {

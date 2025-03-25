@@ -827,25 +827,47 @@ export default function Controller({
               mt={2}
               // mb={4}
             >
-              <Box>교재/물품 주문, 업무 요청(학원사업부)</Box>
-              <Box
-                color={"#999"}
-                fontSize={"0.6rem"}
-                fontWeight={500}
-                border="1px dashed #ccc"
-                borderRadius={6}
-                p={1}
-                mb={1}
-              >
-                <Link
-                  href="/assets/images/approvalrequired.png"
-                  target="_blank"
+              <Box>교재 주문, 업무 요청(학원사업부)</Box>
+              <HStack>
+                {teamData?.gdriveBooks && (
+                  <>
+                    <Box
+                      color={"#999"}
+                      fontSize={"0.6rem"}
+                      fontWeight={500}
+                      textAlign={"center"}
+                      border="1px dashed #ccc"
+                      borderRadius={6}
+                      p={1}
+                      mb={1}
+                    >
+                      <Link href={teamData?.gdriveBooks} target="_blank">
+                        교사용
+                        <br />
+                        교재
+                      </Link>
+                    </Box>
+                  </>
+                )}
+                <Box
+                  color={"#999"}
+                  fontSize={"0.6rem"}
+                  fontWeight={500}
+                  border="1px dashed #ccc"
+                  borderRadius={6}
+                  p={1}
+                  mb={1}
                 >
-                  승인필요
-                  <br />
-                  처리방법
-                </Link>
-              </Box>
+                  <Link
+                    href="/assets/images/approvalrequired.png"
+                    target="_blank"
+                  >
+                    승인필요
+                    <br />
+                    처리방법
+                  </Link>
+                </Box>
+              </HStack>
             </HStack>
           </GridItem>
           <GridItem>
