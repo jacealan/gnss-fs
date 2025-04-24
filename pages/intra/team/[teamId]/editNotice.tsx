@@ -295,28 +295,12 @@ export default function EditNotice() {
                     상상 대치관
                   </Checkbox>
                   <Checkbox
-                    value="PlDc"
-                    {...register("teamsId")}
-                    m={3}
-                    isDisabled={!isAdd}
-                  >
-                    개폴 대치관
-                  </Checkbox>
-                  <Checkbox
-                    value="PlPc"
-                    {...register("teamsId")}
-                    m={3}
-                    isDisabled={!isAdd}
-                  >
-                    평촌관
-                  </Checkbox>
-                  <Checkbox
                     value="SsMd"
                     {...register("teamsId")}
                     m={3}
                     isDisabled={!isAdd}
                   >
-                    상상 의대관
+                    SM관
                   </Checkbox>
                   <Checkbox
                     value="SPAk"
@@ -334,7 +318,6 @@ export default function EditNotice() {
                   >
                     삼청관
                   </Checkbox>
-
                   <Checkbox
                     value="SPSc"
                     {...register("teamsId")}
@@ -342,6 +325,14 @@ export default function EditNotice() {
                     isDisabled={!isAdd}
                   >
                     서초관
+                  </Checkbox>{" "}
+                  <Checkbox
+                    value="SsSc"
+                    {...register("teamsId")}
+                    m={3}
+                    isDisabled={!isAdd}
+                  >
+                    상상 서초관
                   </Checkbox>
                   <Checkbox
                     value="PlBb"
@@ -351,7 +342,6 @@ export default function EditNotice() {
                   >
                     방배관
                   </Checkbox>
-
                   <Checkbox
                     value="SPJs"
                     {...register("teamsId")}
@@ -360,7 +350,6 @@ export default function EditNotice() {
                   >
                     잠실관
                   </Checkbox>
-
                   <Checkbox
                     value="PlSj"
                     {...register("teamsId")}
@@ -369,7 +358,6 @@ export default function EditNotice() {
                   >
                     수지관
                   </Checkbox>
-
                   <Checkbox
                     value="PlDt"
                     {...register("teamsId")}
@@ -378,7 +366,6 @@ export default function EditNotice() {
                   >
                     동탄관
                   </Checkbox>
-
                   <Checkbox
                     value="PlDs"
                     {...register("teamsId")}
@@ -386,17 +373,31 @@ export default function EditNotice() {
                     isDisabled={!isAdd}
                   >
                     다산관
-                  </Checkbox>
-
+                  </Checkbox>{" "}
                   <Checkbox
+                    value="PlDc"
+                    {...register("teamsId")}
+                    m={3}
+                    isDisabled={!isAdd}
+                  >
+                    개폴 대치관
+                  </Checkbox>
+                  <Checkbox
+                    value="PlPc"
+                    {...register("teamsId")}
+                    m={3}
+                    isDisabled={!isAdd}
+                  >
+                    평촌관
+                  </Checkbox>
+                  {/* <Checkbox
                     value="PlSd"
                     {...register("teamsId")}
                     m={3}
                     isDisabled={!isAdd}
                   >
                     송도관
-                  </Checkbox>
-
+                  </Checkbox> */}
                   {/* <Checkbox
                     value="LbJs"
                     {...register("teamsId")}
