@@ -127,7 +127,7 @@ export default function Home() {
                     "PlSj",
                     "PlDt",
                     "PlDs",
-                    "PlSd",
+                    // "PlSd",
                     "-",
                     "gnBiz",
                     "gnGa",

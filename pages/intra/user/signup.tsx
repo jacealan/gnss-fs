@@ -245,11 +245,11 @@ const SignUp: NextPage = () => {
               </Checkbox>
               <hr />
               <Checkbox value="SPSc" {...register("teams")} m={3}>
-                개념상상/개념폴리아 서초관
+                개념폴리아 서초관
               </Checkbox>
-              {/* <Checkbox value="SciSc" {...register("teams")} m={3}>
-                개념상상 과학몰(서초)
-              </Checkbox> */}
+              <Checkbox value="SsSc" {...register("teams")} m={3}>
+                개념상상 서초관
+              </Checkbox>
               <Checkbox value="PlBb" {...register("teams")} m={3}>
                 개념폴리아 방배관
               </Checkbox>
@@ -260,9 +260,9 @@ const SignUp: NextPage = () => {
               {/* <Checkbox value="SciJs" {...register("teams")} m={3}>
                 개념상상 과학몰(잠실)
               </Checkbox> */}
-              <Checkbox value="LbJs" {...register("teams")} m={3}>
+              {/* <Checkbox value="LbJs" {...register("teams")} m={3}>
                 개념상상 독한공부
-              </Checkbox>
+              </Checkbox> */}
               <hr />
               <Checkbox value="PlPc" {...register("teams")} m={3}>
                 개념폴리아 평촌관
@@ -276,9 +276,9 @@ const SignUp: NextPage = () => {
               <Checkbox value="PlDs" {...register("teams")} m={3}>
                 개념폴리아 다산관
               </Checkbox>
-              <Checkbox value="PlSd" {...register("teams")} m={3}>
+              {/* <Checkbox value="PlSd" {...register("teams")} m={3}>
                 개념폴리아 송도관
-              </Checkbox>
+              </Checkbox> */}
               <hr />
               <Checkbox value="gnBiz" {...register("teams")} m={3}>
                 학원사업부

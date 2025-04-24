@@ -53,13 +53,14 @@ export default function UsersList() {
           "SPAk",
           "PlCd",
           "SPSc",
+          "SsSc",
           "PlBb",
           "SPJs",
           "PlPc",
           "PlSj",
           "PlDt",
           "PlDs",
-          "PlSd",
+          // "PlSd",
           // "gnChief",
         ].map((teamId: string, index: number) => (
           <AccordionItem key={index}>
