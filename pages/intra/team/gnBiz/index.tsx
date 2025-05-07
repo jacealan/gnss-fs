@@ -572,7 +572,7 @@ export default function GNBIZ() {
 
               <Flex gap={5} wrap="wrap">
                 <IconBtn
-                  iconImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_ng65XZzr2-e7w_cbvC8f-K1ssCtCDEXPjLUZ_4g2l-nBNRc71sxVBPYBhfvy41YS3g4&usqp=CAU"
+                  iconImage="/assets/icons/cafe24.jpg"
                   link="https://hosting.cafe24.com/"
                   iconTitle="카페24"
                 ></IconBtn>
