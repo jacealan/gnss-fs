@@ -177,6 +177,7 @@ export default function DetailKeynote({
                             )}`
                           ]
                         }
+                        alt=""
                         width="100%"
                         onError={(element: any) => {
                           element.target.remove

@@ -83,6 +83,7 @@ const IconBtn = ({
       >
         <Image
           src={iconImage}
+          alt="icon"
           w={boxSize}
           h={boxSize}
           borderRadius={10}

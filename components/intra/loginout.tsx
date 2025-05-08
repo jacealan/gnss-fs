@@ -151,6 +151,7 @@ export default function LogInOut() {
                   <Flex justifyContent={"flex-end"} alignItems={"center"}>
                     <Image
                       src={session.user?.image ?? ""}
+                      alt="user"
                       h="34px"
                       borderRadius={20}
                     />

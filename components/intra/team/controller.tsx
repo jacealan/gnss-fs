@@ -225,7 +225,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/listCheck.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/listCheck.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box ml={2}>설명회 예약 현황</Box>
                       </Flex>
                     </Button>
@@ -245,7 +249,7 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/write.svg" w="16px" />
+                        <Image src="/assets/icons/write.svg" alt="" w="16px" />
                         <Box>입력</Box>
                       </Flex>
                     </Button>
@@ -265,7 +269,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/settings.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/settings.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box>수정</Box>
                       </Flex>
                     </Button>
@@ -301,7 +309,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/listCheck.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/listCheck.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box ml={2}>초등부 설명회 예약 현황</Box>
                       </Flex>
                     </Button>
@@ -324,7 +336,7 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/write.svg" w="16px" />
+                        <Image src="/assets/icons/write.svg" alt="" w="16px" />
                         <Box>입력</Box>
                       </Flex>
                     </Button>
@@ -347,7 +359,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/settings.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/settings.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box>수정</Box>
                       </Flex>
                     </Button>
@@ -383,7 +399,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/listCheck.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/listCheck.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box ml={2}>중등부 설명회 예약 현황</Box>
                       </Flex>
                     </Button>
@@ -403,7 +423,7 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/write.svg" w="16px" />
+                        <Image src="/assets/icons/write.svg" alt="" w="16px" />
                         <Box>입력</Box>
                       </Flex>
                     </Button>
@@ -426,7 +446,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/settings.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/settings.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box>수정</Box>
                       </Flex>
                     </Button>
@@ -462,7 +486,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/listCheck.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/listCheck.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box ml={2}>고등부 설명회 예약 현황</Box>
                       </Flex>
                     </Button>
@@ -482,7 +510,7 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/write.svg" w="16px" />
+                        <Image src="/assets/icons/write.svg" alt="" w="16px" />
                         <Box>입력</Box>
                       </Flex>
                     </Button>
@@ -505,7 +533,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/settings.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/settings.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box>수정</Box>
                       </Flex>
                     </Button>
@@ -541,7 +573,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/listCheck.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/listCheck.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box ml={2}>과학부 설명회 예약 현황</Box>
                       </Flex>
                     </Button>
@@ -564,7 +600,7 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/write.svg" w="16px" />
+                        <Image src="/assets/icons/write.svg" alt="" w="16px" />
                         <Box>입력</Box>
                       </Flex>
                     </Button>
@@ -587,7 +623,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/settings.svg" w="16px" />
+                        <Image
+                          src="/assets/icons/settings.svg"
+                          alt=""
+                          w="16px"
+                        />
                         <Box>수정</Box>
                       </Flex>
                     </Button>
@@ -642,7 +682,11 @@ export default function Controller({
                           alignItems={"center"}
                           // w="100%"
                         >
-                          <Image src="/assets/icons/board.png" w="20px" />
+                          <Image
+                            src="/assets/icons/board.png"
+                            alt=""
+                            w="20px"
+                          />
                           <Box ml={1}>
                             {branches &&
                               branches[branch.branchId].split(" ")[0]}
@@ -676,6 +720,7 @@ export default function Controller({
                   >
                     <Image
                       src="/assets/icons/blog.png"
+                      alt=""
                       alignItems={"center"}
                       w="20px"
                     />
@@ -702,7 +747,7 @@ export default function Controller({
                           alignItems={"center"}
                           w="100%"
                         >
-                          <Image src="/assets/icons/blog.png" w="20px" />
+                          <Image src="/assets/icons/blog.png" alt="" w="20px" />
                           <Box ml={2}>초•중등</Box>
                         </Flex>
                       </Button>
@@ -724,7 +769,7 @@ export default function Controller({
                           alignItems={"center"}
                           w="100%"
                         >
-                          <Image src="/assets/icons/blog.png" w="20px" />
+                          <Image src="/assets/icons/blog.png" alt="" w="20px" />
                           <Box ml={2}>고등</Box>
                         </Flex>
                       </Button>
@@ -746,7 +791,7 @@ export default function Controller({
                           alignItems={"center"}
                           w="100%"
                         >
-                          <Image src="/assets/icons/blog.png" w="20px" />
+                          <Image src="/assets/icons/blog.png" alt="" w="20px" />
                           <Box ml={2}>과학</Box>
                         </Flex>
                       </Button>
@@ -782,7 +827,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/student.png" w="20px" />
+                        <Image
+                          src="/assets/icons/student.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>학습보고서(to학생)</Box>
                       </Flex>
                     </Button>
@@ -806,7 +855,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/student.png" w="20px" />
+                        <Image
+                          src="/assets/icons/student.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>개념상상</Box>
                       </Flex>
                     </Button>
@@ -895,7 +948,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderBook.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>{teamData?.title} 주문서</Box>
                       </Flex>
                     </Button>
@@ -919,7 +976,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderBook.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           주문서
                           <span style={{ fontSize: "0.8rem" }}>(초등)</span>
@@ -946,7 +1007,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderBook.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           주문서
                           <span style={{ fontSize: "0.8rem" }}>(중등)</span>
@@ -973,7 +1038,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderBook.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           주문서
                           <span style={{ fontSize: "0.8rem" }}>(중1)</span>
@@ -1000,7 +1069,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderBook.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           주문서
                           <span style={{ fontSize: "0.8rem" }}>(중23)</span>
@@ -1027,7 +1100,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderBook.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderBook.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           주문서
                           <span style={{ fontSize: "0.8rem" }}>(고등)</span>
@@ -1064,7 +1141,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderDesign.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>{teamData?.title} 요청서</Box>
                       </Flex>
                     </Button>
@@ -1088,7 +1169,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderDesign.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           요청서
                           <br />
@@ -1116,7 +1201,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderDesign.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           요청서
                           <br />
@@ -1144,7 +1233,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderDesign.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           요청서
                           <br />
@@ -1172,7 +1265,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/orderDesign.png" w="20px" />
+                        <Image
+                          src="/assets/icons/orderDesign.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={2}>
                           요청서
                           <br />
@@ -1278,7 +1375,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/scoreboard.png" w="20px" />
+                        <Image
+                          src="/assets/icons/scoreboard.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={1} fontSize="0.8rem">
                           학습보고서 관리
                         </Box>
@@ -1304,7 +1405,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/teacherLog.png" w="20px" />
+                        <Image
+                          src="/assets/icons/teacherLog.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={1} fontSize="0.8rem">
                           강사 수업기록
                         </Box>
@@ -1340,7 +1445,7 @@ export default function Controller({
                       alignItems={"center"}
                       w="100%"
                     >
-                      <Image src="/assets/icons/edubiz.png" w="20px" />
+                      <Image src="/assets/icons/edubiz.png" alt="" w="20px" />
                       <Box ml={1} fontSize="0.8rem">
                         학원사업부
                       </Box>
@@ -1365,7 +1470,7 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/gdrive.svg" w="20px" />
+                        <Image src="/assets/icons/gdrive.svg" alt="" w="20px" />
                         <Box ml={1} fontSize="0.8rem">
                           경영지원부
                         </Box>
@@ -1391,7 +1496,7 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/gdrive.svg" w="20px" />
+                        <Image src="/assets/icons/gdrive.svg" alt="" w="20px" />
                         <Box ml={1} fontSize="0.8rem">
                           경영지원부
                           <span style={{ fontSize: "0.6rem" }}>(과학)</span>
@@ -1428,7 +1533,7 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/notion.svg" w="20px" />
+                        <Image src="/assets/icons/notion.svg" alt="" w="20px" />
 
                         <Box ml={1} fontSize="0.8rem">
                           노션자료실
@@ -1455,7 +1560,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/worklog.png" w="20px" />
+                        <Image
+                          src="/assets/icons/worklog.png"
+                          alt=""
+                          w="20px"
+                        />
 
                         <Box ml={1} fontSize="0.8rem">
                           근무일지
@@ -1482,7 +1591,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/worklog.png" w="20px" />
+                        <Image
+                          src="/assets/icons/worklog.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={1} fontSize="0.8rem">
                           근무일지
                           <span style={{ fontSize: "0.6rem" }}>(과학)</span>
@@ -1509,7 +1622,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/worklog.png" w="20px" />
+                        <Image
+                          src="/assets/icons/worklog.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={1} fontSize="0.8rem">
                           근무일지
                           <span style={{ fontSize: "0.6rem" }}>(상상)</span>
@@ -1548,7 +1665,7 @@ export default function Controller({
                       alignItems={"center"}
                       w="100%"
                     >
-                      <Image src="/assets/icons/youtube.svg" w="20px" />
+                      <Image src="/assets/icons/youtube.svg" alt="" w="20px" />
                       <Box ml={1} fontSize="0.8rem">
                         개상TV
                       </Box>
@@ -1573,7 +1690,11 @@ export default function Controller({
                         alignItems={"center"}
                         w="100%"
                       >
-                        <Image src="/assets/icons/mockTest.png" w="20px" />
+                        <Image
+                          src="/assets/icons/mockTest.png"
+                          alt=""
+                          w="20px"
+                        />
                         <Box ml={1} fontSize="0.8rem">
                           전국연합학력고사
                         </Box>

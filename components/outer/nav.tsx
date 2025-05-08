@@ -76,7 +76,11 @@ export default function Nav() {
         >
           <Link href="/#" className="link">
             <Flex alignItems={"Center"} fontWeight={1000}>
-              <Image src={`/assets/logos/logoTitle.png`} height={8} />
+              <Image
+                src={`/assets/logos/logoTitle.png`}
+                alt="logo"
+                height={8}
+              />
             </Flex>
           </Link>
           <Flex alignItems={"Center"}>

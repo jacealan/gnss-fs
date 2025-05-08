@@ -56,26 +56,26 @@ export default function EventPlDt() {
   return (
     <Box>
       <Box>
-        <Image src="/assets/events/PlDt1.png"></Image>
+        <Image src="/assets/events/PlDt1.png" alt=""></Image>
       </Box>
       <Box>
         <Link href="https://forms.gle/XhHZ9J956Xmoo41R8" target="_blank">
-          <Image src="/assets/events/PlDt2.png"></Image>
+          <Image src="/assets/events/PlDt2.png" alt=""></Image>
         </Link>
       </Box>
       <Box>
-        <Image src="/assets/events/PlDt3.png"></Image>
+        <Image src="/assets/events/PlDt3.png" alt=""></Image>
       </Box>
       <Box>
         <Link href="https://forms.gle/XhHZ9J956Xmoo41R8" target="_blank">
-          <Image src="/assets/events/PlDt2.png"></Image>
+          <Image src="/assets/events/PlDt2.png" alt=""></Image>
         </Link>
       </Box>
       <Box>
-        <Image src="/assets/events/PlDt4.png"></Image>
+        <Image src="/assets/events/PlDt4.png" alt=""></Image>
       </Box>
       <Box width="100%">
-        <Image src="/assets/events/event6.png"></Image>
+        <Image src="/assets/events/event6.png" alt=""></Image>
         {/* <Link
           href="https://map.naver.com/v5/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%99%94%EC%84%B1%EC%8B%9C%20%EB%8F%99%ED%83%84%EC%88%9C%ED%99%98%EB%8C%80%EB%A1%9C%20127-19%20%EB%8F%99%ED%83%84%EC%97%90%EC%8A%A4%EB%B9%84%ED%83%80%EC%9A%B4%208%EC%B8%B5"
           target="_blank"
@@ -142,7 +142,7 @@ export default function EventPlDt() {
       </Box>
       <Box>
         <Link href={`tel://031-375-4808`}>
-          <Image src="/assets/events/PlDt5.png"></Image>
+          <Image src="/assets/events/PlDt5.png" alt=""></Image>
         </Link>
       </Box>
       {/* <Center

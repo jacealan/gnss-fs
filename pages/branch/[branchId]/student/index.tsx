@@ -210,7 +210,7 @@ export default function CheckStudent({
               ·아이디와 비밀번호를 잊어버리신 경우 학원으로 문의하시기 바랍니다.
             </Box>
             <Divider width="80%" mt={50} mb={30} border="solid 1px lightgray" />
-            <Image src="/assets/logos/gnssgnpolya.png" width="50%" />
+            <Image src="/assets/logos/gnssgnpolya.png" alt="logo" width="50%" />
           </Flex>
         )}
         {isLog && (
@@ -280,7 +280,8 @@ export default function CheckStudent({
                         student.current.data.pubhtml +
                           "/sheet?gid=" +
                           student.current.data.link1.split("=")[2] +
-                          "&single=true"
+                          "&single=true" +
+                          "&range=A1:O59"
                       )
                     }
                   >
@@ -302,7 +303,7 @@ export default function CheckStudent({
                         student.current.data.pubhtml +
                           "/sheet?gid=" +
                           student.current.data.link2.split("=")[2] +
-                          "&single=true"
+                          "&single=true&range=A1:O59"
                       )
                     }
                   >
@@ -325,7 +326,7 @@ export default function CheckStudent({
                         student.current.data.pubhtml +
                           "/sheet?gid=" +
                           student.current.data.link3.split("=")[2] +
-                          "&single=true"
+                          "&single=true&range=A1:O59"
                       )
                     }
                   >
@@ -347,7 +348,7 @@ export default function CheckStudent({
                         student.current.data.pubhtml +
                           "/sheet?gid=" +
                           student.current.data.link4.split("=")[2] +
-                          "&single=true"
+                          "&single=true&range=A1:O59"
                       )
                     }
                   >
@@ -370,7 +371,7 @@ export default function CheckStudent({
                         student.current.data.pubhtml +
                           "/sheet?gid=" +
                           student.current.data.link5.split("=")[2] +
-                          "&single=true"
+                          "&single=true&range=A1:O59"
                       )
                     }
                   >
@@ -381,7 +382,11 @@ export default function CheckStudent({
                   </Button>
                 )}
                 <Divider mt={30} />
-                <Image src="/assets/logos/gnssgnpolya.png" width="50%" />
+                <Image
+                  src="/assets/logos/gnssgnpolya.png"
+                  alt="logo"
+                  width="50%"
+                />
               </Flex>
             </Box>
           </Flex>

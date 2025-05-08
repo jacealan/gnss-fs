@@ -239,6 +239,7 @@ export default function Board({
                 <Link href={branch.blog} target="_blank">
                   <Image
                     src="/assets/icons/blog.png"
+                    alt="blog"
                     width="2rem"
                     mt={vwC * 0.04}
                     ml={vwC * 0.02}
@@ -250,6 +251,7 @@ export default function Board({
                 <Link href={branch.instagram} target="_blank">
                   <Image
                     src="/assets/icons/instagram.png"
+                    alt="instagram"
                     width="2rem"
                     mt={vwC * 0.04}
                     ml={vwC * 0.02}
@@ -261,6 +263,7 @@ export default function Board({
                 <Link href={branch.map} target="_blank">
                   <Image
                     src="/assets/icons/map.png"
+                    alt="map"
                     width="2rem"
                     mt={vwC * 0.04}
                     ml={vwC * 0.02}
@@ -277,6 +280,7 @@ export default function Board({
             />
             <Image
               src={branch?.boardLogo}
+              alt="logo"
               width="36%"
               mt={vwC * 0.02}
               mb={vwC * 0.06}

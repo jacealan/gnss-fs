@@ -33,7 +33,12 @@ export default function NavBar({ teams }: { teams: any }) {
           <Flex direction={"row"} alignItems={"center"}>
             <Link href="/intra" target="_blank">
               <Box bgColor={colors.primary}>
-                <Image src="/assets/logos/logo.png" w="23px" h="40px" />
+                <Image
+                  src="/assets/logos/logo.png"
+                  alt="logo"
+                  w="23px"
+                  h="40px"
+                />
               </Box>
             </Link>
             <Box

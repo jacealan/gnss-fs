@@ -2750,7 +2750,7 @@ export default function QR() {
         </Head>
         <Flex justifyContent={"center"} width="100%" bgColor="#181615">
           <Box width="100%" maxWidth="800px">
-            <Image src={"/assets/images/qr_plsj_1.png"} width="100%" />
+            <Image src={"/assets/images/qr_plsj_1.png"} alt="" width="100%" />
           </Box>
         </Flex>
         {/* <Flex justifyContent={"center"} width="100%" bgColor="#de152e">
@@ -2761,51 +2761,71 @@ export default function QR() {
         <Flex justifyContent={"center"} width="100%" bgColor="#181615">
           <Box width="100%" maxWidth="800px">
             <a href="https://forms.gle/UUZwBs2og3UL6xR36" target="_blank">
-              <Image src={"/assets/images/qr_plsj_btn1.png"} width="100%" />
+              <Image
+                src={"/assets/images/qr_plsj_btn1.png"}
+                alt=""
+                width="100%"
+              />
             </a>
           </Box>
         </Flex>
         <Flex justifyContent={"center"} width="100%" bgColor="#de152e">
           <Box width="100%" maxWidth="800px">
-            <Image src={"/assets/images/qr_plsj_21.png"} width="100%" />
+            <Image src={"/assets/images/qr_plsj_21.png"} alt="" width="100%" />
           </Box>
         </Flex>
         <Box height="30px" bgColor="#de152e" />
         <Flex justifyContent={"center"} width="100%" bgColor="#181615">
           <Box width="100%" maxWidth="800px">
-            <Image src={"/assets/images/qr_plsj_3.png"} width="100%" />
+            <Image src={"/assets/images/qr_plsj_3.png"} alt="" width="100%" />
           </Box>
         </Flex>
         <Flex justifyContent={"center"} width="100%" bgColor="#de152e">
           <Box width="100%" maxWidth="800px">
-            <Image src={"/assets/images/qr_plsj_4.png"} width="100%" />
+            <Image src={"/assets/images/qr_plsj_4.png"} alt="" width="100%" />
           </Box>
         </Flex>
         <Flex justifyContent={"center"} width="100%">
           <Box width="100%" maxWidth="800px">
-            <Image src={"/assets/images/qr_plsj_5.png"} width="100%" />
+            <Image src={"/assets/images/qr_plsj_5.png"} alt="" width="100%" />
           </Box>
         </Flex>
         <Flex justifyContent={"center"} width="100%">
           <Box width="100%" maxWidth="800px">
             <a href="https://forms.gle/UUZwBs2og3UL6xR36" target="_blank">
-              <Image src={"/assets/images/qr_plsj_btn2.png"} width="100%" />
+              <Image
+                src={"/assets/images/qr_plsj_btn2.png"}
+                alt=""
+                width="100%"
+              />
             </a>
           </Box>
         </Flex>
         <Flex justifyContent={"center"} width="100%">
           <Box width="100%" maxWidth="800px">
-            <Image src={"/assets/images/qr_plsj_btn3.png"} width="100%" />
+            <Image
+              src={"/assets/images/qr_plsj_btn3.png"}
+              alt=""
+              width="100%"
+            />
           </Box>
         </Flex>
         <Box height="15px" />
         <Flex justifyContent={"center"} width="100%">
           <a href="https://blog.naver.com/gnpolyasuji" target="_blank">
-            <Image src={"/assets/images/qr_plsj_icon_blog.png"} width="30px" />
+            <Image
+              src={"/assets/images/qr_plsj_icon_blog.png"}
+              alt=""
+              width="30px"
+            />
           </a>
           <Box width="30px" />
           <a href="https://www.instagram.com/gnpolyasuji/" target="_blank">
-            <Image src={"/assets/images/qr_plsj_icon_insta.png"} width="30px" />
+            <Image
+              src={"/assets/images/qr_plsj_icon_insta.png"}
+              alt=""
+              width="30px"
+            />
           </a>
         </Flex>
         <Box height="50px" />

@@ -157,8 +157,9 @@ export default function Team() {
 
             <Box w="100%" h="40px" mt={1} textAlign="right">
               <a href="/" target="_blank">
-                <img
+                <Image
                   src="/assets/logos/gnssgnpolya.png"
+                  alt="logo"
                   width="200px"
                   style={{ marginLeft: "auto" }}
                 />

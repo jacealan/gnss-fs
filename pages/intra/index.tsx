@@ -79,7 +79,11 @@ export default function Home() {
                   signIn()
                 }}
               >
-                <Image src="/assets/images/intraAccessCard.png" zIndex={9999} />
+                <Image
+                  src="/assets/images/intraAccessCard.png"
+                  alt="accesscard"
+                  zIndex={9999}
+                />
               </Link>
             </Flex>
           ) : (
