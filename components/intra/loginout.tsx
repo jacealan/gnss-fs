@@ -58,6 +58,10 @@ export default function LogInOut() {
 
   const isUser = async () => {
     try {
+      if (!(session && session.user && session.user.email)) {
+        return null
+      }
+
       const res = await fetch("/api/user/ismember", {
         method: "POST",
         headers: {

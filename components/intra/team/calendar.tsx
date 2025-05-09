@@ -19,24 +19,6 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
   const [events, setEvents] = useState<any>([])
   const [nowTime, setNowTime] = useState<any>(new Date())
 
-  const getEvents = async () => {
-    const resHoliday = await fetch("/api/event/holiday")
-    const resHolidayData = await resHoliday.json()
-    setHolidays(resHolidayData.data)
-
-    const resMocktest = await fetch("/api/event/mocktest")
-    const resMocktestData = await resMocktest.json()
-    setMocktests(resMocktestData.data)
-
-    const resUnivtest = await fetch("/api/event/univtest")
-    const resUnivtestData = await resUnivtest.json()
-    setUnivtests(resUnivtestData.data)
-
-    const res = await fetch(`/api/event/${teamId}`)
-    const resData = await res.json()
-    setEvents(resData.data)
-  }
-
   const toToday = (): any => {
     const calendar = calendarRef.current
     const firstDayOfTodaysMonth = moment().date(1).toDate()
@@ -45,6 +27,24 @@ export default function CalendarBox({ teamId }: { teamId: string | string[] }) {
   }
 
   useEffect(() => {
+    const getEvents = async () => {
+      const resHoliday = await fetch("/api/event/holiday")
+      const resHolidayData = await resHoliday.json()
+      setHolidays(resHolidayData.data)
+
+      const resMocktest = await fetch("/api/event/mocktest")
+      const resMocktestData = await resMocktest.json()
+      setMocktests(resMocktestData.data)
+
+      const resUnivtest = await fetch("/api/event/univtest")
+      const resUnivtestData = await resUnivtest.json()
+      setUnivtests(resUnivtestData.data)
+
+      const res = await fetch(`/api/event/${teamId}`)
+      const resData = await res.json()
+      setEvents(resData.data)
+    }
+
     getEvents()
   }, [teamId])
   // console.log(holidays)

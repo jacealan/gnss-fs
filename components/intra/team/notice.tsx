@@ -29,18 +29,18 @@ export default function Notice({ teamId }: { teamId: any }) {
   const [notices, setNotices] = useState<any[]>([])
   const [today, setToday] = useState(new Date())
 
-  const getNotices = async () => {
-    if (teamId) {
-      const res =
-        teamId === "gnBiz"
-          ? await fetch("/api/notice/all")
-          : await fetch(`/api/notice/${teamId}`)
-      const resData = await res.json()
-      setNotices(resData.data)
-    }
-  }
-
   useEffect(() => {
+    const getNotices = async () => {
+      if (teamId) {
+        const res =
+          teamId === "gnBiz"
+            ? await fetch("/api/notice/all")
+            : await fetch(`/api/notice/${teamId}`)
+        const resData = await res.json()
+        setNotices(resData.data)
+      }
+    }
+
     getNotices()
   }, [teamId])
 

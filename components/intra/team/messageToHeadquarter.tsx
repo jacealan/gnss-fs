@@ -99,21 +99,21 @@ export default function MessageToHeadquarter() {
     }
   }
 
-  const getMessages = async () => {
-    if (teamId) {
-      const res =
-        teamId === "gnBiz"
-          ? await fetch("/api/message/all")
-          : await fetch(`/api/message/${teamId}/from`)
-      const resData = await res.json()
-      setMessages(resData.data)
-    }
-    // console.log(messages)
-  }
-
   useEffect(() => {
+    const getMessages = async () => {
+      if (teamId) {
+        const res =
+          teamId === "gnBiz"
+            ? await fetch("/api/message/all")
+            : await fetch(`/api/message/${teamId}/from`)
+        const resData = await res.json()
+        setMessages(resData.data)
+      }
+      // console.log(messages)
+    }
+
     getMessages()
-  }, [onToggle, drawerIsOpen])
+  }, [onToggle, drawerIsOpen, teamId])
 
   useEffect(() => {
     const _ = async () => {

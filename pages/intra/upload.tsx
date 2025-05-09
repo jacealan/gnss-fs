@@ -43,25 +43,25 @@ export default function UploadForm() {
     }
   }
 
-  const imgRendering = () => {
-    //window FileReader 사용
-    const reader = new window.FileReader()
-    if (img) {
-      reader.readAsDataURL(img)
-      reader.onloadend = () => {
-        const base64 = reader.result
-        if (base64) {
-          //base64를 string으로 변환하여 state 변경
-          setImgToBase64((_pre) => base64.toString())
+  useEffect(() => {
+    const imgRendering = () => {
+      //window FileReader 사용
+      const reader = new window.FileReader()
+      if (img) {
+        reader.readAsDataURL(img)
+        reader.onloadend = () => {
+          const base64 = reader.result
+          if (base64) {
+            //base64를 string으로 변환하여 state 변경
+            setImgToBase64((_pre) => base64.toString())
+          }
+        }
+        reader.onerror = () => {
+          alert("upload error!!") //실패시
         }
       }
-      reader.onerror = () => {
-        alert("upload error!!") //실패시
-      }
     }
-  }
 
-  useEffect(() => {
     //useEffect cleanup 언마운트시 실행
     return imgRendering()
   }, [img]) //img가 바뀔때만 실행

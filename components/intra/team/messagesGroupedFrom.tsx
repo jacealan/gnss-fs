@@ -17,17 +17,17 @@ export default function MessagesFrom({ teamId }: { teamId: string }) {
   const [teams, setTeams] = useState<any>(null)
   const [users, setUsers] = useState<any>(null)
 
-  const getMessages = async () => {
-    if (teamId) {
-      const res = await fetch(`/api/message/${teamId}/to`)
-      const resData = await res.json()
-      setMessages(resData.data)
-    }
-    // console.log(new Date())
-    // console.log(messages)
-  }
-
   useEffect(() => {
+    const getMessages = async () => {
+      if (teamId) {
+        const res = await fetch(`/api/message/${teamId}/to`)
+        const resData = await res.json()
+        setMessages(resData.data)
+      }
+      // console.log(new Date())
+      // console.log(messages)
+    }
+
     const _ = async () => {
       setTeams(await teamsIdTitle())
       setUsers(await usersEmailName())
