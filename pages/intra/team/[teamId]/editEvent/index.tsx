@@ -6,10 +6,10 @@ export default function Page0() {
   const {
     query: { teamId },
   } = router
-  console.log(router.pathname)
+  // console.log(router.pathname)
 
   useEffect(() => {
-    console.log(router.asPath)
+    // console.log(router.asPath)
     if (teamId !== "teamId") router.push(`${router.asPath}/0`)
-  }, [teamId])
+  }, [teamId, router])
 }

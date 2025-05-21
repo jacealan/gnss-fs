@@ -149,7 +149,7 @@ export default function Board({
                 fontWeight={700}
                 mt={-vwC / 40}
                 mb={vwC / 10}
-                width="70%"
+                width="77%"
               >
                 {branch?.boardConcept}
               </Center>

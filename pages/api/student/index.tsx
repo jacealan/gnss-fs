@@ -52,7 +52,7 @@ export default async function handler(
       spreadsheetId = ""
   }
 
-  console.log(body)
+  // console.log(body)
 
   try {
     // prepare auth
@@ -110,7 +110,7 @@ export default async function handler(
             title5: student[24],
             link5: student[25],
           }
-          console.log(result)
+          // console.log(result)
         }
       }
 
@@ -129,7 +129,7 @@ export default async function handler(
       message: "우리 학원 학생이 아닙니다",
     })
   } catch (e: any) {
-    console.log(e.message)
+    // console.log(e.message)
     return res.status(500).send({
       message: "Something went wrong",
     })

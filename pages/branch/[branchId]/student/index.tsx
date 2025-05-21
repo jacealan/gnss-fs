@@ -95,7 +95,7 @@ export default function CheckStudent({
     if (res.status === 200) {
       student.current = await res.json()
       setIsLog(true)
-      console.log(student.current)
+      // console.log(student.current)
       window.localStorage.setItem(
         "studentData",
         JSON.stringify(student.current)
@@ -113,11 +113,11 @@ export default function CheckStudent({
 
   useEffect(() => {
     let studentData = window.localStorage.getItem("studentData")
-    console.log(studentData)
+    // console.log(studentData)
     if (studentData) {
       setIsLog(true)
       student.current = JSON.parse(studentData)
-      console.log("login")
+      // console.log("login")
     }
   }, [])
 
