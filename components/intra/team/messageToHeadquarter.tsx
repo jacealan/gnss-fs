@@ -230,7 +230,7 @@ export default function MessageToHeadquarter() {
               h={120}
               placeholder={`${
                 messageTo === "gnBiz"
-                  ? "제목(20자이내)\n내용...\n---\n학원사업부       gnedu.biz@gmail.com\n김민수 7526 배정민 7527 이은수 7528"
+                  ? "제목(20자이내)\n내용...\n---\n학원사업부       gnedu.biz@gmail.com\n김민수 7001 배정민 7002 이은수 7003"
                   : "제목(20자이내)\n내용...\n---\n경영지원부\n박미효 6015 황창용 6014 박세화 6016"
               }`}
               size="sm"
