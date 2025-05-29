@@ -16,7 +16,12 @@ function Footer() {
       >
         <Flex justifyContent={"space-between"}>
           <Box fontSize={14} fontWeight={600}>
-            원리상상(주)
+            원리상상(주){" "}
+            <Link href="/feature/branches">
+              <span style={{ fontSize: "0.8rem", fontWeight: 400 }}>
+                &nbsp;&nbsp;[지점안내]
+              </span>
+            </Link>
           </Box>
           <Link href="/intra">ⓘ</Link>
         </Flex>

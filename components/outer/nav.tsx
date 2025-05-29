@@ -38,10 +38,10 @@ export default function Nav() {
     "SsJs",
     "PlJs",
     "ScJs",
-    "LbJs",
     "PlPc",
-    "PlSd",
     "PlSj",
+    "PlDt",
+    "PlDs",
   ]
 
   const [branches, setBranches] = useState<any>(null)
