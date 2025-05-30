@@ -139,6 +139,7 @@ export default function Branches() {
             >
               {branchesData.map((branch) => (
                 <Box
+                  key={branch.name}
                   maxWidth={{ base: "100%", md: "49%" }}
                   flexGrow={1}
                   border="solid 1px #ccc"
@@ -152,16 +153,14 @@ export default function Branches() {
                     {branch.name}
                   </Box>
                   <Box>
-                    <Link href={`tel://${branch.phone}`}>
-                      &#128241; {branch.phone}
-                    </Link>
+                    <Link href={`tel://${branch.phone}`}>{branch.phone}</Link>
                   </Box>
                   <Box>
                     <Link
                       href={`https://map.naver.com/v5/search/${branch.address}`}
                       target="_blank"
                     >
-                      &#127970; {branch.address}
+                      {branch.address}
                     </Link>
                   </Box>
                 </Box>
