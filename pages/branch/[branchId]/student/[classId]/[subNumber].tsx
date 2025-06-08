@@ -44,36 +44,39 @@ import {
   ResponsiveContainer,
 } from "recharts"
 
-export default function StudentScore({
-  isLog,
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const queryData = await context.query
+  const branchData = await getBranch(queryData.branchId || "")
+
+  return {
+    props: {
+      branchId: queryData.branchId,
+      classId: queryData.classId,
+      subNumber: queryData.subNumber,
+    },
+  }
+}
+
+export default function LogBoard({
   branchId,
-  teacher,
   classId,
   subNumber,
-  subject,
-  name,
-  logData,
 }: {
-  isLog: boolean
   branchId: string
-  teacher: string
   classId: string
-  subNumber: number
-  subject: string
-  name: string
-  logData: any
+  subNumber: string
 }) {
-  // const route = useRouter()
-  // const [isLog, setIsLog] = useState<boolean>(false)
-  // const [student, setStudent] = useState<any>(null)
-  // const [logs, setLogs] = useState<any>(logData) //
-  // const log = useRef<any>(null)
+  const route = useRouter()
+  const [isLog, setIsLog] = useState<boolean>(false)
+  const [student, setStudent] = useState<any>(null)
+  const [logs, setLogs] = useState<any>(null)
+  const log = useRef<any>(null)
 
   const [branchTitle, setBranchTitle] = useState<string>("")
-  // const [name, setName] = useState<string>("")
+  const [name, setName] = useState<string>("")
   const [classTitle, setClassTitle] = useState<string>("")
-  // const [subject, setSubject] = useState<string>("")
-  // const [teacher, setTeacher] = useState<string>("")
+  const [subject, setSubject] = useState<string>("")
+  const [teacher, setTeacher] = useState<string>("")
   const [startDate, setStartDate] = useState<any>(null)
   const [endDate, setEndDate] = useState<any>(null)
   const [isMoreCalendar, setIsMoreCalendar] = useState<boolean>(false)
@@ -83,37 +86,40 @@ export default function StudentScore({
   const [calendarStartDefault, setCalendarStartDefault] = useState<any>(null)
   const today = useRef<any>(new Date())
   const [isMoreComments, setIsMoreComments] = useState<boolean>(false)
-  const [comments, setComments] = useState<any>(null) //
+  const [comments, setComments] = useState<any>(null)
   const [commentsDefault, setCommentsDefault] = useState<any>(null)
-  const [chartData, setChartData] = useState<any>(null) //
+  const [chartData, setChartData] = useState<any>(null)
   const [isChartDetail, setIsChartDetail] = useState<boolean>(false)
   const [finalScore, setFinalScore] = useState<any>(null)
   const [finalAvr, setFinalAvr] = useState<any>(null)
 
   const googleDate0 = new Date(1899, 11, 30)
 
-  // console.log(
-  //   isLog,
-  //   branchId,
-  //   teacher,
-  //   classId,
-  //   subNumber,
-  //   subject,
-  //   name,
-  //   logData
-  // )
+  async function getLog() {
+    const res = await fetch("/api/student/log", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        branchId: branchId,
+        name: student.current.data.name,
+        password: "gnedubiz",
+        // timezoneOffset: new Date().getTimezoneOffset() * 60 * 1000,
+      }),
+    })
+
+    if (res.status === 200) {
+      log.current = await res.json()
+      // console.log(log)
+      window.localStorage.setItem("log", JSON.stringify(log.current.data))
+    }
+  }
+
   useEffect(() => {
-    console.log(
-      isLog,
-      branchId,
-      teacher,
-      classId,
-      subNumber,
-      subject,
-      name,
-      logData
-    )
-    // if (studentData === null) route.push("/branch/" + branchId + "/student/")
+    const studentData = window.localStorage.getItem("studentData")
+    if (studentData === null)
+      route.push("/branch/" + branchId + "/student/class")
 
     switch (branchId) {
       case "PlDs":
@@ -144,47 +150,108 @@ export default function StudentScore({
         setBranchTitle("개념상상 잠실관")
     }
 
-    // console.log(isLog)
-    if (isLog && name) {
-      // setIsLog(true)
-      // setStudent(JSON.parse(studentData).data)
-      // setName(JSON.parse(studentData).data.name)
-      setClassTitle(classId?.split("@")[0])
-      // console.log(logData)
+    if (studentData) {
+      setIsLog(true)
+      setStudent(JSON.parse(studentData).data)
+      setName(JSON.parse(studentData).data.name)
+      setClassTitle(classId.split("@")[0])
 
-      // const logData = window.localStorage.getItem("log")
+      const logData = window.localStorage.getItem("log")
       if (logData) {
-        // const logFull = JSON.parse(logData).data
-        const logPick = logData
+        const logFull = JSON.parse(logData).data
+        const logPick = []
         const logChart = []
         const logComment = []
         // console.log(logFull)
 
         // logFull.sort((a: any, b: any) => a[1] - a[2])
-        for (let log of logData) {
-          // if (log[0] === branchId && log[2] == classId) {
-          if (log.comment) {
-            logComment.push({
-              classDate: log.classDate,
-              comment: log.comment,
-            })
+        for (let log of logFull) {
+          if (log[0] === branchId && log[2] == classId) {
+            if (subNumber === "1" && log[11] !== "") {
+              // classId, kindby, startDate, endDate, teacher, subject, date, attendance, supplementDate, homework, testTitle, testScore, testAvr, comment
+              logPick.push({
+                classId: log[2],
+                kind: log[6],
+                startDate: log[7],
+                endDate: log[8],
+                teacher: log[9],
+                subject: log[10],
+                classDate: parse(log[1], "yyyy/MM/dd", new Date()),
+                attendance: log[11],
+                supplementDate: log[12]
+                  ? addDays(googleDate0, Number(log[12]))
+                  : null,
+                homework: log[14],
+                testNo: log[15],
+                testTile: log[16],
+                testScore: log[17],
+                testAvr: log[18],
+                comment: log[19],
+              })
+              if (log[19]) {
+                logComment.push({
+                  classDate: parse(log[1], "yyyy/MM/dd", new Date()),
+                  comment: log[19],
+                })
+              }
+              if (log[17] && log[15] !== "999") {
+                logChart.push({
+                  idx: logChart.length + 1,
+                  testDate: parse(log[1], "yyyy/MM/dd", new Date()),
+                  name: log[16],
+                  score: Number(log[17]),
+                  avr: Number(log[18]).toFixed(1),
+                })
+              }
+              if (log[17] && log[15] === "999") {
+                setFinalScore(Number(log[17]))
+                setFinalAvr(Number(log[18]).toFixed(2))
+              }
+            }
+            if (subNumber === "2" && log[22] !== "") {
+              // classId, kindby, startDate, endDate, teacher, subject,date, attendance, supplementDate, homework, testTitle, testScore, testAvr, comment
+              logPick.push({
+                classId: log[2],
+                kind: log[6],
+                startDate: log[7],
+                endDate: log[8],
+                teacher: log[20],
+                subject: log[21],
+                classDate: parse(log[1], "yyyy/MM/dd", new Date()),
+                attendance: log[22],
+                supplementDate: log[23]
+                  ? addDays(googleDate0, Number(log[23]))
+                  : null,
+                homework: log[25],
+                testNo: log[26],
+                testTile: log[27],
+                testScore: log[28],
+                testAvr: log[29],
+                comment: log[30],
+              })
+              if (log[30]) {
+                logComment.push({
+                  classDate: parse(log[1], "yyyy/MM/dd", new Date()),
+                  comment: log[30],
+                })
+              }
+              if (log[28] && log[26] !== "999") {
+                logChart.push({
+                  idx: logChart.length + 1,
+                  testDate: parse(log[1], "yyyy/MM/dd", new Date()),
+                  name: log[27],
+                  score: Number(log[28]),
+                  avr: Number(log[29]).toFixed(1),
+                })
+              }
+              if (log[28] && log[26] === "999") {
+                setFinalScore(Number(log[28]))
+                setFinalAvr(Number(log[29]).toFixed(2))
+              }
+            }
           }
-          if (log.testScore && log.testNo !== "999") {
-            logChart.push({
-              idx: logChart.length + 1,
-              testDate: log.classDate,
-              name: log.testTitle,
-              score: Number(log.testScore),
-              avr: Number(log.testAvr).toFixed(1),
-            })
-          }
-          if (log.testScore && log.testNo === "999") {
-            setFinalScore(Number(log.testScore))
-            setFinalAvr(Number(log.testAvr).toFixed(1))
-          }
-          // }
         }
-        // setLogs(logPick)
+        setLogs(logPick)
         setComments(logComment)
         if (logComment.length > 2) {
           setCommentsDefault([
@@ -195,11 +262,11 @@ export default function StudentScore({
           setCommentsDefault(logComment)
         }
         setChartData(logChart)
-        console.log(logComment)
+        // console.log(logComment)
 
         if (logPick.length > 0) {
-          // setSubject(logPick[0].subject)
-          // setTeacher(logPick[0].teacher)
+          setSubject(logPick[0].subject)
+          setTeacher(logPick[0].teacher)
           // addDays(new Date(1899, 11, 30), Number(startDate)),
           const classStart = addDays(googleDate0, Number(logPick[0].startDate))
           const classEnd = addDays(googleDate0, Number(logPick[0].endDate))
@@ -230,27 +297,34 @@ export default function StudentScore({
         }
         // console.log(logPick)
       }
-    } else {
-      setComments(null)
-      setChartData(null)
-      setFinalScore(null)
     }
-  }, [isLog, name])
+  }, [])
 
   return (
     <>
-      <Center width="350px" fontSize="0.9rem">
+      <Head>
+        <title>
+          {`${subject} - ${classTitle} - ${name} [개념폴리아/개념상상 학습보고서]`}
+        </title>
+      </Head>
+      <Center width="100vw" minWidth="350px" fontSize="0.98rem">
         <Center flexDirection={"column"} width="100%" maxWidth="460px">
           <Box
             width="100%"
             bgColor="#0D073B"
             color="#FDFFAD"
             fontWeight="900"
+            p="40px 0 20px 0"
             mb={6}
           >
-            {/* <Box width="100%" textAlign="center" fontSize="1.5rem">
+            <Box
+              width="100%"
+              textAlign="center"
+              fontSize="1.5rem"
+              userSelect={"none"}
+            >
               {branchTitle}
-            </Box> */}
+            </Box>
             <Box
               width="100%"
               textAlign="center"
@@ -298,7 +372,7 @@ export default function StudentScore({
             <GridItem width="100%" height="100%" borderTop="solid 1px #ccc">
               <Center height="100%">
                 <Box fontSize={"0.9rem"} userSelect={"none"}>
-                  {classId?.split("@")[0]}
+                  {classTitle}
                 </Box>
               </Center>
             </GridItem>
@@ -353,7 +427,7 @@ export default function StudentScore({
             >
               <Center height="100%">
                 <Box textAlign="right" userSelect={"none"}>
-                  {logData ? format(startDate, "yyyy/MM/dd") : ""}
+                  {format(startDate, "yyyy/MM/dd")}
                 </Box>
               </Center>
             </GridItem>
@@ -375,11 +449,33 @@ export default function StudentScore({
             >
               <Center height="100%">
                 <Box textAlign="left" userSelect={"none"}>
-                  {logData ? format(endDate, "yyyy/MM/dd") : ""}
+                  {format(endDate, "yyyy/MM/dd")}
                 </Box>
               </Center>
             </GridItem>
           </Grid>
+          <Center mt={1}>
+            {/* <Button
+              size="xs"
+              variant={"outline"}
+              fontWeight={400}
+              borderRadius={10}
+            >
+              업데이트
+            </Button> */}
+            <Button
+              size="xs"
+              variant={"outline"}
+              fontWeight={400}
+              // ml={2}
+              borderRadius={10}
+              onClick={() => {
+                route.push("/branch/" + branchId + "/student/class")
+              }}
+            >
+              수강목록
+            </Button>
+          </Center>
 
           <Grid
             templateColumns={"1fr 5fr 1fr"}
@@ -399,6 +495,7 @@ export default function StudentScore({
                 fontWeight={700}
               >
                 <Box
+                  // fontSize="0.8rem"
                   color="white"
                   border="solid 1px white"
                   borderRadius={4}
@@ -409,6 +506,7 @@ export default function StudentScore({
                 </Box>
                 <Box userSelect={"none"}>&nbsp;·&nbsp;</Box>
                 <Box
+                  // fontSize="0.8rem"
                   bgColor="white"
                   color="#3c5a91"
                   border="solid 1px #3c5a91"
@@ -451,7 +549,8 @@ export default function StudentScore({
                 {theDay}
               </GridItem>
             ))}
-            {logData &&
+
+            {logs &&
               isMoreCalendar &&
               calendarDates?.map((theDate: any, index: number) => (
                 <GridItem
@@ -480,7 +579,7 @@ export default function StudentScore({
                       height="1px"
                     ></Box>
                   </Center>
-                  {logData?.map((log: any) =>
+                  {logs.map((log: any) =>
                     isSameDay(theDate, log.classDate) ? (
                       <>
                         <Box
@@ -506,9 +605,7 @@ export default function StudentScore({
                             : log.attendance}
                         </Box>
                         <Box
-                          fontSize={
-                            log.homework === "미제출" ? "0.7rem" : "0.8rem"
-                          }
+                          fontSize="0.8rem"
                           color={
                             log.homework === "완료"
                               ? "green"
@@ -542,7 +639,7 @@ export default function StudentScore({
                   )}
                 </GridItem>
               ))}
-            {logData &&
+            {logs &&
               isMoreCalendar === false &&
               calendarDatesDefault?.map((theDate: any, index: number) => (
                 <GridItem
@@ -553,7 +650,7 @@ export default function StudentScore({
                   }
                   fontWeight={isSameDay(theDate, today.current) ? 700 : 400}
                 >
-                  <Box userSelect={"none"}>
+                  <Box fontSize="0.9rem" userSelect={"none"}>
                     {format(
                       theDate,
                       // theDate === calendarStart
@@ -571,7 +668,7 @@ export default function StudentScore({
                       height="1px"
                     ></Box>
                   </Center>
-                  {logData?.map((log: any) =>
+                  {logs.map((log: any) =>
                     isSameDay(theDate, log.classDate) ? (
                       <>
                         <Box
@@ -597,9 +694,7 @@ export default function StudentScore({
                             : log.attendance}
                         </Box>
                         <Box
-                          fontSize={
-                            log.homework === "미제출" ? "0.7rem" : "0.8rem"
-                          }
+                          fontSize="0.8rem"
                           color={
                             log.homework === "완료"
                               ? "green"
@@ -873,20 +968,21 @@ export default function StudentScore({
                 templateColumns={"5fr 15fr 6fr"}
                 width="80%"
                 bgColor={index % 2 ? "" : "#f5f5f5"}
+                // alignItems={"center"}
               >
                 <GridItem>
-                  <Flex alignItems={"center"} mt="2px">
-                    <Box fontSize="0.7rem" userSelect={"none"}>
+                  <Flex alignItems={"center"} mt="3px">
+                    <Box fontSize="0.8rem" userSelect={"none"}>
                       &nbsp;{chart.idx}
                     </Box>
                     <Box fontSize="0.65rem" userSelect={"none"}>
-                      ({format(chart?.testDate, "MM/dd")})
+                      ({format(chart.testDate, "MM/dd")})
                     </Box>
                   </Flex>
                 </GridItem>
-                <GridItem mt="1px">
-                  <Flex alignItems={"center"}>
-                    <Box fontSize="0.8rem" userSelect={"none"}>
+                <GridItem>
+                  <Flex alignItems={"center"} mt="2px">
+                    <Box fontSize="0.9rem" userSelect={"none"}>
                       {chart.name}
                     </Box>
                   </Flex>
@@ -948,7 +1044,7 @@ export default function StudentScore({
                     >
                       평균
                       <br />
-                      <span style={{ fontSize: "0.85rem" }}>{finalAvr}</span>
+                      <span style={{ fontSize: "0.9rem" }}>{finalAvr}</span>
                     </Box>
                   </GridItem>
                 </Grid>
