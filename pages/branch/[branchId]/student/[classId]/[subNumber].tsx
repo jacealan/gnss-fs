@@ -118,6 +118,8 @@ export default function LogBoard({
 
   useEffect(() => {
     const studentData = window.localStorage.getItem("studentData")
+    // console.log(studentData)
+    // console.log(branchId)
     if (studentData === null)
       route.push("/branch/" + branchId + "/student/class")
 
@@ -157,16 +159,17 @@ export default function LogBoard({
       setClassTitle(classId.split("@")[0])
 
       const logData = window.localStorage.getItem("log")
+      console.log(logData)
       if (logData) {
         const logFull = JSON.parse(logData).data
         const logPick = []
         const logChart = []
         const logComment = []
-        // console.log(logFull)
+        console.log(logFull)
 
         // logFull.sort((a: any, b: any) => a[1] - a[2])
         for (let log of logFull) {
-          if (log[0] === branchId && log[2] == classId) {
+          if (log[2] == classId) {
             if (subNumber === "1" && log[11] !== "") {
               // classId, kindby, startDate, endDate, teacher, subject, date, attendance, supplementDate, homework, testTitle, testScore, testAvr, comment
               logPick.push({
