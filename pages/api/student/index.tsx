@@ -90,8 +90,8 @@ export default async function handler(
       for (let student of students) {
         if (student[1] === body.name && student[2] === body.password) {
           result = {
-            // branchId: body.branchId,
-            teamId: body.teamId,
+            branchId: body.branchId,
+            teamId: student[0],
             name: body.name,
             pubhtml: student[15],
             class1: student[10],

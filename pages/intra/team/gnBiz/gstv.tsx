@@ -161,12 +161,12 @@ const GsTv: NextPage = () => {
     await setValue("gstv6", gstvData && gstvData[5] ? gstvData[5].link : "")
   }
 
-  const __ = async () => {
-    await setGstvData(await getGstv())
-    await _()
-  }
-
   useEffect(() => {
+    const __ = async () => {
+      await setGstvData(await getGstv())
+      await _()
+    }
+
     __()
   }, [])
 

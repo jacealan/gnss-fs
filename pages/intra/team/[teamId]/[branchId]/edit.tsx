@@ -144,7 +144,7 @@ const EditBranch: NextPage = () => {
       }
       _()
     }
-  }, [teamId])
+  }, [teamId, branchId])
 
   useEffect(() => {
     const _ = async () => {

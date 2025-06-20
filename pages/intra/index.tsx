@@ -16,35 +16,6 @@ export default function Home() {
   const [workTeams, setWorkTeams] = useState<string[]>([])
   // const [name, setName] = useState("")
 
-  const getUser = async () => {
-    try {
-      const res = await fetch("/api/user/ismember", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: session?.user?.email }),
-      })
-      // console.log(3, res)
-      const resData = await res.json()
-      // console.log(2, resData)
-      if (resData.success) {
-        const workTeamsArray: string[] = []
-        resData.data.teams.forEach((team: any) =>
-          workTeamsArray.push(team.teamId)
-        )
-        // setWorkTeams((prev) => resData.data.teams)
-        setWorkTeams(workTeamsArray)
-        // setName(resData.data.name)
-        // router.push("/intra/team/gnBiz")
-        // } else {
-        //   router.push("/intra/user/signup")
-      }
-    } catch (error) {
-      console.error("Error:", error)
-    }
-  }
-
   useEffect(() => {
     const _ = async () => {
       setTeams(await teamsIdTitle())
@@ -53,10 +24,42 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
+    const getUser = async () => {
+      if (!(session && session.user && session.user.email)) {
+        return null
+      }
+      try {
+        const res = await fetch("/api/user/ismember", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: session.user.email }),
+        })
+        // console.log(3, res)
+        const resData = await res.json()
+        // console.log(2, resData)
+        if (resData.success) {
+          const workTeamsArray: string[] = []
+          resData.data.teams.forEach((team: any) =>
+            workTeamsArray.push(team.teamId)
+          )
+          // setWorkTeams((prev) => resData.data.teams)
+          setWorkTeams(workTeamsArray)
+          // setName(resData.data.name)
+          // router.push("/intra/team/gnBiz")
+          // } else {
+          //   router.push("/intra/user/signup")
+        }
+      } catch (error) {
+        console.error("Error:", error)
+      }
+    }
+
     if (status === "authenticated") {
       getUser()
     }
-  }, [status])
+  }, [status, session])
 
   // console.log(workTeams)
   return (

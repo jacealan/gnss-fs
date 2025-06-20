@@ -18,10 +18,12 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     "SsJs",
     "PlJs",
     "ScJs",
-    "LbJs",
+    // "LbJs",
     "PlPc",
-    "PlSd",
+    // "PlSd",
     "PlSj",
+    "PlDt",
+    "PlDs",
   ]
 
   const defaultField: ISitemapField[] = [
