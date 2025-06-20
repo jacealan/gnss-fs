@@ -51,6 +51,7 @@ import {
   parseISO,
   parse,
   isSameDay,
+  differenceInDays,
 } from "date-fns"
 import { from } from "form-data"
 
@@ -183,6 +184,15 @@ export default function Teacher({
     const classes2Data = new Set<string>()
 
     for (const log of logs.current) {
+      // console.log(log[2])
+      if (
+        differenceInDays(
+          new Date(),
+          parse(log[2].split("@")[1], "yyMMdd", new Date())
+        ) > 150
+      )
+        continue
+
       if (log[11] && log[9].includes(teacher.current.name)) {
         await logs1Data.push({
           classId: log[2],
@@ -337,7 +347,9 @@ export default function Teacher({
     <>
       <Head>
         <title>
-          {`${teacher.current?.name} - ${branch && branch.branchTitle}`}
+          {teacher.current
+            ? `${teacher.current?.name} - ${branch && branch.branchTitle}`
+            : `학습보고서 - ${branch && branch.branchTitle}`}
         </title>
       </Head>
       <Center width="100%">
@@ -409,7 +421,7 @@ export default function Teacher({
                   isLoading={isSubmitting}
                   type="submit"
                   colorScheme="blue"
-                  bgColor="#0C073B"
+                  bgColor="#3556DA"
                   color="white"
                 >
                   <Box>
@@ -432,7 +444,7 @@ export default function Teacher({
               <Flex
                 justifyContent={"space-between"}
                 width="100%"
-                bgColor="#0D073B"
+                bgColor="#2957E2"
                 color="#FDFFAD"
                 fontWeight={700}
                 fontSize="1rem"

@@ -75,7 +75,7 @@ export default function Notice({ teamId }: { teamId: any }) {
                 moment(notice.endDate).add(1, "days")
             )
               return (
-                <Popover>
+                <Popover key={index}>
                   <PopoverTrigger>
                     <Button
                       w="100%"

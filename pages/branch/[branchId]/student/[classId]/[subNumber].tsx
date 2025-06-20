@@ -29,6 +29,7 @@ import {
   GridItem,
   Divider,
   Button,
+  HStack,
 } from "@chakra-ui/react"
 
 import {
@@ -159,13 +160,13 @@ export default function LogBoard({
       setClassTitle(classId.split("@")[0])
 
       const logData = window.localStorage.getItem("log")
-      console.log(logData)
+      // console.log(logData)
       if (logData) {
         const logFull = JSON.parse(logData).data
         const logPick = []
         const logChart = []
         const logComment = []
-        console.log(logFull)
+        // console.log(logFull)
 
         // logFull.sort((a: any, b: any) => a[1] - a[2])
         for (let log of logFull) {
@@ -312,173 +313,107 @@ export default function LogBoard({
       </Head>
       <Center width="100vw" minWidth="350px" fontSize="0.98rem">
         <Center flexDirection={"column"} width="100%" maxWidth="460px">
-          <Box
+          <Center
             width="100%"
-            bgColor="#0D073B"
-            color="#FDFFAD"
-            fontWeight="900"
+            height="150px"
+            bgColor="#2957E2"
+            color="#fff"
             p="40px 0 20px 0"
-            mb={6}
+            mb={-10}
           >
-            <Box
-              width="100%"
-              textAlign="center"
-              fontSize="1.5rem"
-              userSelect={"none"}
+            <Flex
+              width="80%"
+              justifyContent={"space-between"}
+              alignItems="center"
+              bgColor="#2957E2"
+              color="#fff"
             >
-              {branchTitle}
-            </Box>
-            <Box
-              width="100%"
-              textAlign="center"
-              fontSize="1.2rem"
-              userSelect={"none"}
-            >
-              - 학습보고서 -
-            </Box>
-          </Box>
-
-          <Grid
-            width="90%"
-            templateColumns={"1fr 3fr 1fr 3fr"}
-            templateRows={"1fr 1fr 1fr"}
-            alignItems={"center"}
-            justifyItems={"center"}
-            borderRadius={14}
-          >
-            <GridItem
-              width="100%"
-              height="100%"
-              bgColor="#ddd"
-              borderTop="solid 1px #ccc"
-              p={1}
-            >
-              <Center height="100%">
-                <Box userSelect={"none"}>이름</Box>
-              </Center>
-            </GridItem>
-            <GridItem width="100%" height="100%">
-              <Center height="100%" borderTop="solid 1px #ccc">
-                <Box userSelect={"none"}>{name}</Box>
-              </Center>
-            </GridItem>
-            <GridItem
-              width="100%"
-              height="100%"
-              bgColor="#ddd"
-              borderTop="solid 1px #ccc"
-            >
-              <Center height="100%">
-                <Box userSelect={"none"}>반명</Box>
-              </Center>
-            </GridItem>
-            <GridItem width="100%" height="100%" borderTop="solid 1px #ccc">
-              <Center height="100%">
-                <Box fontSize={"0.9rem"} userSelect={"none"}>
-                  {classTitle}
+              <Box
+                fontSize="1.8rem"
+                fontWeight={700}
+                userSelect={"none"}
+                letterSpacing={"-0.06rem"}
+              >
+                {name} 학생
+              </Box>
+              <Box textAlign={"right"}>
+                <Button
+                  size="2xs"
+                  p={"2px 10px 2px 10px"}
+                  variant={"outline"}
+                  fontSize="0.5rem"
+                  fontWeight={400}
+                  color="#fff"
+                  borderRadius={10}
+                  onClick={() => {
+                    route.push("/branch/" + branchId + "/student/class")
+                  }}
+                >
+                  수강목록
+                </Button>
+                <Box fontSize="0.7rem" textAlign="right" userSelect={"none"}>
+                  {format(startDate, "yy/MM/dd")} ~{" "}
+                  {format(endDate, "yy/MM/dd")}
                 </Box>
-              </Center>
-            </GridItem>
-            <GridItem
+              </Box>
+            </Flex>
+          </Center>
+
+          <Box
+            width={"90%"}
+            bgColor="#fff"
+            borderRadius={8}
+            p={"20px 16px"}
+            fontSize="0.9rem"
+            border="solid 1px #ddd"
+          >
+            <HStack>
+              <Box
+                bgColor="#D9D9D9"
+                borderRadius={16}
+                p="1px 12px"
+                fontWeight={500}
+              >
+                반명
+              </Box>
+              <Box fontSize={"0.9rem"} userSelect={"none"}>
+                {classTitle}
+              </Box>
+            </HStack>
+            <Flex
+              mt={2}
               width="100%"
-              height="100%"
-              bgColor="#ddd"
-              borderTop="solid 1px #ccc"
+              justifyContent={"space-between"}
+              alignItems={"center"}
             >
-              <Center height="100%" p={1}>
-                <Box userSelect={"none"}>과정</Box>
-              </Center>
-            </GridItem>
-            <GridItem width="100%" height="100%" borderTop="solid 1px #ccc">
-              <Center height="100%">
-                <Box fontSize={"0.8rem"} userSelect={"none"}>
+              <HStack>
+                <Box
+                  bgColor="#D9D9D9"
+                  borderRadius={16}
+                  p="1px 12px"
+                  fontWeight={500}
+                >
+                  과정
+                </Box>
+                <Box fontSize={"0.9rem"} userSelect={"none"}>
                   {subject}
                 </Box>
-              </Center>
-            </GridItem>
-            <GridItem
-              width="100%"
-              height="100%"
-              bgColor="#ddd"
-              borderTop="solid 1px #ccc"
-            >
-              <Center height="100%">
-                <Box userSelect={"none"}>담임</Box>
-              </Center>
-            </GridItem>
-            <GridItem width="100%" height="100%" borderTop="solid 1px #ccc">
-              <Center height="100%">
-                <Box userSelect={"none"}>{teacher}</Box>
-              </Center>
-            </GridItem>
-            <GridItem
-              width="100%"
-              height="100%"
-              bgColor="#ddd"
-              borderTop="solid 1px #ccc"
-              borderBottom="solid 1px #ccc"
-            >
-              <Center height="100%" p={1}>
-                <Box userSelect={"none"}>기간</Box>
-              </Center>
-            </GridItem>
-            <GridItem
-              width="100%"
-              height="100%"
-              borderTop="solid 1px #ccc"
-              borderBottom="solid 1px #ccc"
-            >
-              <Center height="100%">
-                <Box textAlign="right" userSelect={"none"}>
-                  {format(startDate, "yyyy/MM/dd")}
+              </HStack>
+              <HStack>
+                <Box
+                  bgColor="#D9D9D9"
+                  borderRadius={16}
+                  p="1px 12px"
+                  fontWeight={500}
+                >
+                  담임
                 </Box>
-              </Center>
-            </GridItem>
-            <GridItem
-              width="100%"
-              height="100%"
-              borderTop="solid 1px #ccc"
-              borderBottom="solid 1px #ccc"
-            >
-              <Center height="100%">
-                <Box userSelect={"none"}>~</Box>
-              </Center>
-            </GridItem>
-            <GridItem
-              width="100%"
-              height="100%"
-              borderTop="solid 1px #ccc"
-              borderBottom="solid 1px #ccc"
-            >
-              <Center height="100%">
-                <Box textAlign="left" userSelect={"none"}>
-                  {format(endDate, "yyyy/MM/dd")}
+                <Box fontSize={"0.9rem"} userSelect={"none"}>
+                  {teacher}
                 </Box>
-              </Center>
-            </GridItem>
-          </Grid>
-          <Center mt={1}>
-            {/* <Button
-              size="xs"
-              variant={"outline"}
-              fontWeight={400}
-              borderRadius={10}
-            >
-              업데이트
-            </Button> */}
-            <Button
-              size="xs"
-              variant={"outline"}
-              fontWeight={400}
-              // ml={2}
-              borderRadius={10}
-              onClick={() => {
-                route.push("/branch/" + branchId + "/student/class")
-              }}
-            >
-              수강목록
-            </Button>
-          </Center>
+              </HStack>
+            </Flex>
+          </Box>
 
           <Grid
             templateColumns={"1fr 5fr 1fr"}
@@ -486,7 +421,7 @@ export default function LogBoard({
             p={1}
             mt={6}
             mb={1}
-            bgColor="#3c5a91"
+            bgColor="#2957E2"
             alignItems={"center"}
           >
             <GridItem width="100%"></GridItem>
@@ -497,28 +432,7 @@ export default function LogBoard({
                 color="white"
                 fontWeight={700}
               >
-                <Box
-                  // fontSize="0.8rem"
-                  color="white"
-                  border="solid 1px white"
-                  borderRadius={4}
-                  p={"1px 3px 1px 3px"}
-                  userSelect={"none"}
-                >
-                  출결
-                </Box>
-                <Box userSelect={"none"}>&nbsp;·&nbsp;</Box>
-                <Box
-                  // fontSize="0.8rem"
-                  bgColor="white"
-                  color="#3c5a91"
-                  border="solid 1px #3c5a91"
-                  borderRadius={4}
-                  p={"1px 3px 1px 3px"}
-                  userSelect={"none"}
-                >
-                  과제
-                </Box>
+                출결&nbsp;·&nbsp;과제
               </Center>
             </GridItem>
             <GridItem width="100%" textAlign="right">
@@ -544,9 +458,9 @@ export default function LogBoard({
               <GridItem
                 key={theDay}
                 textAlign={"center"}
-                bgColor="#eee"
-                borderRadius={4}
-                fontSize="0.9rem"
+                bgColor="#D9D9D9"
+                borderRadius={2}
+                fontSize="0.8rem"
                 userSelect={"none"}
               >
                 {theDay}
@@ -580,25 +494,27 @@ export default function LogBoard({
                       borderBottom="solid 1px #ccc"
                       width="70%"
                       height="1px"
+                      mb={1}
                     ></Box>
                   </Center>
                   {logs.map((log: any) =>
                     isSameDay(theDate, log.classDate) ? (
                       <>
                         <Box
-                          fontSize="0.8rem"
+                          fontSize="0.7rem"
+                          fontWeight={600}
                           bgColor={
                             log.attendance === "출석"
-                              ? "green"
+                              ? "#93BD51"
                               : log.attendance === "결석"
                               ? log.supplementDate
-                                ? "blue"
-                                : "red"
+                                ? "#FFA42D"
+                                : "#F55F5F"
                               : "gray"
                           }
                           color="white"
-                          borderRadius={4}
-                          p={"1px 3px 1px 3px"}
+                          borderRadius={10}
+                          p={"0px 3px 0px 3px"}
                           mb={"1px"}
                           userSelect={"none"}
                         >
@@ -608,27 +524,27 @@ export default function LogBoard({
                             : log.attendance}
                         </Box>
                         <Box
-                          fontSize="0.8rem"
+                          fontSize="0.7rem"
                           color={
                             log.homework === "완료"
-                              ? "green"
+                              ? "#93BD51"
                               : log.homework === "부족"
-                              ? "orange"
+                              ? "#FFA42D"
                               : log.homework === "미제출"
-                              ? "red"
+                              ? "#F55F5F"
                               : "gray"
                           }
                           border={
                             log.homework === "완료"
-                              ? "solid 1px green"
+                              ? "solid 1px #93BD51"
                               : log.homework === "부족"
-                              ? "solid 1px orange"
+                              ? "solid 1px #FFA42D"
                               : log.homework === "미제출"
-                              ? "solid 1px red"
+                              ? "solid 1px #F55F5F"
                               : "solid 1px gray"
                           }
-                          borderRadius={4}
-                          p={"1px 3px 1px 3px"}
+                          borderRadius={10}
+                          p={"0px 3px 0px 3px"}
                           userSelect={"none"}
                         >
                           {log.homework ? log.homework : "-"}
@@ -652,6 +568,7 @@ export default function LogBoard({
                     theDate < startDate || theDate > endDate ? "#ddd" : "#000"
                   }
                   fontWeight={isSameDay(theDate, today.current) ? 700 : 400}
+                  mb={1}
                 >
                   <Box fontSize="0.9rem" userSelect={"none"}>
                     {format(
@@ -669,25 +586,27 @@ export default function LogBoard({
                       borderBottom="solid 1px #ccc"
                       width="70%"
                       height="1px"
+                      mb={1}
                     ></Box>
                   </Center>
                   {logs.map((log: any) =>
                     isSameDay(theDate, log.classDate) ? (
                       <>
                         <Box
-                          fontSize="0.8rem"
+                          fontSize="0.7rem"
+                          fontWeight={600}
                           bgColor={
                             log.attendance === "출석"
-                              ? "green"
+                              ? "#93BD51"
                               : log.attendance === "결석"
                               ? log.supplementDate
-                                ? "blue"
-                                : "red"
+                                ? "#FFA42D"
+                                : "#F55F5F"
                               : "gray"
                           }
                           color="white"
-                          borderRadius={4}
-                          p={"1px 3px 1px 3px"}
+                          borderRadius={10}
+                          p={"0px 3px 0px 3px"}
                           mb={"1px"}
                           userSelect={"none"}
                         >
@@ -697,27 +616,27 @@ export default function LogBoard({
                             : log.attendance}
                         </Box>
                         <Box
-                          fontSize="0.8rem"
+                          fontSize="0.7rem"
                           color={
                             log.homework === "완료"
-                              ? "green"
+                              ? "#93BD51"
                               : log.homework === "부족"
-                              ? "orange"
+                              ? "#FFA42D"
                               : log.homework === "미제출"
-                              ? "red"
+                              ? "#F55F5F"
                               : "gray"
                           }
                           border={
                             log.homework === "완료"
-                              ? "solid 1px green"
+                              ? "solid 1px #93BD51"
                               : log.homework === "부족"
-                              ? "solid 1px orange"
+                              ? "solid 1px #FFA42D"
                               : log.homework === "미제출"
-                              ? "solid 1px red"
+                              ? "solid 1px #F55F5F"
                               : "solid 1px gray"
                           }
-                          borderRadius={4}
-                          p={"1px 3px 1px 3px"}
+                          borderRadius={10}
+                          p={"0px 3px 0px 3px"}
                           userSelect={"none"}
                         >
                           {log.homework ? log.homework : "-"}
@@ -738,7 +657,7 @@ export default function LogBoard({
             p={1}
             mt={6}
             mb={1}
-            bgColor="#3c5a91"
+            bgColor="#2957E2"
             alignItems={"center"}
           >
             <GridItem width="100%"></GridItem>
@@ -772,7 +691,7 @@ export default function LogBoard({
             </GridItem>
           </Grid>
           {((comments && comments.length === 0) || comments === null) && (
-            <Box userSelect={"none"}>아직 학습 코멘트가 없습니다</Box>
+            <Box userSelect={"none"}>-</Box>
           )}
           {comments && comments.length > 0 && isMoreComments === true && (
             <>
@@ -785,19 +704,26 @@ export default function LogBoard({
                 >
                   <GridItem>
                     <Box
+                      p={"0 4px"}
                       textAlign={"center"}
                       fontSize="0.7rem"
-                      mt={1}
-                      border="solid 1px #3c5a91"
+                      mt={"2px"}
+                      border="solid 1px #2957E2"
                       borderRadius={2}
-                      color="#3c5a91"
+                      color="#2957E2"
                       userSelect={"none"}
                     >
                       {format(comment.classDate, "MM/dd")}
                     </Box>
                   </GridItem>
                   <GridItem>
-                    <Box pl={2} pr={2} userSelect={"none"}>
+                    <Box
+                      fontSize="0.9rem"
+                      letterSpacing={"-0.04rem"}
+                      pl={2}
+                      pr={2}
+                      userSelect={"none"}
+                    >
                       {comment.comment}
                     </Box>
                   </GridItem>
@@ -816,19 +742,26 @@ export default function LogBoard({
                 >
                   <GridItem>
                     <Box
+                      p={"0 4px"}
                       textAlign={"center"}
                       fontSize="0.7rem"
-                      mt={1}
-                      border="solid 1px #3c5a91"
+                      mt={"2px"}
+                      border="solid 1px #2957E2"
                       borderRadius={2}
-                      color="#3c5a91"
+                      color="#2957E2"
                       userSelect={"none"}
                     >
                       {format(comment.classDate, "MM/dd")}
                     </Box>
                   </GridItem>
                   <GridItem>
-                    <Box pl={2} pr={2} userSelect={"none"}>
+                    <Box
+                      fontSize="0.9rem"
+                      letterSpacing={"-0.04rem"}
+                      pl={2}
+                      pr={2}
+                      userSelect={"none"}
+                    >
                       {comment.comment}
                     </Box>
                   </GridItem>
@@ -843,7 +776,7 @@ export default function LogBoard({
             p={1}
             mt={6}
             mb={1}
-            bgColor="#3c5a91"
+            bgColor="#2957E2"
             alignItems={"center"}
           >
             <GridItem width="100%"></GridItem>
@@ -855,11 +788,11 @@ export default function LogBoard({
                 fontWeight={700}
                 userSelect={"none"}
               >
-                주간평가 점수 변동 추이
+                평가 점수 변동 추이
               </Box>
             </GridItem>
             <GridItem width="100%" textAlign="right">
-              {calendarDates?.length > 14 && (
+              {chartData && chartData.length > 0 && (
                 <Box
                   border="solid 1px #ccc"
                   borderRadius={20}
@@ -985,7 +918,11 @@ export default function LogBoard({
                 </GridItem>
                 <GridItem>
                   <Flex alignItems={"center"} mt="2px">
-                    <Box fontSize="0.9rem" userSelect={"none"}>
+                    <Box
+                      fontSize="0.8rem"
+                      userSelect={"none"}
+                      letterSpacing={"-0.04rem"}
+                    >
                       {chart.name}
                     </Box>
                   </Flex>
@@ -1003,7 +940,7 @@ export default function LogBoard({
               </Grid>
             ))}
           {(chartData === null || chartData.length === 0) && (
-            <Box userSelect={"none"}>아직 평가 기록이 없습니다</Box>
+            <Box userSelect={"none"}>-</Box>
           )}
 
           {finalScore && (
@@ -1014,7 +951,8 @@ export default function LogBoard({
                 mt={6}
                 mb={1}
                 textAlign="center"
-                bgColor="#e54761"
+                bgColor="#F55F5F"
+                borderRadius={20}
                 color="white"
                 fontWeight={700}
                 userSelect={"none"}

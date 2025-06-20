@@ -16,6 +16,7 @@ import {
   Grid,
   GridItem,
   Divider,
+  Icon,
 } from "@chakra-ui/react"
 import {
   FormErrorMessage,
@@ -35,6 +36,20 @@ import {
   Checkbox,
   Textarea,
 } from "@chakra-ui/react"
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from "@chakra-ui/react"
+import { RepeatClockIcon } from "@chakra-ui/icons"
+import { GrUpdate, GrRefresh } from "react-icons/gr"
+import { HiOutlineLogout, HiLogout } from "react-icons/hi"
+import { RiAlarmWarningFill } from "react-icons/ri"
 
 import {
   format,
@@ -49,6 +64,7 @@ import {
   parseISO,
   parse,
   isSameDay,
+  differenceInDays,
 } from "date-fns"
 
 type Inputs = {
@@ -78,6 +94,9 @@ export default function LogStudent({
   // targetId: number
   branch: any
 }) {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = useRef(null)
+
   const [isLog, setIsLog] = useState<boolean>(false)
   const student = useRef<any>(null)
   const log = useRef<any>(null)
@@ -193,6 +212,14 @@ export default function LogStudent({
 
     const classesArray: any[] = []
     classesSet.forEach((row: any) => {
+      if (
+        differenceInDays(
+          new Date(),
+          parse(JSON.parse(row)[1].split("@")[1], "yyMMdd", new Date())
+        ) > 150
+      )
+        return
+
       classesArray.push(JSON.parse(row))
     })
     await classesArray.sort((a, b) => -(a[4] - b[4]))
@@ -254,6 +281,14 @@ export default function LogStudent({
 
     const classesArray: any[] = []
     classesSet.forEach((row: any) => {
+      if (
+        differenceInDays(
+          new Date(),
+          parse(JSON.parse(row)[1].split("@")[1], "yyMMdd", new Date())
+        ) > 150
+      )
+        return
+
       classesArray.push(JSON.parse(row))
     })
     await classesArray.sort((a, b) => -(a[4] - b[4]))
@@ -276,6 +311,7 @@ export default function LogStudent({
     }
   }, [isLog])
 
+  // console.log(differenceInDays(parseISO(branch.studentNoticeDate), new Date()))
   return (
     <>
       <Head>
@@ -354,7 +390,7 @@ export default function LogStudent({
                   isLoading={isSubmitting}
                   type="submit"
                   colorScheme="blue"
-                  bgColor="#0C073B"
+                  bgColor="#3556DA"
                   color="white"
                 >
                   <Box>
@@ -390,19 +426,35 @@ export default function LogStudent({
             maxWidth="400px"
             minHeight="640px"
             maxHeight="896px"
-            bgImage={"/assets/images/student2.png"}
+            // bgImage={"/assets/images/student2.png"}
             bgSize={"100%"}
             bgPosition="top"
             bgRepeat={"no-repeat"}
           >
+            <Center
+              bgColor={"#2957E2"}
+              color="white"
+              fontSize={"1.7rem"}
+              width="100%"
+              minHeight="200px"
+              mb={-350}
+            >
+              <Box width="80%" mt={"0px"}>
+                <Box fontWeight={700} fontFamily={"Paperlogy"} mb={-2}>
+                  {branch && branch.branchTitle}
+                </Box>
+                <Box fontFamily={"Paperlogy"}>온라인 학습 보고서</Box>
+              </Box>
+            </Center>
             <Box
-              width="80%"
+              width="90%"
               mt={300}
+              mb={8}
               bgColor="white"
-              boxShadow={"2px 2px 2px #eee"}
-              border="solid 1px #ddd"
-              borderRadius={20}
-              p={4}
+              boxShadow={"2px 2px 2px rgb(50, 102, 205, .2)"}
+              border="solid 1px #2957E2"
+              borderRadius={8}
+              p={"16px 16px 32px 16px"}
             >
               <Flex
                 width="100%"
@@ -411,41 +463,32 @@ export default function LogStudent({
                 alignItems={"center"}
                 gap={4}
               >
-                <Box>
-                  <Box fontSize="1.5rem" fontWeight="900" userSelect={"none"}>
+                <Flex
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                  width="90%"
+                >
+                  <Box
+                    fontSize="1.5rem"
+                    fontWeight="700"
+                    userSelect={"none"}
+                    style={{ fontStretch: "semi-condensed" }}
+                    // fontFamily={"Paperlogy"}
+                  >
                     {student.current.data.name} 학생
                   </Box>
-                  <Center width="100%">
+                  <Flex alignItems={"center"}>
                     <Box
-                      color="gray"
-                      fontSize="0.7rem"
-                      border="1px #aaa solid"
-                      borderRadius={10}
-                      pl={2}
-                      pr={2}
-                      _hover={{ cursor: "pointer" }}
-                      onClick={() => {
-                        log.current = null
-                        setClasses(null)
-                        window.localStorage.removeItem("studentData")
-                        window.localStorage.removeItem("log")
-                        window.localStorage.removeItem("getLogDate")
-                        setIsLog(false)
-                      }}
-                      userSelect={"none"}
-                    >
-                      logout
-                    </Box>
-                    <Box
+                      title="update"
                       color={enableUpdate ? "gray" : "#eee"}
-                      fontSize="0.7rem"
-                      border={
-                        enableUpdate ? "1px #aaa solid" : "1px #eee solid"
-                      }
-                      borderRadius={10}
-                      ml={2}
-                      pl={2}
-                      pr={2}
+                      fontSize="1rem"
+                      // border={
+                      //   enableUpdate ? "1px #aaa solid" : "1px #eee solid"
+                      // }
+                      // borderRadius={10}
+                      // ml={2}
+                      // pl={2}
+                      // pr={2}
                       _hover={{
                         cursor: enableUpdate ? "pointer" : "default",
                       }}
@@ -462,44 +505,114 @@ export default function LogStudent({
                       }}
                       userSelect={"none"}
                     >
-                      update
+                      <GrRefresh />
                     </Box>
-                  </Center>
-                  {enableUpdate === false && (
-                    <Center width="100%">
-                      <Box
-                        fontSize="0.5rem"
-                        mt={1}
-                        color="grey"
-                        userSelect={"none"}
-                      >
-                        update는 10분당 1회 가능합니다.
-                      </Box>
-                    </Center>
+                    <Box
+                      title="logout"
+                      color="gray"
+                      fontSize="1.2rem"
+                      // border="1px #aaa solid"
+                      borderRadius={10}
+                      pl={4}
+                      // pr={2}
+                      _hover={{ cursor: "pointer" }}
+                      onClick={() => {
+                        log.current = null
+                        setClasses(null)
+                        window.localStorage.removeItem("studentData")
+                        window.localStorage.removeItem("log")
+                        window.localStorage.removeItem("getLogDate")
+                        setIsLog(false)
+                      }}
+                      userSelect={"none"}
+                    >
+                      <HiLogout />
+                    </Box>
+                  </Flex>
+                </Flex>
+
+                <Button
+                  mt={3}
+                  ref={btnRef}
+                  onClick={onOpen}
+                  width="90%"
+                  border="solid 1px #1267d3"
+                  borderRadius={"6px"}
+                  boxShadow={"2px 2px 1px #ccc"}
+                  color="#1267d3"
+                  bgColor="#fff"
+                  _hover={{ boxShadow: "2px 2px 2px #aaa" }}
+                  pt={1}
+                  pb={1}
+                >
+                  <Box width="100%" overflow="hidden">
+                    {branch.studentNoticeTitle}
+                  </Box>
+                  {differenceInDays(
+                    parseISO(branch.studentNoticeDate),
+                    new Date()
+                  ) < 7 && (
+                    <Icon
+                      as={RiAlarmWarningFill}
+                      color="#F55F5F"
+                      boxSize={4}
+                      position={"absolute"}
+                      top={-2}
+                      left={-1}
+                    />
                   )}
-                </Box>
-                <Divider width="20%" border="solid 1px #aaa" mb={4} />
+                </Button>
+                <Modal
+                  onClose={onClose}
+                  finalFocusRef={btnRef}
+                  isOpen={isOpen}
+                  scrollBehavior={"outside"}
+                >
+                  <ModalOverlay />
+                  <ModalContent>
+                    <ModalHeader>{branch.studentNoticeTitle}</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                      <Box fontSize="0.9rem" letterSpacing={"-0.04rem"}>
+                        {branch.studentNotice
+                          .split("\n")
+                          .map((line: string, index: number) => (
+                            <Box key={index}>{line ? line : <br />}</Box>
+                          ))}
+                      </Box>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button onClick={onClose}>Close</Button>
+                    </ModalFooter>
+                  </ModalContent>
+                </Modal>
                 {classes?.map((classObj: any) => (
                   <Box
-                    width="80%"
+                    width="90%"
+                    border="solid 1px #1267d3"
                     borderRadius={"6px"}
-                    // colorScheme="blue"
-                    bgColor="#0C073B"
-                    _hover={{ bg: "#1267d3" }}
-                    color="white"
+                    boxShadow={"2px 2px 1px #ccc"}
+                    bgColor="#1267d3"
+                    color="#fff"
+                    _hover={{ boxShadow: "2px 2px 3px #aaa" }}
                     pt={1}
                     pb={1}
                     key={classObj[1] + "_" + classObj[0]}
                   >
                     <a href={classObj[1] + "/" + classObj[0]}>
-                      <Box width="100%" textAlign="center" userSelect={"none"}>
+                      <Box
+                        fontWeight={700}
+                        width="100%"
+                        textAlign="center"
+                        userSelect={"none"}
+                      >
                         {classObj[6]}
                       </Box>
                       <Box
                         width="100%"
                         textAlign="center"
                         fontSize={"0.6rem"}
-                        color="#ddd"
+                        // color="#ddd"
                         userSelect={"none"}
                       >
                         {classObj[1]} · {classObj[5]}
@@ -510,15 +623,10 @@ export default function LogStudent({
                 {classes == null && (
                   <Box userSelect={"none"}>잠시만 기다려주세요</Box>
                 )}
-
-                <Divider mt={30} />
-                <Image
-                  src="/assets/logos/gnssgnpolya.png"
-                  alt="logo"
-                  width="50%"
-                />
               </Flex>
             </Box>
+            <Divider mb={4} width="80%" />
+            <Image src="/assets/logos/gnssgnpolya.png" alt="logo" width="40%" />
           </Flex>
         )}
       </Center>

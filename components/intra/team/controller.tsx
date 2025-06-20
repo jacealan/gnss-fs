@@ -2,8 +2,28 @@ import React, { useState, useEffect } from "react"
 import branchesIdTitle from "@/lib/branchesIdTitle"
 
 import colors from "@/theme/colors"
-import { Box, Grid, GridItem, Flex, HStack, Link } from "@chakra-ui/react"
+import {
+  Box,
+  Grid,
+  GridItem,
+  Flex,
+  HStack,
+  Link,
+  Divider,
+} from "@chakra-ui/react"
 import { Button, ButtonGroup, Image } from "@chakra-ui/react"
+
+import {
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Input,
+} from "@chakra-ui/react"
 
 import {
   EditIcon,
@@ -22,6 +42,8 @@ import {
   TbSquareRoundedNumber3Filled,
   TbSquareRoundedNumber4Filled,
 } from "react-icons/tb"
+import getBranch from "@/lib/getBranch"
+import StudentNotice from "@/components/intra/team/studentNotice"
 
 const joins: string[] = ["PlBb", "PlSd", "PlSj", "PlDt", "PlDs"]
 
@@ -33,6 +55,14 @@ export default function Controller({
   teamId: string | string[]
 }) {
   const [branches, setBranches] = useState<any>(null)
+  const [studentNotice, setStudentNotice] = useState<any>([])
+
+  const {
+    isOpen: studentNoticeIsOpen,
+    onOpen: studentNoticeOnOpen,
+    onClose: studentNoticeOnClose,
+  } = useDisclosure()
+  const studentNoticeBtnRef = React.useRef()
 
   useEffect(() => {
     const _ = async () => {
@@ -40,8 +70,34 @@ export default function Controller({
       // setUsers(await usersEmailName())
       setBranches(await branchesIdTitle())
     }
+
+    // setStudentNotice([])
     _()
   }, [])
+
+  useEffect(() => {
+    const __ = async () => {
+      console.log(teamId)
+      console.log(teamData)
+      if (teamData && teamData.branches.length > 0) {
+        const notices = []
+        for (const branch of teamData.branches) {
+          console.log(branch.branchId)
+          const branchData = await getBranch(branch.branchId)
+          console.log(branchData)
+          console.log(branchData?.studentNotice)
+          notices.push({
+            branchId: branchData?.branchId,
+            branchTitle: branchData?.branchTitle,
+            title: branchData?.studentNoticeTitle,
+            description: branchData?.studentNotice,
+          })
+        }
+        await setStudentNotice(notices)
+      }
+    }
+    __()
+  }, [teamData, teamId])
 
   return (
     <>
@@ -811,60 +867,78 @@ export default function Controller({
               bgColor={colors.blue0}
             >
               {teamData?.student && (
-                <Box w={teamData?.studentSs ? "50%" : "100%"}>
-                  <a href={`${teamData?.student}`} target="_blank">
-                    <Button
-                      w="100%"
-                      bgColor="white"
-                      border={`solid 1px ${colors.blue1}`}
-                      borderRadius={"4px"}
-                      fontSize="14px"
-                      fontWeight={400}
-                      _hover={{ fontWeight: 700 }}
-                    >
-                      <Flex
-                        justifyContent={"center"}
-                        alignItems={"center"}
+                <>
+                  <Box w={teamData?.studentSs ? "50%" : "100%"}>
+                    <a href={`${teamData?.student}`} target="_blank">
+                      <Button
                         w="100%"
+                        bgColor="white"
+                        border={`solid 1px ${colors.blue1}`}
+                        borderRadius={"4px"}
+                        fontSize="14px"
+                        fontWeight={400}
+                        _hover={{ fontWeight: 700 }}
                       >
-                        <Image
-                          src="/assets/icons/student.png"
-                          alt=""
-                          w="20px"
-                        />
-                        <Box ml={2}>학습보고서(to학생)</Box>
-                      </Flex>
-                    </Button>
-                  </a>
-                </Box>
+                        <Flex
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          w="100%"
+                        >
+                          <Image
+                            src="/assets/icons/student.png"
+                            alt=""
+                            w="20px"
+                          />
+                          <Box ml={2}>학습보고서(to학생)</Box>
+                        </Flex>
+                      </Button>
+                    </a>
+                  </Box>
+                  <StudentNotice
+                    teamId={teamId}
+                    branchId={teamData.branches[0].branchId}
+                    // branchTitle={studentNotice[0]?.branchTitle}
+                    // title={studentNotice[0]?.title}
+                    // description={studentNotice[0]?.description}
+                  />
+                </>
               )}
               {teamData?.studentSs && (
-                <Box w="50%">
-                  <a href={`${teamData?.studentSs}`} target="_blank">
-                    <Button
-                      w="100%"
-                      bgColor="white"
-                      border={`solid 1px ${colors.blue1}`}
-                      borderRadius={"4px"}
-                      fontSize="14px"
-                      fontWeight={400}
-                      _hover={{ fontWeight: 700 }}
-                    >
-                      <Flex
-                        justifyContent={"center"}
-                        alignItems={"center"}
+                <>
+                  <Box w="50%">
+                    <a href={`${teamData?.studentSs}`} target="_blank">
+                      <Button
                         w="100%"
+                        bgColor="white"
+                        border={`solid 1px ${colors.blue1}`}
+                        borderRadius={"4px"}
+                        fontSize="14px"
+                        fontWeight={400}
+                        _hover={{ fontWeight: 700 }}
                       >
-                        <Image
-                          src="/assets/icons/student.png"
-                          alt=""
-                          w="20px"
-                        />
-                        <Box ml={2}>개념상상</Box>
-                      </Flex>
-                    </Button>
-                  </a>
-                </Box>
+                        <Flex
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          w="100%"
+                        >
+                          <Image
+                            src="/assets/icons/student.png"
+                            alt=""
+                            w="20px"
+                          />
+                          <Box ml={2}>개념상상</Box>
+                        </Flex>
+                      </Button>
+                    </a>
+                  </Box>
+                  <StudentNotice
+                    teamId={teamId}
+                    branchId={teamData.branches[1].branchId}
+                    // branchTitle={studentNotice[1]?.branchTitle}
+                    // title={studentNotice[1]?.title}
+                    // description={studentNotice[1]?.description}
+                  />
+                </>
               )}
             </Flex>
           </GridItem>
