@@ -86,6 +86,7 @@ export default function StudentNotice({
         updatedBy: session?.user?.email,
         updatedFrom: teamId,
         branchId: branchId,
+        branchTitle: branchTitle,
         timezoneOffset: new Date().getTimezoneOffset() * 60 * 1000,
         studentNoticeTitle: data.title,
         studentNotice: data.description,
