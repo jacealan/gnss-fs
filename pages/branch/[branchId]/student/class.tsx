@@ -306,11 +306,13 @@ export default function LogStudent({
   }, [])
 
   useEffect(() => {
+    // if (isLog) {
     let logData = window.localStorage.getItem("log")
     if (isLog && !classes) {
       getLog()
       getClasses()
     }
+    // }
   }, [isLog])
 
   // console.log(differenceInDays(parseISO(branch.studentNoticeDate), new Date()))
@@ -596,9 +598,6 @@ export default function LogStudent({
                                         }}
                                       >
                                         {word}&nbsp;
-                                      </span>
-                                      <span style={{ fontSize: "1.2rem" }}>
-                                        ⇗
                                       </span>
                                       &nbsp;
                                     </Link>
