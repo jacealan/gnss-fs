@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
 import { GetServerSidePropsContext } from "next" // SSR
+import Link from "next/link"
 
 import { useSession } from "next-auth/react"
 import { useForm, SubmitHandler } from "react-hook-form"
@@ -50,6 +51,7 @@ import { RepeatClockIcon } from "@chakra-ui/icons"
 import { GrUpdate, GrRefresh } from "react-icons/gr"
 import { HiOutlineLogout, HiLogout } from "react-icons/hi"
 import { RiAlarmWarningFill } from "react-icons/ri"
+import { LiaExternalLinkAltSolid } from "react-icons/lia"
 
 import {
   format,
@@ -577,7 +579,35 @@ export default function LogStudent({
                         {branch.studentNotice
                           .split("\n")
                           .map((line: string, index: number) => (
-                            <Box key={index}>{line ? line : <br />}</Box>
+                            <div key={index}>
+                              {line
+                                .split(" ")
+                                .map((word: string, index: number) =>
+                                  word.substring(0, 4) === "http" ? (
+                                    <Link
+                                      href={word}
+                                      target="_blank"
+                                      key={index}
+                                    >
+                                      <span
+                                        style={{
+                                          fontWeight: 700,
+                                          fontSize: "0.7rem",
+                                        }}
+                                      >
+                                        {word}&nbsp;
+                                      </span>
+                                      <span style={{ fontSize: "1.2rem" }}>
+                                        ⇗
+                                      </span>
+                                      &nbsp;
+                                    </Link>
+                                  ) : (
+                                    <span key={index}>{word}&nbsp;</span>
+                                  )
+                                )}
+                              <br />
+                            </div>
                           ))}
                       </Box>
                     </ModalBody>
