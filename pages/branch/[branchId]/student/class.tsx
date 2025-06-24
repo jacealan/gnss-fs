@@ -325,8 +325,8 @@ export default function LogStudent({
             : "개념폴리아·개념상상 학습보고서"}
         </title>
       </Head>
-      <Center width="100vw" minWidth="350px">
-        {!isLog && (
+      {!isLog && (
+        <Center width="100vw" minWidth="350px">
           <Flex
             direction={"column"}
             alignItems={"center"}
@@ -419,8 +419,10 @@ export default function LogStudent({
             <Divider width="80%" mt={50} mb={30} border="solid 1px lightgray" />
             <Image src="/assets/logos/gnssgnpolya.png" alt="logo" width="50%" />
           </Flex>
-        )}
-        {isLog && (
+        </Center>
+      )}
+      {isLog && (
+        <Center width="100vw" minWidth="350px">
           <Flex
             direction={"column"}
             alignItems={"center"}
@@ -657,8 +659,8 @@ export default function LogStudent({
             <Divider mb={4} width="80%" />
             <Image src="/assets/logos/gnssgnpolya.png" alt="logo" width="40%" />
           </Flex>
-        )}
-      </Center>
+        </Center>
+      )}
     </>
   )
 }
