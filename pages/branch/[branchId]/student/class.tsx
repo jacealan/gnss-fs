@@ -325,7 +325,7 @@ export default function LogStudent({
             : "개념폴리아·개념상상 학습보고서"}
         </title>
       </Head>
-      <Center width="100%">
+      <Center width="100vw">
         {!isLog && (
           <Flex
             direction={"column"}
