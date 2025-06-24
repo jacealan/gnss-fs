@@ -440,10 +440,10 @@ export default function LogStudent({
               color="white"
               fontSize={"1.7rem"}
               width="100%"
-              minHeight="200px"
+              // height="200px"
               // mb={-350}
             >
-              <Box width="80%" mt={"0px"}>
+              <Box width="80%" pt={16} pb={14}>
                 <Box fontWeight={700} fontFamily={"Paperlogy"} mb={-2}>
                   {branch && branch.branchTitle}
                 </Box>
