@@ -363,6 +363,7 @@ export default function LogStudent({
                     maxLength={10}
                     pt={6}
                     pb={6}
+                    fontSize={"1rem"}
                     {...register("name")}
                   />
                   <FormErrorMessage>
@@ -380,6 +381,7 @@ export default function LogStudent({
                     maxLength={20}
                     pt={6}
                     pb={6}
+                    fontSize={"1rem"}
                     {...register("password")}
                   />
                   <FormErrorMessage>
