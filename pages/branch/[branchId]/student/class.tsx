@@ -441,7 +441,7 @@ export default function LogStudent({
               fontSize={"1.7rem"}
               width="100%"
               minHeight="200px"
-              mb={-350}
+              // mb={-350}
             >
               <Box width="80%" mt={"0px"}>
                 <Box fontWeight={700} fontFamily={"Paperlogy"} mb={-2}>
@@ -452,7 +452,7 @@ export default function LogStudent({
             </Center>
             <Box
               width="90%"
-              mt={300}
+              mt={-50}
               mb={8}
               bgColor="white"
               boxShadow={"2px 2px 2px rgb(50, 102, 205, .2)"}
