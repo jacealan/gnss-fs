@@ -11,15 +11,15 @@ const spanStyle = {
 }
 
 const slideLists = [
+  { imageNum: 1 },
   { imageNum: 5, link: "https://blog.naver.com/gnsc2505/223795989590" },
-  { imageNum: 1, link: "https://blog.naver.com/gnpolyadt" },
   { imageNum: 0, link: "https://blog.naver.com/gnsssmedu" },
-  { imageNum: 6, link: "https://blog.naver.com/gnpolyads" },
+  // { imageNum: 6, link: "https://blog.naver.com/gnpolyads" },
   {
     imageNum: 9,
     link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
   },
-  { imageNum: 7, link: "/branch/PlSj" },
+  // { imageNum: 7, link: "/branch/PlSj" },
 ]
 
 const buttonStyle = {
