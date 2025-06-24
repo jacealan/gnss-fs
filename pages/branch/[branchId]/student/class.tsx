@@ -655,7 +655,12 @@ export default function LogStudent({
               </Flex>
             </Box>
             <Divider mb={4} width="80%" />
-            <Image src="/assets/logos/gnssgnpolya.png" alt="logo" width="40%" />
+            <Image
+              src="/assets/logos/gnssgnpolya.png"
+              alt="logo"
+              width="40%"
+              mb={10}
+            />
           </Flex>
         )}
       </Center>
