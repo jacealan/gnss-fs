@@ -325,7 +325,7 @@ export default function LogStudent({
             : "개념폴리아·개념상상 학습보고서"}
         </title>
       </Head>
-      <Center width="100vw">
+      <Center width="100vw" minWidth="350px">
         {!isLog && (
           <Flex
             direction={"column"}
@@ -333,9 +333,9 @@ export default function LogStudent({
             justify={"flex-start"}
             width="100%"
             minWidth="350px"
-            maxWidth="400px"
-            minHeight="640px"
-            maxHeight="896px"
+            maxWidth="500px"
+            // minHeight="640px"
+            // maxHeight="896px"
             bgImage={"/assets/images/student1.png"}
             bgSize={"100%"}
             bgPosition="top"
@@ -427,9 +427,9 @@ export default function LogStudent({
             justify={"flex-start"}
             width="100%"
             minWidth="350px"
-            maxWidth="400px"
-            minHeight="640px"
-            maxHeight="896px"
+            maxWidth="500px"
+            // minHeight="640px"
+            // maxHeight="896px"
             // bgImage={"/assets/images/student2.png"}
             bgSize={"100%"}
             bgPosition="top"
