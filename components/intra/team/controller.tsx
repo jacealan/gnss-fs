@@ -77,15 +77,15 @@ export default function Controller({
 
   useEffect(() => {
     const __ = async () => {
-      console.log(teamId)
-      console.log(teamData)
+      // console.log(teamId)
+      // console.log(teamData)
       if (teamData && teamData.branches.length > 0) {
         const notices = []
         for (const branch of teamData.branches) {
-          console.log(branch.branchId)
+          // console.log(branch.branchId)
           const branchData = await getBranch(branch.branchId)
-          console.log(branchData)
-          console.log(branchData?.studentNotice)
+          // console.log(branchData)
+          // console.log(branchData?.studentNotice)
           notices.push({
             branchId: branchData?.branchId,
             branchTitle: branchData?.branchTitle,

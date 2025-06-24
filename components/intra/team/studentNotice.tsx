@@ -102,11 +102,11 @@ export default function StudentNotice({
     element.style.height = `${element.scrollHeight}px`
   }
 
-  console.log(title)
+  // console.log(title)
 
   useEffect(() => {
     const __ = async () => {
-      console.log(branchId)
+      // console.log(branchId)
       const branchData = await getBranch(branchId)
       setBranchTitle(() => branchData?.branchTitle)
       setTitle(() => branchData?.studentNoticeTitle)
@@ -114,7 +114,7 @@ export default function StudentNotice({
       setNoticeDate(() => branchData?.studentNoticeDate)
       // }
 
-      console.log(branchData)
+      // console.log(branchData)
     }
 
     __()
