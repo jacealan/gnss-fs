@@ -630,7 +630,7 @@ export default function LogStudent({
                     pb={1}
                     key={classObj[1] + "_" + classObj[0]}
                   >
-                    <a href={classObj[1] + "/" + classObj[0]}>
+                    <a href={`student/${classObj[1]}/${classObj[0]}`}>
                       <Box
                         fontWeight={700}
                         width="100%"
