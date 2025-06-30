@@ -121,8 +121,7 @@ export default function LogBoard({
     const studentData = window.localStorage.getItem("studentData")
     // console.log(studentData)
     // console.log(branchId)
-    if (studentData === null)
-      route.push("/branch/" + branchId + "/student/class")
+    if (studentData === null) route.push("/branch/" + branchId + "/student")
 
     switch (branchId) {
       case "PlDs":
@@ -346,7 +345,7 @@ export default function LogBoard({
                   color="#fff"
                   borderRadius={10}
                   onClick={() => {
-                    route.push("/branch/" + branchId + "/student/class")
+                    route.push("/branch/" + branchId + "/student")
                   }}
                 >
                   수강목록
