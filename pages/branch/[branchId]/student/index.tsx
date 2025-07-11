@@ -287,7 +287,7 @@ export default function LogStudent({
         differenceInDays(
           new Date(),
           parse(JSON.parse(row)[1].split("@")[1], "yyMMdd", new Date())
-        ) > 150
+        ) > 130
       )
         return
 
