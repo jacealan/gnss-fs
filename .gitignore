@@ -27,8 +27,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env
-.env*.local
+.env*
+.env*.local*
 
 # vercel
 .vercel
@@ -41,3 +41,4 @@ next-env.d.ts
 /public/googlec5cf80fdb86ea095.html
 /public/naver05b80f25b2839299ad559a8142c5a785.html
 /public/sitemap-0.xml
+gnss-c8887-9b6438b8150e.json
