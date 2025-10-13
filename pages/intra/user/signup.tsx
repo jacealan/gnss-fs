@@ -276,9 +276,9 @@ const SignUp: NextPage = () => {
               <Checkbox value="PlDs" {...register("teams")} m={3}>
                 개념폴리아 다산관
               </Checkbox>
-              {/* <Checkbox value="PlSd" {...register("teams")} m={3}>
+              <Checkbox value="PlSd" {...register("teams")} m={3}>
                 개념폴리아 송도관
-              </Checkbox> */}
+              </Checkbox>
               <hr />
               <Checkbox value="gnBiz" {...register("teams")} m={3}>
                 학원사업부
