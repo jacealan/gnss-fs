@@ -11,8 +11,9 @@ const spanStyle = {
 }
 
 const slideLists = [
-  { imageNum: 0, link: "https://blog.naver.com/gnss0508/224004497472" },
-  { imageNum: 1, link: "https://blog.naver.com/gnsc2505/224004656090" },
+  // { imageNum: 0, link: "https://blog.naver.com/gnss0508/224004497472" },
+  { imageNum: 1, link: "https://blog.naver.com/gnsc2505/224044542722" },
+  { imageNum: 2, link: "https://blog.naver.com/gnss0508" },
   // { imageNum: 5, link: "https://blog.naver.com/gnsc2505/223795989590" },
   // { imageNum: 6, link: "https://blog.naver.com/gnpolyads" },
   {
