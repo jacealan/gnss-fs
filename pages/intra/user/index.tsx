@@ -60,7 +60,7 @@ export default function UsersList() {
           "PlSj",
           "PlDt",
           "PlDs",
-          // "PlSd",
+          "PlSd",
           // "gnChief",
         ].map((teamId: string, index: number) => (
           <AccordionItem key={index}>
