@@ -93,6 +93,11 @@ const branchesData = [
     phone: "031-556-4808",
     address: "경기도 남양주시 다산순환로 356 푸리마타워 4층",
   },
+  {
+    name: "메이커즈_개념폴리아 송도학원",
+    phone: "032-859-8892",
+    address: "인천광역시 연수구 해돋이로152번길 9, 7층(703 704 705)",
+  },
 ]
 
 export default function Branches() {
