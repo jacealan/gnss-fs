@@ -11,7 +11,7 @@ const spanStyle = {
 }
 
 const slideLists = [
-  { imageNum: 3, link: "" },
+  { imageNum: 3, link: "https://gnss.co.kr/branch/PlSd/board" },
   // { imageNum: 0, link: "https://blog.naver.com/gnss0508/224004497472" },
   { imageNum: 1, link: "https://blog.naver.com/gnsc2505/224044542722" },
   { imageNum: 2, link: "https://blog.naver.com/gnss0508" },
