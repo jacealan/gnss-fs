@@ -188,11 +188,8 @@ export default function BottomBar({ teams }: { teams: any }) {
             <Stack direction={"row"}>
               <Box>학원사업부</Box>
               <Link href="tel://02-566-0508">02-566-0508</Link>
-              <Link
-                href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B4%91%ED%8F%89%EB%A1%9C56%EA%B8%B8%208-13%20%08%EC%88%98%EC%84%9C%ED%83%80%EC%9B%8C%201519%ED%98%B8"
-                target="_blank"
-              >
-                서울시 강남구 광평로56길 8-13 수서타워 1519호
+              <Link href="https://naver.me/F75THZXp" target="_blank">
+                서울 송파구 백제고분로 89 영우빌딩 2층
               </Link>
             </Stack>
           </Box>
