@@ -5,8 +5,8 @@ Disallow: /intra
 Disallow: /api
 
 # Host
-Host: https://gnss.co.kr
+Host: http://localhost:8080
 
 # Sitemaps
-Sitemap: https://gnss.co.kr/sitemap.xml
-Sitemap: https://gnss.co.kr/server-sitemap.xml
+Sitemap: http://localhost:8080/sitemap.xml
+Sitemap: http://localhost:8080/server-sitemap.xml
