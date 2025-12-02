@@ -143,6 +143,10 @@ export default function StudentScore({
         break
       case "SsJs":
         setBranchTitle("개념상상 잠실관")
+        break
+      case "PlSd":
+        setBranchTitle("개념폴리아 송도관")
+        break
     }
 
     // console.log(isLog)

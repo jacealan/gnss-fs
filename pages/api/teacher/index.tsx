@@ -48,6 +48,9 @@ export default async function handler(
     case "SsJs":
       spreadsheetId = "13xCKr92K4n2dhUPx_vQW4ZjRi-kMrwYfr3bSZhPJma4"
       break
+    case "PlSd":
+      spreadsheetId = "1cH6-tJ4vpO2UvmgrtnLz-fl13kIiOO8YbNMl91wc3AM"
+      break
     default:
       spreadsheetId = ""
   }
