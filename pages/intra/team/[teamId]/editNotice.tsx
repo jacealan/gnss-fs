@@ -390,14 +390,14 @@ export default function EditNotice() {
                   >
                     평촌관
                   </Checkbox>
-                  {/* <Checkbox
+                  <Checkbox
                     value="PlSd"
                     {...register("teamsId")}
                     m={3}
                     isDisabled={!isAdd}
                   >
                     송도관
-                  </Checkbox> */}
+                  </Checkbox>
                   {/* <Checkbox
                     value="LbJs"
                     {...register("teamsId")}
