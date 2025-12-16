@@ -34,7 +34,7 @@
     "mongodb": "^5.7.0",
     "mongoose": "^7.3.4",
     "nanoid": "^4.0.2",
-    "next": "13.4.8",
+    "next": "~14.2.35",
     "next-auth": "^4.22.1",
     "next-real-viewport": "^0.7.2",
     "react": "18.2.0",
