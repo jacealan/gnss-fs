@@ -271,6 +271,18 @@ export default function Board({
                   ></Image>
                 </Link>
               )}
+              {branch.boardKakaoChannel && (
+                <Link href={branch.kakaoChannel} target="_blank">
+                  <Image
+                    src="/assets/icons/kakaochannel.png"
+                    alt="map"
+                    width="2rem"
+                    mt={vwC * 0.04}
+                    ml={vwC * 0.02}
+                    mr={vwC * 0.02}
+                  ></Image>
+                </Link>
+              )}
             </Center>
 
             <Divider
