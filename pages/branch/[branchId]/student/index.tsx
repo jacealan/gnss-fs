@@ -243,7 +243,7 @@ export default function LogStudent({
     } else {
       log.current = await JSON.parse(logData)
     }
-    // console.log(log.current)
+    console.log(log.current)
     // if (!log.current) return
 
     const classesSet = new Set()
@@ -295,6 +295,7 @@ export default function LogStudent({
     })
     await classesArray.sort((a, b) => -(a[4] - b[4]))
     setClasses(() => classesArray)
+    console.log(classesSet)
   }
 
   useEffect(() => {
@@ -442,8 +443,8 @@ export default function LogStudent({
               color="white"
               fontSize={"1.7rem"}
               width="100%"
-              // height="200px"
-              // mb={-350}
+            // height="200px"
+            // mb={-350}
             >
               <Box width="80%" pt={16} pb={14}>
                 <Box fontWeight={700} fontFamily={"Paperlogy"} mb={-2}>
@@ -479,7 +480,7 @@ export default function LogStudent({
                     fontWeight="700"
                     userSelect={"none"}
                     style={{ fontStretch: "semi-condensed" }}
-                    // fontFamily={"Paperlogy"}
+                  // fontFamily={"Paperlogy"}
                   >
                     {student.current.data.name} 학생
                   </Box>
@@ -558,15 +559,15 @@ export default function LogStudent({
                     parseISO(branch.studentNoticeDate),
                     new Date()
                   ) < 7 && (
-                    <Icon
-                      as={RiAlarmWarningFill}
-                      color="#F55F5F"
-                      boxSize={4}
-                      position={"absolute"}
-                      top={-2}
-                      left={-1}
-                    />
-                  )}
+                      <Icon
+                        as={RiAlarmWarningFill}
+                        color="#F55F5F"
+                        boxSize={4}
+                        position={"absolute"}
+                        top={-2}
+                        left={-1}
+                      />
+                    )}
                 </Button>
                 <Modal
                   onClose={onClose}
