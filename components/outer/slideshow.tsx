@@ -12,7 +12,7 @@ const spanStyle = {
 
 const slideLists = [
   { imageNum: 2, link: "https://m.blog.naver.com/gnss0508/224156859041" },
-  { imageNum: 3, link: "https://pf.kakao.com/_qBIan/112155065" },
+  { imageNum: 3, link: "https://blog.naver.com/gnsc2505/224153816082" },
   { imageNum: 1, link: "" },
   // { imageNum: 0, link: "https://blog.naver.com/gnsc2505/224083415771#webbn" },
   // { imageNum: 3, link: "https://gnss.co.kr/branch/PlSd/board" },
