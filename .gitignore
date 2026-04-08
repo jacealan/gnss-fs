@@ -16,6 +16,7 @@
 /build
 
 /public/uploads/
+/public/test/
 
 # misc
 .DS_Store
