@@ -42,7 +42,7 @@ export default function Home() {
         if (resData.success) {
           const workTeamsArray: string[] = []
           resData.data.teams.forEach((team: any) =>
-            workTeamsArray.push(team.teamId)
+            workTeamsArray.push(team.teamId),
           )
           // setWorkTeams((prev) => resData.data.teams)
           setWorkTeams(workTeamsArray)
@@ -135,6 +135,8 @@ export default function Home() {
                     "PlDt",
                     "PlDs",
                     "PlSd",
+                    "PlKa",
+                    "PlWr",
                     "-",
                     "gnBiz",
                     "gnGa",

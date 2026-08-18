@@ -33,7 +33,7 @@ export default function BottomBar({ teams }: { teams: any }) {
         if (resData.success) {
           const workTeamsArray: string[] = []
           resData.data.teams.forEach((team: any) =>
-            workTeamsArray.push(team.teamId)
+            workTeamsArray.push(team.teamId),
           )
           // setWorkTeams((prev) => resData.data.teams)
           setWorkTeams(workTeamsArray)
@@ -89,11 +89,11 @@ export default function BottomBar({ teams }: { teams: any }) {
           </Box>
           <Box>
             <Box fontWeight={700} mb={2}>
-              서울 서초
+              서울 서초,관악
             </Box>
 
             {teams &&
-              ["SPSc", "SsSc", "PlBb"].map((teamId, index) => (
+              ["SPSc", "SsSc", "PlBb", "PlKa"].map((teamId, index) => (
                 <Box key={index}>
                   {workTeams.includes(teamId) ||
                   workTeams.includes("gnBiz") ||
@@ -133,19 +133,21 @@ export default function BottomBar({ teams }: { teams: any }) {
             </Box>
 
             {teams &&
-              ["PlPc", "PlSj", "PlDt", "PlDs", "PlSd"].map((teamId, index) => (
-                <Box key={index}>
-                  {workTeams.includes(teamId) ||
-                  workTeams.includes("gnBiz") ||
-                  workTeams.includes("gnGa") ? (
-                    <Link href={`/intra/team/${teamId}`}>
-                      <Box color={colors.primary}>{`${teams[teamId]}`}</Box>
-                    </Link>
-                  ) : (
-                    <Box color={"#aaa"}>{`${teams[teamId]}`}</Box>
-                  )}
-                </Box>
-              ))}
+              ["PlPc", "PlSj", "PlDt", "PlDs", "PlSd", "PlWr"].map(
+                (teamId, index) => (
+                  <Box key={index}>
+                    {workTeams.includes(teamId) ||
+                    workTeams.includes("gnBiz") ||
+                    workTeams.includes("gnGa") ? (
+                      <Link href={`/intra/team/${teamId}`}>
+                        <Box color={colors.primary}>{`${teams[teamId]}`}</Box>
+                      </Link>
+                    ) : (
+                      <Box color={"#aaa"}>{`${teams[teamId]}`}</Box>
+                    )}
+                  </Box>
+                ),
+              )}
           </Box>
           <Box>
             <Box fontWeight={700} mb={2}>
