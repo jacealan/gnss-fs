@@ -69,7 +69,7 @@ export default function BottomBar({ teams }: { teams: any }) {
         <Flex justifyContent={"space-evenly"} mb={5}>
           <Box>
             <Box fontWeight={700} mb={2}>
-              강남 대치
+              대치,강남
             </Box>
 
             {teams &&
@@ -89,7 +89,7 @@ export default function BottomBar({ teams }: { teams: any }) {
           </Box>
           <Box>
             <Box fontWeight={700} mb={2}>
-              서울 서초,관악
+              서초,관악
             </Box>
 
             {teams &&
@@ -109,7 +109,7 @@ export default function BottomBar({ teams }: { teams: any }) {
           </Box>
           <Box>
             <Box fontWeight={700} mb={2}>
-              서울 잠실
+              잠실
             </Box>
 
             {teams &&
@@ -129,7 +129,7 @@ export default function BottomBar({ teams }: { teams: any }) {
           </Box>
           <Box>
             <Box fontWeight={700} mb={2}>
-              수도권 경기
+              수도권,경기
             </Box>
 
             {teams &&
