@@ -45,7 +45,7 @@ import {
 import getBranch from "@/lib/getBranch"
 import StudentNotice from "@/components/intra/team/studentNotice"
 
-const joins: string[] = ["PlBb", "PlSd", "PlSj", "PlDt", "PlDs"]
+const joins: string[] = ["PlBb", "PlSd", "PlSj", "PlDt", "PlDs", "PlKa", "PlWr"]
 
 export default function Controller({
   teamData,
