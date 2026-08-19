@@ -251,11 +251,11 @@ export default function EditNotice() {
                             setValue("title", notice.title)
                             setValue(
                               "startDate",
-                              moment(notice.startDate).format("YYYY-MM-DD")
+                              moment(notice.startDate).format("YYYY-MM-DD"),
                             )
                             setValue(
                               "endDate",
-                              moment(notice.endDate).format("YYYY-MM-DD")
+                              moment(notice.endDate).format("YYYY-MM-DD"),
                             )
                             setValue("description", notice.description)
                             // console.log(getValues())
@@ -343,6 +343,14 @@ export default function EditNotice() {
                     방배관
                   </Checkbox>
                   <Checkbox
+                    value="PlKa"
+                    {...register("teamsId")}
+                    m={3}
+                    isDisabled={!isAdd}
+                  >
+                    관악관
+                  </Checkbox>
+                  <Checkbox
                     value="SPJs"
                     {...register("teamsId")}
                     m={3}
@@ -373,7 +381,15 @@ export default function EditNotice() {
                     isDisabled={!isAdd}
                   >
                     다산관
-                  </Checkbox>{" "}
+                  </Checkbox>
+                  <Checkbox
+                    value="PlWr"
+                    {...register("teamsId")}
+                    m={3}
+                    isDisabled={!isAdd}
+                  >
+                    위례관
+                  </Checkbox>
                   <Checkbox
                     value="PlDc"
                     {...register("teamsId")}
