@@ -11,6 +11,7 @@ const spanStyle = {
 }
 
 const slideLists = [
+  { imageNum: 0, link: "" },
   { imageNum: 4, link: "https://blog.naver.com/gnpolya23/224361834779" },
   { imageNum: 2, link: "https://blog.naver.com/gnsc2505" },
   // { imageNum: 1, link: "" },
@@ -21,10 +22,10 @@ const slideLists = [
   // { imageNum: 2, link: "https://blog.naver.com/gnss0508" },
   // { imageNum: 5, link: "https://blog.naver.com/gnsc2505/223795989590" },
   // { imageNum: 6, link: "https://blog.naver.com/gnpolyads" },
-  {
-    imageNum: 9,
-    link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
-  },
+  // {
+  //   imageNum: 9,
+  //   link: "https://www.youtube.com/channel/UCwgew-iQxiOL1_XeYG0Tn0A", // 개상TV
+  // },
   // { imageNum: 7, link: "/branch/PlSj" },
 ]
 
