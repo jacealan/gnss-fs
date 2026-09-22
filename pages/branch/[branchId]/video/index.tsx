@@ -24,10 +24,13 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   if (branchId === "PlSc") videoTeamId = "SPSc"
   if (branchId === "PlJs") videoTeamId = "SPJs"
-  if (["PlCd", "PlBb", "PlSd", "PlSj", "PlDt", "PlDs"].includes(branchId)) {
+  if (
+    ["PlCd", "PlBb", "PlSd", "PlSj", "PlDt", "PlDs"].includes(
+      branchId as string,
+    )
+  ) {
     videoTeamId = branchId
   }
-
 
   return {
     redirect: {
