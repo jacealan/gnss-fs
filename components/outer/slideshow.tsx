@@ -11,7 +11,7 @@ const spanStyle = {
 }
 
 const slideLists = [
-  // { imageNum: 0, link: "" },
+  { imageNum: 0, link: "" },
   { imageNum: 1, link: "https://blog.naver.com/gnss0508" },
   { imageNum: 4, link: "https://blog.naver.com/gnpolya23/224361834779" },
   { imageNum: 2, link: "https://blog.naver.com/gnsc2505" },
