@@ -60,6 +60,7 @@ export default function UsersList() {
           "PlSj",
           "PlDt",
           "PlDs",
+          "PlKa",
           "PlSd",
           // "gnChief",
         ].map((teamId: string, index: number) => (
@@ -77,11 +78,11 @@ export default function UsersList() {
                 {teams
                   .find((team: any) => team?.teamId === teamId)
                   ?.members?.sort((a: any, b: any) =>
-                    a.userName.localeCompare(b.userName)
+                    a.userName.localeCompare(b.userName),
                   )
                   .map((member: any, index: number) => {
                     const showUser = users.find(
-                      (user) => user.email === member.userEmail
+                      (user) => user.email === member.userEmail,
                     )
                     return (
                       <GridItem _hover={{ bgColor: "#f5f5f5" }} key={index}>
