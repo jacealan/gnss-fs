@@ -103,6 +103,11 @@ const branchesData = [
     phone: "032-859-8892",
     address: "인천광역시 연수구 해돋이로152번길 9, 7층(703 704 705)",
   },
+  {
+    name: "개념폴리아 관악관",
+    phone: "02-878-4587",
+    address: "서울특별시 관악구 양녕로 74 2층",
+  },
 ]
 
 export default function Branches() {
