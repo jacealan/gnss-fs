@@ -656,7 +656,19 @@ export default function LogStudent({
                   <Box userSelect={"none"}>잠시만 기다려주세요</Box>
                 )}
                 <a href={`/branch/${branchId}/video`}>
-                  <Button>동영상 학습실</Button>
+                  <Box
+                    width="90%"
+                    border="solid 1px #1267d3"
+                    borderRadius={"6px"}
+                    boxShadow={"2px 2px 1px #ccc"}
+                    bgColor="#fff"
+                    color="#fff"
+                    _hover={{ boxShadow: "2px 2px 3px #aaa" }}
+                    pt={1}
+                    pb={1}
+                  >
+                    동영상 학습실
+                  </Box>
                 </a>
               </Flex>
             </Box>
