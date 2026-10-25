@@ -138,7 +138,7 @@ export default function LogStudent({
       // console.log(student.current)
       window.localStorage.setItem(
         "studentData",
-        JSON.stringify(student.current)
+        JSON.stringify(student.current),
       )
       // console.log(student.current.data.link1.split("="))
       // console.log(student.current.data.link1.split("=")[2])
@@ -193,7 +193,7 @@ export default function LogStudent({
             Number(row[8]),
             row[9],
             row[10],
-          ])
+          ]),
         )
       }
       if (row[20] && row[21]) {
@@ -206,7 +206,7 @@ export default function LogStudent({
             Number(row[8]),
             row[20],
             row[21],
-          ])
+          ]),
         )
       }
       // console.log(row)
@@ -217,7 +217,7 @@ export default function LogStudent({
       if (
         differenceInDays(
           new Date(),
-          parse(JSON.parse(row)[1].split("@")[1], "yyMMdd", new Date())
+          parse(JSON.parse(row)[1].split("@")[1], "yyMMdd", new Date()),
         ) > 150
       )
         return
@@ -262,7 +262,7 @@ export default function LogStudent({
             Number(row[8]),
             row[9],
             row[10],
-          ])
+          ]),
         )
       }
       if (row[20] && row[21]) {
@@ -275,7 +275,7 @@ export default function LogStudent({
             Number(row[8]),
             row[20],
             row[21],
-          ])
+          ]),
         )
       }
       // console.log(row)
@@ -286,7 +286,7 @@ export default function LogStudent({
       if (
         differenceInDays(
           new Date(),
-          parse(JSON.parse(row)[1].split("@")[1], "yyMMdd", new Date())
+          parse(JSON.parse(row)[1].split("@")[1], "yyMMdd", new Date()),
         ) > 130
       )
         return
@@ -443,8 +443,8 @@ export default function LogStudent({
               color="white"
               fontSize={"1.7rem"}
               width="100%"
-            // height="200px"
-            // mb={-350}
+              // height="200px"
+              // mb={-350}
             >
               <Box width="80%" pt={16} pb={14}>
                 <Box fontWeight={700} fontFamily={"Paperlogy"} mb={-2}>
@@ -480,7 +480,7 @@ export default function LogStudent({
                     fontWeight="700"
                     userSelect={"none"}
                     style={{ fontStretch: "semi-condensed" }}
-                  // fontFamily={"Paperlogy"}
+                    // fontFamily={"Paperlogy"}
                   >
                     {student.current.data.name} 학생
                   </Box>
@@ -557,17 +557,17 @@ export default function LogStudent({
                   </Box>
                   {differenceInDays(
                     parseISO(branch.studentNoticeDate),
-                    new Date()
+                    new Date(),
                   ) < 7 && (
-                      <Icon
-                        as={RiAlarmWarningFill}
-                        color="#F55F5F"
-                        boxSize={4}
-                        position={"absolute"}
-                        top={-2}
-                        left={-1}
-                      />
-                    )}
+                    <Icon
+                      as={RiAlarmWarningFill}
+                      color="#F55F5F"
+                      boxSize={4}
+                      position={"absolute"}
+                      top={-2}
+                      left={-1}
+                    />
+                  )}
                 </Button>
                 <Modal
                   onClose={onClose}
@@ -606,7 +606,7 @@ export default function LogStudent({
                                     </Link>
                                   ) : (
                                     <span key={index}>{word}&nbsp;</span>
-                                  )
+                                  ),
                                 )}
                               <br />
                             </div>
@@ -618,7 +618,6 @@ export default function LogStudent({
                     </ModalFooter>
                   </ModalContent>
                 </Modal>
-                <Button>동영상 학습실</Button>
                 {classes?.map((classObj: any) => (
                   <Box
                     width="90%"
@@ -656,6 +655,9 @@ export default function LogStudent({
                 {classes == null && (
                   <Box userSelect={"none"}>잠시만 기다려주세요</Box>
                 )}
+                <a href="/video">
+                  <Button>동영상 학습실</Button>
+                </a>
               </Flex>
             </Box>
             <Divider mb={4} width="80%" />
