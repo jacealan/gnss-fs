@@ -655,7 +655,7 @@ export default function LogStudent({
                 {classes == null && (
                   <Box userSelect={"none"}>잠시만 기다려주세요</Box>
                 )}
-                <a href="/video">
+                <a href={`/branch/${branchId}/video`}>
                   <Button>동영상 학습실</Button>
                 </a>
               </Flex>
