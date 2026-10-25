@@ -618,6 +618,7 @@ export default function LogStudent({
                     </ModalFooter>
                   </ModalContent>
                 </Modal>
+                <Button>동영상 학습실</Button>
                 {classes?.map((classObj: any) => (
                   <Box
                     width="90%"

@@ -24,8 +24,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   if (branchId === "PlSc") videoTeamId = "SPSc"
   if (branchId === "PlJs") videoTeamId = "SPJs"
+  if (branchId === "SsJs") videoTeamId = "SPJs"
   if (
-    ["PlCd", "PlBb", "PlSd", "PlSj", "PlDt", "PlDs"].includes(
+    ["PlCd", "PlBb", "PlSd", "PlSj", "PlDt", "PlDs", "PlKw"].includes(
       branchId as string,
     )
   ) {
