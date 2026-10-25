@@ -662,12 +662,14 @@ export default function LogStudent({
                     borderRadius={"6px"}
                     boxShadow={"2px 2px 1px #ccc"}
                     bgColor="#fff"
-                    color="#fff"
+                    color="#121212"
                     _hover={{ boxShadow: "2px 2px 3px #aaa" }}
                     pt={1}
                     pb={1}
                   >
-                    동영상 학습실
+                    <Box width="100%" overflow="hidden">
+                      동영상 학습실
+                    </Box>
                   </Box>
                 </a>
               </Flex>
