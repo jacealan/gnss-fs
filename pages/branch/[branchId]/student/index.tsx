@@ -664,11 +664,16 @@ export default function LogStudent({
                   color="#121212"
                   fontWeight={700}
                   _hover={{ boxShadow: "2px 2px 3px #aaa" }}
-                  pt={1}
-                  pb={1}
+                  pt={2}
+                  pb={2}
                 >
                   <a href={`/branch/${branchId}/video`} target="_blank">
-                    <Box width="100%" overflow="hidden">
+                    <Box
+                      width="100%"
+                      overflow="hidden"
+                      textAlign="center"
+                      userSelect={"none"}
+                    >
                       동영상 학습실
                     </Box>
                   </a>
