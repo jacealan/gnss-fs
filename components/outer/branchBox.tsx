@@ -6,6 +6,7 @@ import { useRealViewport } from "next-real-viewport"
 import { Flex, HStack, Box, Divider } from "@chakra-ui/react"
 import { PhoneIcon, CalendarIcon, ChatIcon } from "@chakra-ui/icons"
 import { PiStudentFill } from "react-icons/pi"
+import { MdPlayCircleOutline } from "react-icons/md"
 
 import theme from "@/components/outer/theme.json"
 import locations from "@/components/outer/locations.json"
@@ -115,6 +116,11 @@ export default function BranchBox({
             {branch?.student && (
               <a href={branch?.student} title="학습보고서" target="_blank">
                 <PiStudentFill size="1.5rem" />
+              </a>
+            )}
+            {branch?.video && (
+              <a href={branch?.video} title="폴리안ON" target="_blank">
+                <MdPlayCircleOutline size="1.5rem" />
               </a>
             )}
           </Flex>
