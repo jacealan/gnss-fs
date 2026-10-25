@@ -655,7 +655,11 @@ export default function LogStudent({
                 {classes == null && (
                   <Box userSelect={"none"}>잠시만 기다려주세요</Box>
                 )}
-                <a href={`/branch/${branchId}/video`}>
+                <a
+                  href={`/branch/${branchId}/video`}
+                  target="_blank"
+                  className="width: 100%"
+                >
                   <Box
                     width="90%"
                     border="solid 1px #1267d3"
