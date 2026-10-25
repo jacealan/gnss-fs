@@ -658,22 +658,10 @@ export default function LogStudent({
                 <a
                   href={`/branch/${branchId}/video`}
                   target="_blank"
-                  className="width: 100%"
+                  className="w-[90%] border-solid border-[1px] border-[#1267d3] rounded-[6px] shadow-[2px_2px_1px_#ccc] bg-[#fff] font-bold text-[#121212] hover:shadow-[2px_2px_3px_#aaa] pt-1 pb-1"
                 >
-                  <Box
-                    width="90%"
-                    border="solid 1px #1267d3"
-                    borderRadius={"6px"}
-                    boxShadow={"2px 2px 1px #ccc"}
-                    bgColor="#fff"
-                    color="#121212"
-                    _hover={{ boxShadow: "2px 2px 3px #aaa" }}
-                    pt={1}
-                    pb={1}
-                  >
-                    <Box width="100%" overflow="hidden">
-                      동영상 학습실
-                    </Box>
+                  <Box width="100%" overflow="hidden">
+                    동영상 학습실
                   </Box>
                 </a>
               </Flex>
