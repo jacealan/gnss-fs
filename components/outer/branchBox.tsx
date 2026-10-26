@@ -6,7 +6,6 @@ import { useRealViewport } from "next-real-viewport"
 import { Flex, HStack, Box, Divider } from "@chakra-ui/react"
 import { PhoneIcon, CalendarIcon, ChatIcon } from "@chakra-ui/icons"
 import { PiStudentFill } from "react-icons/pi"
-import { MdPlayCircleOutline } from "react-icons/md"
 
 import theme from "@/components/outer/theme.json"
 import locations from "@/components/outer/locations.json"
@@ -120,7 +119,25 @@ export default function BranchBox({
             )}
             {branch?.video && (
               <a href={branch?.video} title="폴리안ON" target="_blank">
-                <MdPlayCircleOutline size="1.5rem" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 73.29 82.6"
+                  width="1.5rem"
+                  height="1.5rem"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M46.51,10.65v11.14c9.52,3.89,16.23,13.24,16.23,24.16,0,14.41-11.68,26.1-26.1,26.1s-26.1-11.68-26.1-26.1c0-10.92,6.71-20.27,16.23-24.16v-11.14C11.33,14.96,0,29.13,0,45.95c0,20.24,16.41,36.65,36.65,36.65s36.65-16.41,36.65-36.65c0-16.82-11.33-30.99-26.78-35.3Z" />
+                  <rect
+                    x="32.48"
+                    y="0"
+                    width="9.3"
+                    height="28.24"
+                    rx="4.13"
+                    ry="4.13"
+                  />
+                  <path d="M48.66,44.74l-17.36-10.7c-1.59-.98-3.63.16-3.63,2.03v21.4c0,1.87,2.05,3.01,3.63,2.03l17.36-10.7c1.51-.93,1.51-3.13,0-4.06Z" />
+                </svg>
               </a>
             )}
           </Flex>
