@@ -51,6 +51,10 @@ export default async function handler(
     case "PlSd":
       spreadsheetId = "1cH6-tJ4vpO2UvmgrtnLz-fl13kIiOO8YbNMl91wc3AM"
       break
+    case "PlKa":
+      spreadsheetId = "19shI5Qj72Z5XKnOFx3xebSJcG5yce9PTUE3Pnd_ZX70"
+      break
+
     default:
       spreadsheetId = ""
   }
