@@ -35,7 +35,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   return {
     redirect: {
-      destination: `https://classm.gnbiz.mywire.org/${videoTeamId || ""}/v`,
+      destination: `https://classm.gnbiz.opik.net/${videoTeamId || ""}/v`,
       permanent: false,
     },
   }
